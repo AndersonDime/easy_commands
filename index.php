@@ -15,6 +15,9 @@ include 'template/navbar.php';
         case 'listar-produtos':
             include 'pages/listar-orcamentos.php';
             break;
+        case 'cadastro-produtos';
+            include 'pages/cadastro-produtos.php';
+            break;
         default:
             include 'pages/home.php';
     }

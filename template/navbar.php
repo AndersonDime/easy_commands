@@ -18,7 +18,7 @@
             <a class="nav-link" href="html-components.html">Salão</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="html-components.html">Configurações</a>
+            <a class="nav-link" href="configuracoes.php">Configurações</a>
         </li>
     </ul>
   </div>
