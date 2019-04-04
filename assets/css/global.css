@@ -1,0 +1,49 @@
+/*Colors*/
+.bg-black{
+    background-color: #333333!important;
+}
+
+.bg-white{
+    background-color: #f2f2f2!important;
+}
+
+.bg-blue{
+    background-color: #93c1be!important;
+}
+
+.txt-black{
+    color: #333333!important;
+}
+
+.txt-white{
+    color: #f2f2f2!important;
+}
+
+.txt-blue{
+    color: #93c1be!important;
+}
+/*Buttons*/
+
+.btn-blue{
+    background-color: #93c1be!important;
+    color: #f2f2f2!important;
+    border-color: #93c1be!important;
+}
+
+.btn-black{
+    background-color: #333333!important;
+    color: #f2f2f2!important;
+    border-color: #333333!important;
+}
+
+.btn-white{
+    background-color: #f2f2f2!important;
+    color: #333333!important;
+    border-color: #f2f2f2!important;
+}
+
+.navbar-container{
+    width: 100%;
+}
+
+
