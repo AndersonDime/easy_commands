@@ -10,12 +10,12 @@ include 'template/navbar.php';
 <div class="container">
 
 <?php
-	
+
 	switch ($get) {
         case 'listar-produtos':
             include 'pages/listar-orcamentos.php';
             break;
-        case 'cadastro-produtos';
+        case 'cadproduto';
             include 'pages/cadastro-produtos.php';
             break;
         default:

@@ -1,3 +1,18 @@
+<?php
+
+    $get = isset($_GET['pagina'])? $_GET['pagina']:'';
+
+    function active($get, $link=''){
+        if ($get == $link)
+        {
+            return 'class="nav-item active"';
+        }
+        return  'class="nav-item"';
+    }
+
+?>
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-black">
 	<a class="navbar-brand txt-blue" href="#">Easy Commands</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -5,20 +20,20 @@
   </button>
   <div class="collapse navbar-collapse" id="navbar1">
     <ul class="navbar-nav ml-auto"> 
-        <li class="nav-item active">
+    <li <?php echo active($get, 'cadproduto'); ?>>
             <a class="nav-link" href="http://bootstrap-ecommerce.com">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
+        <li <?php echo active($get, 'cadproduto'); ?>>
             <a class="nav-link" href="html-components.html">Produção</a>
         </li>
-        <li class="nav-item">
+        <li <?php echo active($get, 'cadproduto'); ?>>
             <a class="nav-link" href="html-components.html">Caixa</a>
         </li>
-        <li class="nav-item">
+        <li <?php echo active($get, 'cadproduto'); ?>>
             <a class="nav-link" href="html-components.html">Salão</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="configuracoes.php">Configurações</a>
+        <li <?php echo active($get, 'cadproduto'); ?>>
+            <a class="nav-link" href="?pagina=cadproduto">Configurações</a>
         </li>
     </ul>
   </div>
