@@ -3,7 +3,7 @@ include_once("../services/products-service.php");
 
 $nome = $_POST["produto"];
 
-$cp = $_POST["ident"];
+$cp = $_POST["cp"];
 
 $valor = $_POST["preco"];
 

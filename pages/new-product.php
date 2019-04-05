@@ -27,7 +27,7 @@ $categ = mysql_mostrar("SELECT * FROM categorias");
                             foreach ($categ as $value){
                             ?>
 
-                            <option value="<?php $value["id"];?>"> <?php echo $value["nome"]; ?></option>
+                            <option value="<?php echo $value["id"];?>"> <?php echo $value["nome"]; ?></option>
 
                             <?php } ?>
                         </select>
