@@ -1,0 +1,33 @@
+.forgot-password{
+    margin-top: 10px;
+}
+
+.register-button{
+    cursor: pointer;
+}
+
+body {
+    background-image: url("../../assets/img/login_screen.jpg");
+    background-size: 100%;
+}
+
+.logo{
+    background-image: url("../../assets/img/pp.jpg");
+    background-size: 100%;
+}
+
+.transparencia {
+    background-color: #000000bf;
+    color: white;
+  }
+.dont {
+    color: white;
+    text-decoration: none;
+}
+.bttamanho{
+    width: 120px;
+    margin-right: 15px;
+}
+.botao-voltar-login{
+    width: 100px;
+}

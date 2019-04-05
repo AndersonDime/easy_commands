@@ -1,6 +1,6 @@
 <?php
 
-    $get = isset($_GET['page'])? $_GET['page']:'';
+    $get = isset($_GET['pagina'])? $_GET['pagina']:'';
 
     function active($get, $link=''){
         if ($get == $link)
@@ -32,8 +32,8 @@
         <li <?php echo active($get, 'cadproduto'); ?>>
             <a class="nav-link" href="html-components.html">Salão</a>
         </li>
-        <li <?php echo active($get, 'new-product'); ?>>
-            <a class="nav-link" href="?page=new-product">Configurações</a>
+        <li <?php echo active($get, 'cadproduto'); ?>>
+            <a class="nav-link" href="?pagina=cadproduto">Configurações</a>
         </li>
     </ul>
   </div>
