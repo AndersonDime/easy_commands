@@ -18,6 +18,9 @@ include 'template/navbar.php';
         case 'new-product';
             include 'pages/new-product.php';
             break;
+        case 'list-table';
+            include 'pages/list-table.php';
+            break;
         default:
             include 'pages/home.php';
     }

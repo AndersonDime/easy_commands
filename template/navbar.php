@@ -30,7 +30,7 @@
             <a class="nav-link" href="html-components.html">Caixa</a>
         </li>
         <li <?php echo active($get, 'cadproduto'); ?>>
-            <a class="nav-link" href="html-components.html">Salão</a>
+            <a class="nav-link" href="?page=list-table">Salão</a>
         </li>
         <li <?php echo active($get, 'new-product'); ?>>
             <a class="nav-link" href="?page=new-product">Configurações</a>

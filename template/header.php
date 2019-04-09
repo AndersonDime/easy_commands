@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/global.css">
 </head>
-<body>
+<body class="bg-white txt-black">
 
 
 
