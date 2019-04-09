@@ -20,8 +20,8 @@
   </button>
   <div class="collapse navbar-collapse" id="navbar1">
     <ul class="navbar-nav ml-auto"> 
-    <li <?php echo active($get, 'cadproduto'); ?>>
-            <a class="nav-link" href="http://bootstrap-ecommerce.com">Home <span class="sr-only">(current)</span></a>
+    <li <?php echo active($get, 'home-page'); ?>>
+            <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
         </li>
         <li <?php echo active($get, 'cadproduto'); ?>>
             <a class="nav-link" href="html-components.html">Produção</a>
