@@ -1,7 +1,7 @@
 <?php
 include_once("assets/services/products-service.php");
 
-$categ = mysql_mostrar("SELECT * FROM categorias");
+$categ = mysql_getdata("SELECT * FROM categorias");
 
 ?>
 
@@ -13,16 +13,16 @@ $categ = mysql_mostrar("SELECT * FROM categorias");
             <div class="col-sm-12 col-md-4"></div>
             <div class="col-sm-12 col-md-4">
                 <div class="card transparencia">
-                <div class="card-header bg-primary">Cadastro de Itens</div>
+                <div class="card-header bg-dark txt-white">Cadastro de Itens</div>
                     <div class="card-body">
                     <div class="form-group">
                         <label>Nome do produto</label>
-                        <input type="text" class="form-control" id="product" name="produto">
+                        <input type="text" class="form-control" id="product" name="product" required>
                         
                     </div>
                     <div class="form-group">
                         <label>Categoria do produto</label>
-                        <select class="form-control" name="cp">
+                        <select class="form-control" name="category">
                             <?php 
                             foreach ($categ as $value){
                             ?>
@@ -34,9 +34,9 @@ $categ = mysql_mostrar("SELECT * FROM categorias");
                     </div>
                     <div class="form-group">
                         <label>Preço</label>
-                        <input type="text" class="form-control" id="valor" name="preco">
+                        <input  type="text" class="form-control" id="valor" name="price" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    <input type="submit" class="btn btn-primary" value="Cadastrar">
                 </div>
             </div>
             </div>

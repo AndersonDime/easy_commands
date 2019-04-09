@@ -1,15 +1,17 @@
 <?php
 include_once("../services/products-service.php");
 
-$nome = $_POST["produto"];
+$name = $_POST["product"];
 
-$cp = $_POST["cp"];
+$cat = $_POST["category"];
 
-$valor = $_POST["preco"];
+$valor = $_POST["price"];
 
-$armazenar = mysql_insert("INSERT INTO produtos VALUES(DEFAULT, '{$nome}', '{$cp}', '{$valor}')");
 
-if ($armazenar > 0) {
+$show = mysql_insert("INSERT INTO produtos VALUES(DEFAULT, '{$name}', '{$cat}', '{$valor}')");
+
+if ($show > 0) {
+    sleep(3);
     header('Location: ../../index.php');
 }
 
