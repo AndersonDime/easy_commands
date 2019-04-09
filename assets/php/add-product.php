@@ -1,18 +1,30 @@
 <?php
 include_once("../services/products-service.php");
 
+$message = "Produto ja existe dentro do banco de dados";
+
 $name = $_POST["product"];
 
 $cat = $_POST["category"];
 
-$valor = $_POST["price"];
+$price = $_POST["price"];
 
+$newprice = str_replace(",", ".",$price);
 
-$show = mysql_insert("INSERT INTO produtos VALUES(DEFAULT, '{$name}', '{$cat}', '{$valor}')");
+$valid = mysql_getdata("SELECT * FROM produtos WHERE nome='$name'");
+
+if(count($valid)==0){
+    $show = mysql_insert("INSERT INTO produtos VALUES(DEFAULT, '{$name}', '{$cat}', {$newprice})");
 
 if ($show > 0) {
-    sleep(3);
+    //sleep(3);
     header('Location: ../../index.php');
 }
+
+}else{
+    echo "<script type='text/javascript'>alert('$message');</script>";
+    header('Location: new-product.php');
+}
+
 
 ?>

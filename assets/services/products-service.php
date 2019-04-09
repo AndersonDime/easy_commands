@@ -24,12 +24,12 @@ return $orcamento;
 function mysql_insert($script){
 
     $con = mysqli_connect("localhost","root","root","easycomands") or die(mysqli_connect_error());
-    echo $script;
-    $dados = mysqli_query($con, $script) or die(mysqli_error());
+    //echo $script;
+    $dados = mysqli_query($con, $script) or die(mysqli_error($con));
 
     $afetada = mysqli_affected_rows($con);
     
-    echo $afetada;
+    //echo $afetada;
     
     mysqli_close($con);
 

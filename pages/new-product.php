@@ -34,9 +34,9 @@ $categ = mysql_getdata("SELECT * FROM categorias");
                     </div>
                     <div class="form-group">
                         <label>Preço</label>
-                        <input  type="text" class="form-control" id="valor" name="price" required>
+                        <input  type="text" class="form-control" id="valor" pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$" name="price" required>
                     </div>
-                    <input type="submit" class="btn btn-primary" value="Cadastrar">
+                    <input type="submit" class="btn btn-blue" value="Cadastrar">
                 </div>
             </div>
             </div>
