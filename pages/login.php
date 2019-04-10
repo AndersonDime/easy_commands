@@ -3,7 +3,6 @@
         display: none!important;
     }
 </style>
-<link rel="stylesheet" type="text/css" media="screen" href="assets/css/login.css">
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-4"></div>
@@ -13,10 +12,10 @@
             </center>
             <div class="card transparencia">
                 <div class="card-body">
-                    <form action="">
+                    <form action="../easy_commands/assets/php/users.php" method="POST">
                         <div class="form-group">
                             <label for="user">Usuário</label>
-                            <input type="email" class="form-control" id="user" name="userId" aria-describedby="emailHelp" required>
+                            <input type="text" class="form-control" id="user" name="userId" aria-describedby="emailHelp" required>
                         </div>
                         <div class="form-group">
                             <label for="password">Senha</label>
@@ -38,10 +37,3 @@
         <div class="col-sm-12 col-md-4"></div>
     </div>
 </div>
-
-<?php
-$inputId = $_POST["userId"];
-$inputPass = $_POST["userPass"];
-
-
-?>
