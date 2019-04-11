@@ -13,21 +13,26 @@ include 'template/header.php';
 
 	switch ($get) {
         case 'listar-produtos';
+            include 'template/navbar.php'; 
             include 'pages/listar-orcamentos.php';
             break;
         case 'new-product';
+            include 'template/navbar.php'; 
             include 'pages/new-product.php';
             break;
         case 'list-table';
+            include 'template/navbar.php'; 
             include 'pages/list-table.php';
         case 'home-page';
             include 'template/navbar.php'; 
             include 'pages/home.php';
             break;
         case 'delete-products';
+            include 'template/navbar.php'; 
             include 'pages/delete-products.php';
             break;
         case 'list-products';
+            include 'template/navbar.php'; 
             include 'pages/list-products.php';
             break;
         default:
