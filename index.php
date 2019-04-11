@@ -1,19 +1,13 @@
-<style>
-    .navbar{
-        display: none!important;
-    }
-</style>
 
 <?php 
 session_start();
-$get = isset($_GET['pages'])? $_GET['pages']:'';
+$get = isset($_GET['page'])? $_GET['page']:'';
 
 include 'template/header.php';
-include 'template/navbar.php';
 
 ?>
 
-<div class="container">
+<div class="container-fluid">
 
 <?php
 
@@ -27,7 +21,11 @@ include 'template/navbar.php';
         case 'list-table';
             include 'pages/list-table.php';
         case 'home-page';
+            include 'template/navbar.php'; 
             include 'pages/home.php';
+            break;
+        case 'delete';
+            include 'pages/delete.php';
             break;
         default:
             include 'pages/login.php';
@@ -58,7 +56,8 @@ if($total == 1){
         $_SESSION["userId"] = $data["id"];
         $_SESSION["userUsername"] = stripslashes($data["usuario"]);
         $_SESSION["userPermission-Level"] = $data["nivel_de_permissao"];
-        header("Location: /easy_commands/index.php?pages=home-page");        
+        header("Location: index.php?page=home-page");  
+       
         exit;
     //Senha invalida
     }else{
