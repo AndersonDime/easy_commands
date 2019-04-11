@@ -26,6 +26,9 @@
         <li <?php echo active($get, 'cadproduto'); ?>>
             <a class="nav-link" href="html-components.html">Produção</a>
         </li>
+        <li <?php echo active($get, 'list-produtcs'); ?>>
+            <a class="nav-link" href="?page=list-products">Lista de Produtos</a>
+        </li>
         <li <?php echo active($get, 'cadproduto'); ?>>
             <a class="nav-link" href="html-components.html">Caixa</a>
         </li>

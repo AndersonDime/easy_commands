@@ -1,5 +1,5 @@
 <?php
-include_once("../assets/services/products-service.php");
+include_once("assets/services/products-service.php");
 
 $list = mysql_getdata("SELECT * FROM produtos INNER JOIN categorias ON produtos.categoria_produtos_id = categorias.id");
 
