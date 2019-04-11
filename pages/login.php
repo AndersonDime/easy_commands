@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+=======
+<style>
+    .navbar{
+        display: none!important;
+    }
+</style>
+
+>>>>>>> 994bfca836c29b05464a1e6dc90de207d21d93e2
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-4"></div>

@@ -24,8 +24,11 @@ include 'template/header.php';
             include 'template/navbar.php'; 
             include 'pages/home.php';
             break;
-        case 'delete';
-            include 'pages/delete.php';
+        case 'delete-products';
+            include 'pages/delete-products.php';
+            break;
+        case 'list-products';
+            include 'pages/list-products.php';
             break;
         default:
             include 'pages/login.php';

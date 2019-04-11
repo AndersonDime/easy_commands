@@ -1,19 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Easy Commands</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../assets/bootstrap/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="../assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/global.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/login.css">
-</head>
-<body class="bg-white txt-black">
-
 <?php
-include_once("../assets/services/products-service.php");
+include_once("assets/services/products-service.php");
 
 $list = mysql_getdata("SELECT * FROM produtos INNER JOIN categorias ON produtos.categoria_produtos_id = categorias.id");
 
@@ -44,7 +30,7 @@ $list = mysql_getdata("SELECT * FROM produtos INNER JOIN categorias ON produtos.
                     <td><?php echo $value["nome"]; ?></td>
                     <td><?php echo $value["preco"]; ?></td>
                     <td><?php echo $value["nome_categoria"]; ?></td>
-                    <td>  <a href="?pages=delete&id=<?php echo $value["id"] ?> " > 
+                    <td>  <a href="?pages=delete-products&id=<?php echo $value["id"] ?> " > 
                     <button type="button" class="btn btn-sm btn-info">Editar</button> 
                     </a> </td>
                     <td> <button type="button" class="btn btn-sm btn-danger">Excluir</button> </td>               
