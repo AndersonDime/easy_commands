@@ -13,7 +13,7 @@
             </center>
             <div class="card transparencia">
                 <div class="card-body">
-                    <form action="../easy_commands/assets/php/users.php" method="POST">
+                    <form action="../easy_commands/index.php" method="POST">
                         <div class="form-group">
                             <label for="user">Usuário</label>
                             <input type="text" class="form-control" id="user" name="userId" aria-describedby="emailHelp" required>
