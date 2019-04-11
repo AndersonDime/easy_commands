@@ -26,7 +26,7 @@ if($total == 1){
         $_SESSION["userId"] = $data["id"];
         $_SESSION["userUsername"] = stripslashes($data["usuario"]);
         $_SESSION["userPermission-Level"] = $data["nivel_de_permissao"];
-        header("Location: http://localhost/easy_commands/pages/home.php");
+        header("Location: ../../index.php");
         exit;
     //Senha invalida
     }else{

@@ -23,6 +23,9 @@ include 'template/navbar.php';
         case 'home-page';
             include 'pages/home.php';
             break;
+        case 'delete';
+            include 'pages/delete.php';
+            break;
         default:
             include 'pages/login.php';
     }
