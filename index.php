@@ -21,10 +21,10 @@ include 'template/navbar.php';
         case 'list-table';
             include 'pages/list-table.php';
         case 'home-page';
-            include 'pages/index.php';
+            include 'pages/home.php';
             break;
         default:
-            include 'pages/home.php';
+            include 'pages/login.php';
     }
 ?>
 
