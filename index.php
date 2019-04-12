@@ -30,6 +30,9 @@ include 'template/header.php';
         case 'list-products';
             include 'pages/list-products.php';
             break;
+        case 'add-product';
+            include 'assets/php/add-product.php';
+            break;
         default:
             include 'pages/login.php';
     }
