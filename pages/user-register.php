@@ -8,18 +8,22 @@
             </center>
             <div class="card transparencia">
                 <div class="card-body">
-                    <form action="../easy_commands/index.php" method="POST">
+                    <form action="" method="POST">
                         <div class="form-group">
                             <label for="user">Usuário</label>
-                            <input type="text" class="form-control" id="user" name="userId" aria-describedby="emailHelp" required>
+                            <input type="text" class="form-control" id="user" name="userId" required>
                         </div>
                         <div class="form-group">
-                            <label for="user">Usuário</label>
-                            <input type="text" class="form-control" id="user" name="userId" aria-describedby="emailHelp" required>
+                            <label for="user">Nivel de Permissao</label>
+                            <input type="number" max="1" min="0" class="form-control" id="permission" name="userPermission" required>
                         </div>
                         <div class="form-group">
-                            <label for="user">Usuário</label>
-                            <input type="text" class="form-control" id="user" name="userId" aria-describedby="emailHelp" required>
+                            <label for="user">Email</label>
+                            <input type="email" class="form-control" id="user" name="userEmail"  required>
+                        </div>
+                        <div class="form-group">
+                            <label for="user">Setor</label>
+                            <input type="number" class="form-control" id="user" name="userEmail"  required>
                         </div>
                         <div class="form-group">
                             <label for="password">Senha</label>
@@ -27,9 +31,6 @@
                         </div>
                         <div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">
-                                Lembrar Senha
-                            </label>
                         </div>
                         <button type="submit" class="btn btn-outline-success btn-block">Entrar</button> 
                     </form>
