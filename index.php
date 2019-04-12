@@ -1,5 +1,5 @@
 
-<?php 
+<?php
 session_start();
 $get = isset($_GET['page'])? $_GET['page']:'';
 
@@ -35,6 +35,10 @@ include 'template/header.php';
             include 'template/navbar.php'; 
             include 'pages/list-products.php';
             break;
+        case 'user-register';
+            include 'template/navbar.php'; 
+            include 'pages/user-register.php';
+            break;
         default:
             include 'pages/login.php';
     }
@@ -69,6 +73,11 @@ if($total == 1){
         exit;
     //Senha invalida
     }else{
+        ?>
+        <div class="container alert alert-danger" role="alert" style="width: 26%;">
+        <strong>Erro!</strong>
+        Usuario ou senha incorretos.
+        </div><?php
         unset ($_SESSION['userId']);
         unset ($_SESSION['userPass']);
         exit;
@@ -76,6 +85,11 @@ if($total == 1){
     }
 }
 else{
+    ?>
+    <div class="container alert alert-danger" role="alert" style="width: 26.3%;">
+    <strong>Erro!</strong>
+    Usuario nao cadastrado.
+    </div><?php
     unset ($_SESSION['userId']);
     unset ($_SESSION['userPass']);
     exit; 

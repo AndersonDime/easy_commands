@@ -3,7 +3,8 @@
         <div class="col-sm-12 col-md-4"></div>
         <div class="col-sm-12 col-md-4">
             <center>
-                <div class="logo"></div>
+            </br>   
+                <div class="logo"></br></div>
             </center>
             <div class="card transparencia">
                 <div class="card-body">

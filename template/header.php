@@ -9,6 +9,12 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/global.css">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/login.css">
+
+    <script src="assets/jquery/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/javascript/global.js"></script>
+    <script src=".../easy_commands/assets/javascript/login.js"></script>
 </head>
 <body class="bg-white txt-black">
 

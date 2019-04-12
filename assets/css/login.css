@@ -7,13 +7,10 @@
 }
 
 body {
+    background-image: url("../../assets/img/register_food.jpg");
     background-size: 100%;
 }
 
-.logo{
-    background-image: url("../../assets/img/pp.jpg");
-    background-size: 100%;
-}
 
 .transparencia {
     background-color: #000000bf;

@@ -21,13 +21,22 @@
   <div class="collapse navbar-collapse" id="navbar1">
     <ul class="navbar-nav ml-auto"> 
     <li <?php echo active($get, 'home-page'); ?>>
-            <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="?page=home-page">Home <span class="sr-only">(current)</span></a>
         </li>
         <li <?php echo active($get, 'cadproduto'); ?>>
             <a class="nav-link" href="html-components.html">Produção</a>
         </li>
         <li <?php echo active($get, 'list-produtcs'); ?>>
-            <a class="nav-link" href="?page=list-products">Lista de Produtos</a>
+            <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Produtos
+            </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="?page=new-product">Cadastrar Item</a>
+                    <a class="dropdown-item" href="?page=list-products">Lista de Item</a>
+                    <a class="dropdown-item" href="?page=user-register">Alguma coisa aqui</a>
+                </div>
+            </div>
         </li>
         <li <?php echo active($get, 'cadproduto'); ?>>
             <a class="nav-link" href="html-components.html">Caixa</a>
@@ -35,8 +44,8 @@
         <li <?php echo active($get, 'cadproduto'); ?>>
             <a class="nav-link" href="?page=list-table">Salão</a>
         </li>
-        <li <?php echo active($get, 'new-product'); ?>>
-            <a class="nav-link" href="?page=new-product">Configurações</a>
+        <li <?php echo active($get, 'logout'); ?>>
+            <a class="nav-link" href="index.php">Sair</a>
         </li>
     </ul>
   </div>
