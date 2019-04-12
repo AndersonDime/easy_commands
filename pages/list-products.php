@@ -1,7 +1,7 @@
 <?php
 include_once("assets/services/products-service.php");
 
-$list = mysql_getdata("SELECT * FROM produtos INNER JOIN categorias ON produtos.categoria_produtos_id = categorias.id");
+$list = mysql_getdata("SELECT * FROM produtos INNER JOIN categorias ON produtos.categoria_produtos_id = categorias.id_categoria");
 
 ?>
 
@@ -10,6 +10,7 @@ $list = mysql_getdata("SELECT * FROM produtos INNER JOIN categorias ON produtos.
     <div class="row">
         <div class="col-sm-12 col-md-3"></div>
         <div class="col-sm-12 col-md-6">
+        <a class="btn btn-block btn-info" href="?page=new-product" > Novo Produto</a>
             <table class="table table-dark">
             <thead>
                 <tr>
@@ -30,10 +31,10 @@ $list = mysql_getdata("SELECT * FROM produtos INNER JOIN categorias ON produtos.
                     <td><?php echo $value["nome"]; ?></td>
                     <td><?php echo $value["preco"]; ?></td>
                     <td><?php echo $value["nome_categoria"]; ?></td>
-                    <td>  <a href="?pages=delete-products&id=<?php echo $value["id"] ?> " > 
-                    <button type="button" class="btn btn-sm btn-info">Editar</button> 
+                    <td>  <a class="btn btn-sm btn-info" href="#" > 
+                        Editar
                     </a> </td>
-                    <td> <button type="button" class="btn btn-sm btn-danger">Excluir</button> </td>               
+                    <td> <a class="btn btn-sm btn-danger" href="?page=delete-products&id=<?php echo $value["id"] ?> ">Excluir</a> </td>               
                 </tr>
                 <?php
                     }

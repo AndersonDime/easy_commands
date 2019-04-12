@@ -8,15 +8,15 @@ $con = mysqli_connect("localhost","root","root","easycomands") or die(mysqli_con
 
 $valor = mysqli_query($con,$script) or die();
 
-$orcamento = array();
+$resp = array();
 
 while($linha = mysqli_fetch_array($valor, MYSQLI_ASSOC)){
-    array_push($orcamento , $linha);
+    array_push($resp , $linha);
    
 }
 
 
-return $orcamento;
+return $resp;
 
 }
 

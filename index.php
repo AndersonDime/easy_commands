@@ -34,6 +34,9 @@ include 'template/header.php';
             include 'template/navbar.php'; 
             include 'pages/list-products.php';
             break;
+        case 'add-product';
+            include 'assets/php/add-product.php';
+            break;
         default:
             include 'pages/login.php';
     }
