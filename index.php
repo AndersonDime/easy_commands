@@ -1,4 +1,3 @@
-
 <?php 
 session_start();
 $get = isset($_GET['page'])? $_GET['page']:'';
@@ -40,7 +39,7 @@ include 'template/header.php';
     }
 
 //Conecta com o banco
-require "/assets/php/conect.php";
+require "assets/php/conect.php";
 //Pega usuario e senha criptografando
 $inputId = isset($_POST["userId"]) ? addslashes(trim($_POST["userId"])) : FALSE;
 $inputPass = isset($_POST["userPass"]) ? (trim($_POST["userPass"])) : FALSE;
