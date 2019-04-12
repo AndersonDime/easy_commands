@@ -7,3 +7,17 @@ body{
 background-image: url("fundo/pizza.jpg");
 background-size: 100%;
 }
+
+.validation-box{
+    height: 0px!important;
+    animation-name: pop;
+    animation-duration: 4s;
+}
+
+
+@KEYFRAMES pop{
+    0%{ height: 0px;}
+    25%{ height: fit-content!important;}
+    75%{height: fit-content!important;}
+    100%{height: 0px;}
+}

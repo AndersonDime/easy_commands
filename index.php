@@ -38,13 +38,15 @@ include 'template/header.php';
         case 'user-register';
             include 'template/navbar.php'; 
             include 'pages/user-register.php';
+        case 'add-product';
+            include 'assets/php/add-product.php';
             break;
         default:
             include 'pages/login.php';
     }
 
 //Conecta com o banco
-require "/assets/php/conect.php";
+require "assets/php/conect.php";
 //Pega usuario e senha criptografando
 $inputId = isset($_POST["userId"]) ? addslashes(trim($_POST["userId"])) : FALSE;
 $inputPass = isset($_POST["userPass"]) ? (trim($_POST["userPass"])) : FALSE;
