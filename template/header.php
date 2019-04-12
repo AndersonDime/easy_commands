@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/global.css">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/login.css">
+    <link rel="stylesheet" type="text-css" href="assets/css/cadastro-produtos.css">
+    
 </head>
 <body class="bg-white txt-black">
 

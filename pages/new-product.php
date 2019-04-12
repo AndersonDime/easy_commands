@@ -3,11 +3,12 @@ include_once("assets/services/products-service.php");
 
 $categ = mysql_getdata("SELECT * FROM categorias");
 
-$msg= isset($_GET["msg"]) ? $_GET["msg"] : "";
+$success= isset($_GET["success"]) ? $_GET["success"] : "";
+
+$fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
 
 ?>
 
-<link rel="stylesheet" type="text-css" href="assets/css/cadastro-produtos.css">
 
 <form action="?page=add-product" method="post">
 <div class="container-fluid">
@@ -40,16 +41,27 @@ $msg= isset($_GET["msg"]) ? $_GET["msg"] : "";
                     </div>
                     <input type="submit" class="btn btn-blue" value="Cadastrar">
 
-                            <?php
-                            if (!empty($msg)){
-
-                                echo $msg;
-
-                            }
-                            ?>
-
                 </div>
             </div>
+            <?php
+					//se orçamento foi inserido com sucesso mostra essa mensagem:
+                    if ($success):
+                    ?>
+                    <div class="alert alert-success validation-box" role="alert">
+                        <strong>Sucesso!</strong>
+                            Item cadastrado
+                    </div>
+                    <?php endif; ?>
+
+                     <?php
+					// se houver erro no formulario mostra essa mensagem:
+                    if ($fail):
+                    ?>
+                    <div class="alert alert-danger validation-box" role="alert">
+                        <strong>Erro!</strong>
+                        Erro para cadastrar item
+                    </div>
+                    <?php endif; ?>
             </div>
             <div class="col-sm-12 col-md-4"></div>
         </div>
