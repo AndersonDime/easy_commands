@@ -35,11 +35,18 @@ include 'template/header.php';
             include 'template/navbar.php'; 
             include 'pages/list-products.php';
             break;
+        case 'alter-products';
+            include 'template/navbar.php'; 
+            include 'pages/alter-products.php';
+            break;
         case 'user-register';
             include 'template/navbar.php'; 
             include 'pages/user-register.php';
         case 'add-product';
             include 'assets/php/add-product.php';
+            break;
+        case 'edit-product';
+            include 'assets/php/edit-product.php';
             break;
         default:
             include 'pages/login.php';

@@ -24,14 +24,15 @@ $list = mysql_getdata("SELECT * FROM produtos INNER JOIN categorias ON produtos.
             </thead>
                 <?php 
                     foreach ($list as  $key =>$value){
+                    $newprice = str_replace(".", ",",$value["preco"]);
                 ?>
             <tbody>
                 <tr>
                     <th><?php echo $value["id"];?> </th>
                     <td><?php echo $value["nome"]; ?></td>
-                    <td><?php echo $value["preco"]; ?></td>
+                    <td><?php echo $newprice; ?></td>
                     <td><?php echo $value["nome_categoria"]; ?></td>
-                    <td>  <a class="btn btn-sm btn-info" href="#" > 
+                    <td>  <a class="btn btn-sm btn-info" href="?page=alter-products&id=<?php echo $value["id"] ?>" > 
                         Editar
                     </a> </td>
                     <td> <a class="btn btn-sm btn-danger" href="?page=delete-products&id=<?php echo $value["id"] ?> ">Excluir</a> </td>               
