@@ -76,10 +76,11 @@ if($total == 1){
     //Senha invalida
     }else{
         ?>
-        <div class="container alert alert-danger" role="alert" style="width: 26%;">
-        <strong>Erro!</strong>
-        Usuario ou senha incorretos.
-        </div><?php
+        <div class="container alert alert-danger alert-dismissable" style="width: 26%;">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <strong>Erro:</strong> Usuario ou senha incorretos.
+        </div>
+        <?php
         unset ($_SESSION['userId']);
         unset ($_SESSION['userPass']);
         exit;
@@ -88,10 +89,11 @@ if($total == 1){
 }
 else{
     ?>
-    <div class="container alert alert-danger" role="alert" style="width: 26.3%;">
-    <strong>Erro!</strong>
-    Usuario nao cadastrado.
-    </div><?php
+    <div class="container alert alert-danger alert-dismissable" style="width: 26%;">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <strong>Erro:</strong> Usuario ou senha incorretos.
+    </div>
+    <?php
     unset ($_SESSION['userId']);
     unset ($_SESSION['userPass']);
     exit; 
