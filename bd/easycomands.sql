@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12/04/2019 às 02:58
--- Versão do servidor: 10.1.32-MariaDB
--- Versão do PHP: 7.2.5
+-- Generation Time: 12-Abr-2019 às 03:07
+-- Versão do servidor: 5.7.11-log
+-- PHP Version: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,39 +17,34 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `easycomands`
+-- Database: `easycomands`
 --
-
+CREATE SCHEMA IF NOT EXISTS `easycomands` DEFAULT CHARACTER SET utf8 ;
+USE `easycomands` ;
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `categorias`
+-- Estrutura da tabela `categorias`
 --
 
 CREATE TABLE `categorias` (
-  `id` tinyint(3) NOT NULL,
-  `nome` varchar(10) NOT NULL,
+  `id_categoria` tinyint(3) NOT NULL,
+  `nome_categoria` varchar(10) NOT NULL,
   `setores_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
 --
--- Estrutura para tabela `mesas`
+-- Extraindo dados da tabela `categorias`
 --
 
-CREATE TABLE `mesas` (
-  `id` int(11) NOT NULL,
-  `numero` int(11) NOT NULL,
-  `ativa` bit(1) NOT NULL,
-  `preferencia` bit(1) NOT NULL,
-  `reservada` bit(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `categorias` (`id_categoria`, `nome_categoria`, `setores_id`) VALUES
+(1, 'Bebidas', 1),
+(2, 'Comida', 2);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `pedidos`
+-- Estrutura da tabela `pedidos`
 --
 
 CREATE TABLE `pedidos` (
@@ -64,7 +57,7 @@ CREATE TABLE `pedidos` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `pedidos_has_produtos`
+-- Estrutura da tabela `pedidos_has_produtos`
 --
 
 CREATE TABLE `pedidos_has_produtos` (
@@ -77,20 +70,28 @@ CREATE TABLE `pedidos_has_produtos` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `produtos`
+-- Estrutura da tabela `produtos`
 --
 
 CREATE TABLE `produtos` (
   `id` tinyint(3) NOT NULL,
   `nome` varchar(20) NOT NULL,
   `categoria_produtos_id` tinyint(3) NOT NULL,
-  `preco` tinyint(3) NOT NULL
+  `preco` decimal(6,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `produtos`
+--
+
+INSERT INTO `produtos` (`id`, `nome`, `categoria_produtos_id`, `preco`) VALUES
+(1, 'coca', 1, '3.50'),
+(2, 'cebola', 2, '1.50');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `setores`
+-- Estrutura da tabela `setores`
 --
 
 CREATE TABLE `setores` (
@@ -99,16 +100,17 @@ CREATE TABLE `setores` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `setores`
+-- Extraindo dados da tabela `setores`
 --
 
 INSERT INTO `setores` (`id`, `nome`) VALUES
-(1, 'Copa');
+(1, 'Copa'),
+(2, 'Cozinha');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuarios`
+-- Estrutura da tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -121,37 +123,31 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `usuarios`
+-- Extraindo dados da tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `nivel_de_permissao`, `senha`, `email`, `setores_id`) VALUES
-(3, 'Joao', 1, '123456', 'joao@email.com', 1);
+(1, 'victor', 1, '012345', 'victor@victor.com', 2);
 
 --
--- Índices de tabelas apagadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices de tabela `categorias`
+-- Indexes for table `categorias`
 --
 ALTER TABLE `categorias`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id_categoria`),
   ADD KEY `fk_categoria_produtos_setores1_idx` (`setores_id`);
 
 --
--- Índices de tabela `mesas`
---
-ALTER TABLE `mesas`
-  ADD PRIMARY KEY (`id`);
-
---
--- Índices de tabela `pedidos`
+-- Indexes for table `pedidos`
 --
 ALTER TABLE `pedidos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `pedidos_has_produtos`
+-- Indexes for table `pedidos_has_produtos`
 --
 ALTER TABLE `pedidos_has_produtos`
   ADD PRIMARY KEY (`pedidos_id`,`produtos_id`),
@@ -159,94 +155,82 @@ ALTER TABLE `pedidos_has_produtos`
   ADD KEY `fk_pedidos_has_produtos_pedidos1_idx` (`pedidos_id`);
 
 --
--- Índices de tabela `produtos`
+-- Indexes for table `produtos`
 --
 ALTER TABLE `produtos`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_produtos_categoria_produtos_idx` (`categoria_produtos_id`);
 
 --
--- Índices de tabela `setores`
+-- Indexes for table `setores`
 --
 ALTER TABLE `setores`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `usuarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_funcionarios_setores1_idx` (`setores_id`);
 
 --
--- AUTO_INCREMENT de tabelas apagadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `categorias`
+-- AUTO_INCREMENT for table `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` tinyint(3) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_categoria` tinyint(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT de tabela `mesas`
---
-ALTER TABLE `mesas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `pedidos`
+-- AUTO_INCREMENT for table `pedidos`
 --
 ALTER TABLE `pedidos`
   MODIFY `id` tinyint(3) NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT de tabela `produtos`
+-- AUTO_INCREMENT for table `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` tinyint(3) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id` tinyint(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT de tabela `setores`
+-- AUTO_INCREMENT for table `setores`
 --
 ALTER TABLE `setores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT de tabela `usuarios`
+-- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- Constraints for dumped tables
+--
 
 --
--- Restrições para dumps de tabelas
---
-
---
--- Restrições para tabelas `categorias`
+-- Limitadores para a tabela `categorias`
 --
 ALTER TABLE `categorias`
   ADD CONSTRAINT `fk_categoria_produtos_setores1` FOREIGN KEY (`setores_id`) REFERENCES `setores` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `pedidos_has_produtos`
+-- Limitadores para a tabela `pedidos_has_produtos`
 --
 ALTER TABLE `pedidos_has_produtos`
   ADD CONSTRAINT `fk_pedidos_has_produtos_pedidos1` FOREIGN KEY (`pedidos_id`) REFERENCES `pedidos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_pedidos_has_produtos_produtos1` FOREIGN KEY (`produtos_id`) REFERENCES `produtos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `produtos`
+-- Limitadores para a tabela `produtos`
 --
 ALTER TABLE `produtos`
-  ADD CONSTRAINT `fk_produtos_categoria_produtos` FOREIGN KEY (`categoria_produtos_id`) REFERENCES `categorias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_produtos_categoria_produtos` FOREIGN KEY (`categoria_produtos_id`) REFERENCES `categorias` (`id_categoria`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `usuarios`
+-- Limitadores para a tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `fk_funcionarios_setores1` FOREIGN KEY (`setores_id`) REFERENCES `setores` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
