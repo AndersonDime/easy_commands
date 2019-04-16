@@ -16,6 +16,7 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/javascript/global.js"></script>
     <script src=".../easy_commands/assets/javascript/login.js"></script>
+    <script src="assets/javascript/notify.js"></script>
     <link rel="stylesheet" type="text-css" href="assets/css/cadastro-produtos.css">
     
 </head>
