@@ -105,8 +105,6 @@ else{
     unset ($_SESSION['userPass']);
     exit; 
 }
-
-
 ?>
 
 </div>
