@@ -19,12 +19,14 @@ $alter = mysql_insert("UPDATE produtos SET nome='$name',categoria_produtos_id='$
 
 if ($alter > 0) {
     //sleep(3);
-    header('Location: ?page=alter-products&success=1');
+    header('Location: ?page=list-products');
+}
+
 }else{
     header('Location: ?page=alter-products&fail=1');
 }
 
-}
+
 
 
 ?>

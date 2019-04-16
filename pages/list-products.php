@@ -5,7 +5,6 @@ $list = mysql_getdata("SELECT * FROM produtos INNER JOIN categorias ON produtos.
 
 ?>
 
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12 col-md-3"></div>

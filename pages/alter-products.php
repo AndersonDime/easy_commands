@@ -1,5 +1,5 @@
 <?php
-$ident = $_GET["id"];
+$ident =  $_GET["id"];
 
 include_once("assets/services/products-service.php");
 
