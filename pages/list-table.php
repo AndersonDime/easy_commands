@@ -1,5 +1,5 @@
 <?php 
-
+require 'assets/services/session-validate.php';
     $get = isset($_GET['page'])? $_GET['page']:'';
 
 ?>

@@ -6,7 +6,7 @@
             </br>   
                 <div class="logo"></br></div>
             </center>
-            <div class="card transparencia">
+            <div id="card-transparencia" class="card transparencia">
                 <div class="card-body">
                     <form action="../easy_commands/index.php" method="POST">
                         <div class="form-group">

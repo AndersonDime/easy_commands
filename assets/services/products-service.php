@@ -1,6 +1,5 @@
 <pre>
 <?php
-
 function mysql_getdata($script){
 
 $con = mysqli_connect("localhost","root","root","easycomands") or die(mysqli_connect_error());

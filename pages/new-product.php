@@ -1,4 +1,5 @@
 <?php
+require 'assets/services/session-validate.php';
 include_once("assets/services/products-service.php");
 
 $categ = mysql_getdata("SELECT * FROM categorias");

@@ -1,10 +1,19 @@
+<?
+require 'assets/services/session-validate.php';
+require 'assets/php/conect.php';
+
+$select = "SELECT * FROM setores";
+$query = mysqli_query($con, $select);
+$values = mysqli_fetch_array($query);
+
+?>
 <script>
 $(document).ready(function() {
     $("body").tooltip({ selector: '[data-toggle=tooltip]' });
 });
 </script>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-sm-12 col-md-4"></div>
         <div class="col-sm-12 col-md-4">
@@ -39,11 +48,13 @@ $(document).ready(function() {
                             <label for="user">Setor</label><br>
                             <div class="">
                             <select class="btn" required>
-                                <option value="AAA">AAAA</option>
-                                <option value=""></option>
+                                <?php foreach($values as $setores){?>
+                                <option value=""><?php echo $setores ?></option>
+                                <option value="">a</option>
                                 <option value=""></option>
                                 <option value=""></option>
                             </select>
+                            <?php } ?>
                             </div>
                         </div>
                         <div class="form-group">
@@ -56,6 +67,6 @@ $(document).ready(function() {
                 </a>
             </div>
         </div>
-        <div class="col-sm-12 col-md-4"></div>
     </div>
+    <div class="col-sm-12 col-md-4"></div>
 </div>

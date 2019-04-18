@@ -46,6 +46,7 @@ include 'template/header.php';
             include 'assets/php/add-product.php';
             break;
         case 'edit-product';
+            include 'template/navbar.php'; 
             include 'assets/php/edit-product.php';
             break;
         default:
@@ -74,6 +75,7 @@ if($total == 1){
 
     //Verifica senha, caso ok passa pra sessao as informacoes    
     if(!strcmp($inputPass, $data["senha"])){
+        $_SESSION["sessionId"] = session_id();
         $_SESSION["userId"] = $data["id"];
         $_SESSION["userUsername"] = stripslashes($data["usuario"]);
         $_SESSION["userPermission-Level"] = $data["nivel_de_permissao"];
@@ -83,23 +85,21 @@ if($total == 1){
     //Senha invalida
     }else{
         ?>
-        <div class="container alert alert-danger alert-dismissable" style="width: 26%;">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <strong>Erro:</strong> Usuario ou senha incorretos.
-        </div>
-        <?php
-        unset ($_SESSION['userId']);
-        unset ($_SESSION['userPass']);
-        exit;
+    <script>
+        $.notify("Login ou senha incorretos.", { position:"b c", className: 'error' } );
+    </script>
+    <?php
+    unset ($_SESSION['userId']);
+    unset ($_SESSION['userPass']);
+    exit; 
     //Login inexistente 
     }
 }
 else{
     ?>
-    <div class="container alert alert-danger alert-dismissable" style="width: 26%;">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <strong>Erro:</strong> Usuario ou senha incorretos.
-    </div>
+    <script>
+        $.notify( document.getElementById("card-transparencia"), "Login ou senha incorretos.", { position:"b c", className: 'error' } );
+    </script>
     <?php
     unset ($_SESSION['userId']);
     unset ($_SESSION['userPass']);

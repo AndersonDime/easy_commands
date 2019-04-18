@@ -1,4 +1,5 @@
 <?php
+require 'assets/services/session-validate.php';
 $ident =  $_GET["id"];
 
 include_once("assets/services/products-service.php");
