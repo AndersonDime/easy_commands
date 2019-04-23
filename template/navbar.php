@@ -35,6 +35,7 @@
                     <a class="dropdown-item" href="?page=new-product">Cadastrar Item</a>
                     <a class="dropdown-item" href="?page=list-products">Lista de Item</a>
                     <a class="dropdown-item" href="?page=user-register">Alguma coisa aqui</a>
+                    <a class="dropdown-item" href="?page=new-sectors">Cadastro de setores</a>
                 </div>
             </div>
         </li>

@@ -10,7 +10,6 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
 
 ?>
 
-
 <form action="?page=add-product" method="post">
 <div class="container-fluid">
         <div class="row">
@@ -49,7 +48,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                     if ($success):
                     ?>
                     <script>
-                        $.notify( "Cadastrado com sucesso", { position:"top center", className: 'success' } );
+                        $.notify( "Cadastrado com sucesso", { position:"top center", align:"center",  className: 'success' } );
                     </script>
                     <?php endif; ?>
 
@@ -58,7 +57,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                     if ($fail):
                     ?>
                     <script>
-                        $.notify( "Erro ao cadastrar o item", { position:"top center" } );
+                        $.notify( "Erro ao cadastrar o item", { position:"top center", align:"center" } );
                     </script>
                     <?php endif; ?>
             </div>
