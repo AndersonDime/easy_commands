@@ -35,7 +35,6 @@
                     <a class="dropdown-item" href="?page=new-product">Cadastrar Item</a>
                     <a class="dropdown-item" href="?page=list-products">Lista de Item</a>
                     <a class="dropdown-item" href="?page=user-register">Alguma coisa aqui</a>
-                    <a class="dropdown-item" href="?page=new-sectors">Cadastro de setores</a>
                 </div>
             </div>
         </li>
@@ -46,8 +45,21 @@
             <a class="nav-link" href="?page=list-table">Salão</a>
         </li>
         <li <?php echo active($get, 'logout'); ?>>
+            <button class="btn" onclick="logout();">Sair<button>
             <a class="nav-link" href="index.php">Sair</a>
         </li>
     </ul>
   </div>
 </nav>
+<div id="logout" class="row">
+    <div id="logout" class="col-sm-12 col-md-4"></div>
+    <div id="logout" class="card transparencia body col-sm-12 col-md-4">
+        <center>
+        <a>Voce deseja realmente sair?</a></br>
+        <button class="btn btn-sm btn-info">Sim</button>
+        <button class="btn btn-sm btn-danger">Sim</button>
+    </div>
+</div>
+<script>
+    document.getElementById("logout").style.display = "none!important";
+</script>

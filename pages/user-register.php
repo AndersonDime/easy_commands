@@ -1,11 +1,6 @@
-<?
-require 'assets/services/session-validate.php';
-require 'assets/php/conect.php';
-
-$select = "SELECT * FROM setores";
-$query = mysqli_query($con, $select);
-$values = mysqli_fetch_array($query);
-
+<?php
+include_once("assets/services/products-service.php");
+$select = mysql_getdata("SELECT * FROM setores");
 ?>
 <script>
 $(document).ready(function() {
@@ -48,13 +43,10 @@ $(document).ready(function() {
                             <label for="user">Setor</label><br>
                             <div class="">
                             <select class="btn" required>
-                                <?php foreach($values as $setores){?>
-                                <option value=""><?php echo $setores ?></option>
-                                <option value="">a</option>
-                                <option value=""></option>
-                                <option value=""></option>
+                                <?php foreach($select as $key =>$value){?>
+                                <option value="<?php echo $value["id"] ?>"><?php echo $value["nome"] ?></option>
+                                <?php } ?>
                             </select>
-                            <?php } ?>
                             </div>
                         </div>
                         <div class="form-group">

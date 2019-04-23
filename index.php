@@ -43,16 +43,11 @@ include 'template/header.php';
             include 'template/navbar.php'; 
             include 'pages/user-register.php';
         case 'add-product';
-            include 'template/navbar.php';
             include 'assets/php/add-product.php';
             break;
         case 'edit-product';
             include 'template/navbar.php'; 
             include 'assets/php/edit-product.php';
-            break;
-        case 'new-sectors';
-            include 'template/navbar.php'; 
-            include 'pages/new-sectors.php';
             break;
         default:
             include 'pages/login.php';
@@ -103,7 +98,7 @@ if($total == 1){
 else{
     ?>
     <script>
-        $.notify( document.getElementById("card-transparencia"), "Login ou senha incorretos.", { position:"b c", className: 'error' } );
+        $.notify( document.getElementById("teste"), "Login ou senha incorretos.", { position:"botton center", className: 'error' } );
     </script>
     <?php
     unset ($_SESSION['userId']);
