@@ -34,7 +34,7 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" href="?page=new-product">Cadastrar Item</a>
                     <a class="dropdown-item" href="?page=list-products">Lista de Item</a>
-                    <a class="dropdown-item" href="?page=user-register">Alguma coisa aqui</a>
+                    <a class="dropdown-item" href="">Alguma coisa aqui</a>
                 </div>
             </div>
         </li>
@@ -54,10 +54,18 @@
         <li <?php echo active($get, 'cadproduto'); ?>>
             <a class="nav-link" href="?page=list-table">Salão</a>
         </li>
+        <li <?php echo active($get, 'user-register'); ?>>
+            <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Config
+            </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="?page=user-register">Cadastrar Usuario</a>
+                </div>
+            </div>
+        </li>
         <li>
-        <button class="btn" onclick = 
-        
-        >Sair</button>
+        <button class="btn" onclick = "functionConfirm();">Sair</button>
         </li>
     </ul>
   </div>

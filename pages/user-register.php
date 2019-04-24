@@ -17,6 +17,7 @@ $(document).ready(function() {
                 <div class="logo"></br></div>
             </center>
             <div class="card transparencia">
+            <div class="card-header bg-dark txt-white">Cadastro de Usuário</div>
                 <div class="card-body">
                     <form action="" method="POST">
                         <div class="form-group">
