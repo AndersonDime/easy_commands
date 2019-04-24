@@ -20,7 +20,7 @@ $alter = mysql_insert("UPDATE produtos SET nome='$name',categoria_produtos_id='$
 
 if ($alter > 0) {
     //sleep(3);
-    header('Location: ?page=list-products');
+    header('Location: ?page=list-products&success=1');
 }
 
 }else{

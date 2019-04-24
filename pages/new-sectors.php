@@ -11,7 +11,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
 ?>
 
 
-<form action="?page=add-product" method="post">
+<form action="?page=add-sector" method="post">
 <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 col-md-4"></div>
@@ -33,7 +33,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                     if ($success):
                     ?>
                     <script>
-                        $.notify( "Cadastrado com sucesso", { from: "top", align:  "center", className: 'success' } );
+                        $.notify( "Cadastrado com sucesso", { position:"top center", className: 'success' } );
                     </script>
                     <?php endif; ?>
 

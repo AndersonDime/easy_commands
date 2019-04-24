@@ -53,6 +53,9 @@ include 'template/header.php';
             include 'template/navbar.php'; 
             include 'pages/new-sectors.php';
             break;
+        case 'add-sector'; 
+            include 'assets/php/add-sector.php';
+            break;
         default:
             include 'pages/login.php';
     }
