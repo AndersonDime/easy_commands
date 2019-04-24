@@ -44,22 +44,24 @@
         <li <?php echo active($get, 'cadproduto'); ?>>
             <a class="nav-link" href="?page=list-table">Salão</a>
         </li>
-        <li <?php echo active($get, 'logout'); ?>>
-            <button class="btn" onclick="logout();">Sair<button>
-            <a class="nav-link" href="index.php">Sair</a>
+        <li>
+        <button class="btn" onclick = 
+        'functionConfirm("Deseja realmente sair?", function yes() {
+            window.location.replace("assets/php/logout.php")
+        },
+        function no() {
+        });'
+        >Sair</button>
+            <li>
+        </li>
         </li>
     </ul>
   </div>
 </nav>
-<div id="logout" class="row">
-    <div id="logout" class="col-sm-12 col-md-4"></div>
-    <div id="logout" class="card transparencia body col-sm-12 col-md-4">
-        <center>
-        <a>Voce deseja realmente sair?</a></br>
-        <button class="btn btn-sm btn-info">Sim</button>
-        <button class="btn btn-sm btn-danger">Sim</button>
-    </div>
-</div>
-<script>
-    document.getElementById("logout").style.display = "none!important";
-</script>
+
+<div id="confirm" class="card transparencia">
+         <div class="message"></div>
+         <button class="yes btn-info">Sim</button>
+         <button class="no btn-danger">Não</button>
+      </div>
+      

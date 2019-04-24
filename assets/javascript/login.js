@@ -1,13 +1,10 @@
-//mensagem caso o login esteja incorreto ou inexistente
-function login_mensage(){
-
-    alert("O usuário que voce digitou não existe ou está incorreto!");
-
-}
-//mensagem caso a senha esteja incorreta
-function pass_mensage(){
-
-    alert("A senha que voce digitou está incorreta!");
-
-}
-
+function functionConfirm(msg, myYes, myNo) {
+    var confirmBox = $("#confirm");
+    confirmBox.find(".message").text(msg);
+    confirmBox.find(".yes,.no").unbind().click(function() {
+       confirmBox.hide();
+    });
+    confirmBox.find(".yes").click(myYes);
+    confirmBox.find(".no").click(myNo);
+    confirmBox.show();
+ }
