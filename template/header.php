@@ -14,8 +14,9 @@
     <script src="assets/jquery/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/global.js"></script>
-    <script src=".../easy_commands/assets/javascript/login.js"></script>
+    <script src="assets/javascript/login.js"></script>
     <script src="assets/javascript/notify.js"></script>
     <link rel="stylesheet" type="text-css" href="assets/css/cadastro-produtos.css">
     
