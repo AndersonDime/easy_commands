@@ -38,6 +38,16 @@
                 </div>
             </div>
         </li>
+        <li <?php echo active($get, 'new-sectors'); ?>>
+            <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Setores
+            </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="?page=new-sectors">Novo Setor</a>
+                </div>
+            </div>
+        </li>
         <li <?php echo active($get, 'cadproduto'); ?>>
             <a class="nav-link" href="html-components.html">Caixa</a>
         </li>

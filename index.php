@@ -49,6 +49,10 @@ include 'template/header.php';
             include 'template/navbar.php'; 
             include 'assets/php/edit-product.php';
             break;
+        case 'new-sectors';
+            include 'template/navbar.php'; 
+            include 'pages/new-sectors.php';
+            break;
         default:
             include 'pages/login.php';
     }

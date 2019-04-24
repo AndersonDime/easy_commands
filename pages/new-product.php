@@ -58,7 +58,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                     if ($fail):
                     ?>
                     <script>
-                        $.notify(document.getElementById("show"), "Erro ao cadastrar o item", { position:"top center" } );
+                        $.notify ("Erro ao cadastrar o item", { position:"top center" } );
                     </script>
                     <?php endif; ?>
             </div>
