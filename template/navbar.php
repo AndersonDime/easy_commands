@@ -56,14 +56,8 @@
         </li>
         <li>
         <button class="btn" onclick = 
-        'functionConfirm("Deseja realmente sair?", function yes() {
-            window.location.replace("assets/php/logout.php")
-        },
-        function no() {
-        });'
+        
         >Sair</button>
-            <li>
-        </li>
         </li>
     </ul>
   </div>

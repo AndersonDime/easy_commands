@@ -9,7 +9,7 @@ $delet = mysql_delete("DELETE FROM produtos WHERE id = $id");
 
 
 if ($delet > 0) {
-    header('Location: ?page=list-products');
+    header('Location: ?page=home-page');
 }
 
 ?>
