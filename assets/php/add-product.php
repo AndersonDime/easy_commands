@@ -1,6 +1,6 @@
 <?php
-require 'assets/services/session-validate.php';
-include_once("assets/services/products-service.php");
+require './assets/services/session-validate.php';
+include_once("./assets/services/products-service.php");
 
 $name = $_POST["product"];
 
