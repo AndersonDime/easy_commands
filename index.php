@@ -53,6 +53,10 @@ include 'template/header.php';
             include 'template/navbar.php'; 
             include 'pages/new-sectors.php';
             break;
+        case 'add-command';
+            include 'template/navbar.php'; 
+            include 'pages/add-command.php';
+            break;
         default:
             include 'pages/login.php';
     }
