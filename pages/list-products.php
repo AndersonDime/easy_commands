@@ -4,13 +4,16 @@ include_once("assets/services/products-service.php");
 
 $list = mysql_getdata("SELECT * FROM produtos INNER JOIN categorias ON produtos.categoria_produtos_id = categorias.id_categoria");
 
+$success= isset($_GET["success"]) ? $_GET["success"] : "";
+
+$fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
+
 ?>
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12 col-md-3"></div>
         <div class="col-sm-12 col-md-6">
-        <a class="btn btn-block btn-info" href="?page=new-product" > Novo Produto</a>
             <table class="table table-dark">
             <thead>
                 <tr>
@@ -42,6 +45,25 @@ $list = mysql_getdata("SELECT * FROM produtos INNER JOIN categorias ON produtos.
                 ?>
             </tbody>
             </table>
+            <a class="btn btn-info" href="?page=new-product" > Novo Produto + </a>
+            <?php
+					//se orçamento foi inserido com sucesso mostra essa mensagem:
+                    if ($success):
+                    ?>
+                    <script>
+                        $.notify( "Alterado com sucesso", { position:"top center", className: 'success' } );
+                    </script>
+                    <?php endif; ?>
+
+                     <?php
+					// se houver erro no formulario mostra essa mensagem:
+                    if ($fail):
+                    ?>
+                    <script>
+                        $.notify( "Excluido com sucesso", { position:"top center" } );
+                    </script>
+                    <?php endif; ?>
+                
         </div>
         </div>
         <div class="col-sm-12 col-md-3"></div>

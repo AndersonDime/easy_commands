@@ -12,7 +12,6 @@
 
 ?>
 
-
 <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-black">
 	<a class="navbar-brand txt-blue" href="#">Easy Commands</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +22,7 @@
     <li <?php echo active($get, 'home-page'); ?>>
             <a class="nav-link" href="?page=home-page">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li <?php echo active($get, 'cadproduto'); ?>>
+        <li>
             <a class="nav-link" href="html-components.html">Produção</a>
         </li>
         <li <?php echo active($get, 'list-produtcs'); ?>>
@@ -34,46 +33,44 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" href="?page=new-product">Cadastrar Item</a>
                     <a class="dropdown-item" href="?page=list-products">Lista de Item</a>
-                    <a class="dropdown-item" href="">Alguma coisa aqui</a>
-                </div>
-            </div>
-        </li>
-        <li <?php echo active($get, 'new-sectors'); ?>>
-            <div class="dropdown">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Setores
-            </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="?page=new-sectors">Novo Setor</a>
-                </div>
-            </div>
-        </li>
-        <li <?php echo active($get, 'cadproduto'); ?>>
-            <a class="nav-link" href="html-components.html">Caixa</a>
-        </li>
-        <li <?php echo active($get, 'cadproduto'); ?>>
-            <a class="nav-link" href="?page=list-table">Salão</a>
-        </li>
-        <li <?php echo active($get, ''); ?>>
-            <div class="dropdown">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Config
-            </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="?page=user-register">Cadastrar Usuario</a>
                 </div>
             </div>
         </li>
         <li>
+            <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="ddlSetores" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Setores
+            </a>
+                <div class="dropdown-menu" aria-labelledby="ddlSetores">
+                    <a class="dropdown-item" href="?page=new-sectors">Cadastrar Setor</a>
+                    <a class="dropdown-item" href="?page=list-sectors">Lista de Setores</a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <a class="nav-link" href="html-components.html">Caixa</a>
+        </li>
+        <li>
+            <a class="nav-link" href="?page=list-table">Salão</a>
+        </li>
+        <li <?php echo active($get, ''); ?>>
+            <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="ddlUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Config
+            </a>
+                <div class="dropdown-menu" aria-labelledby="ddlUser">
+                    <a class="dropdown-item" href="?page=user-register">Cadastrar Usuario</a>
+                </div>
+            </div>
+        </li>
+        <li <?php echo active($get, 'logout'); ?>>
         <button class="btn" onclick = "functionConfirm();">Sair</button>
         </li>
     </ul>
   </div>
 </nav>
-
 <div id="confirm" class="card transparencia">
-         <div class="message"></div>
-         <button class="yes btn-info">Sim</button>
-         <button class="no btn-danger">Não</button>
-      </div>
-      
+	 <div class="message"></div>
+	 <button class="yes btn-info">Sim</button>
+	 <button class="no btn-danger">Não</button>
+  </div>

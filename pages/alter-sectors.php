@@ -1,5 +1,7 @@
 <?php
 require 'assets/services/session-validate.php';
+$ident =  $_GET["id"];
+
 include_once("assets/services/products-service.php");
 
 $categ = mysql_getdata("SELECT * FROM setores");
@@ -11,7 +13,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
 ?>
 
 
-<form action="?page=add-sector" method="post">
+<form action="?page=edit-sectors" method="post">
 <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 col-md-4"></div>
@@ -22,7 +24,10 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                     <div class="form-group">
                         <label>Nome do Setor</label>
                     <input type="text" class="form-control" id="sec" name="sector" required>
+
+                    <input type="hidden" name="id" value="<?php echo $ident?>">
                     </div>
+
                         
                     <input type="submit" class="btn btn-blue" value="Cadastrar">
 
