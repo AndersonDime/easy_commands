@@ -19,7 +19,7 @@ $(document).ready(function() {
             <div class="card transparencia">
             <div class="card-header bg-dark txt-white">Cadastro de Usuário</div>
                 <div class="card-body">
-                    <form action="" method="POST">
+                    <form action="" method="">
                         <div class="form-group">
                             <label for="user">Usuário</label>
                             <input type="text" class="form-control" id="user" name="userId" required>

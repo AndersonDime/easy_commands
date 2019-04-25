@@ -11,11 +11,11 @@ if(count($valid)==0){
 
 if ($show > 0) {
     //sleep(3);
-    header('Location: ?page=new-sectors&success=1');
+    echo "<script type='text/javascript'>window.top.location='?page=new-sectors&success=1';</script>"; exit;
 }
 
 }else{
-    header('Location: ?page=new-sectors&fail=1');
+    echo "<script type='text/javascript'>window.top.location='?page=new-sectors&fail=1';</script>"; exit;
 }
 
 

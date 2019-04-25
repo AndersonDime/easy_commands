@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL);
 require 'assets/services/session-validate.php';
 include_once("assets/services/products-service.php");
 
@@ -17,13 +18,10 @@ if(count($valid)==0){
 
 if ($show > 0) {
     //sleep(3);
-    header('Location: ?page=new-product&success=1');
+    echo "<script type='text/javascript'>window.top.location='?page=new-product&success=1';</script>"; exit;
 }
 
 }else{
-    echo "<script type='text/javascript'>alert('$message');</script>";
-    header('Location: ?page=new-product&fail=1');
+    echo "<script type='text/javascript'>window.top.location='?page=new-product&fail=1';</script>"; exit;
 }
-
-
 ?>

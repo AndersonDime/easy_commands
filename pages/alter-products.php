@@ -52,20 +52,18 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
 					//se orçamento foi inserido com sucesso mostra essa mensagem:
                     if ($success):
                     ?>
-                    <div class="alert alert-success validation-box" role="alert">
-                        <strong>Sucesso!</strong>
-                            Item Alterado
-                    </div>
+                    <script>
+                        $.notify( "Cadastrado com sucesso", { position:"top center", className: 'success' } );
+                    </script>
                     <?php endif; ?>
 
                      <?php
 					// se houver erro no formulario mostra essa mensagem:
                     if ($fail):
                     ?>
-                    <div class="alert alert-danger validation-box" role="alert">
-                        <strong>Erro!</strong>
-                        Erro para Alterar informações do item
-                    </div>
+                    <script>
+                        $.notify( "Erro ao cadastrar o item", { position:"top center" } );
+                    </script>
                     <?php endif; ?>
             </div>
             <div class="col-sm-12 col-md-4"></div>

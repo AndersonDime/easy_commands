@@ -11,7 +11,8 @@ $resp = array();
 
 while($linha = mysqli_fetch_array($valor, MYSQLI_ASSOC)){
     array_push($resp , $linha);
-   
+
+    
 }
 
 
