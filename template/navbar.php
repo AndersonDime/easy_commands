@@ -53,7 +53,7 @@
         <li>
             <a class="nav-link" href="?page=list-table">Salão</a>
         </li>
-        <li>
+        <li <?php echo active($get, ''); ?>>
             <div class="dropdown">
             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="ddlUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Config
