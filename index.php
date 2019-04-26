@@ -10,57 +10,71 @@ include 'template/header.php';
 <div class="container-fluid">
 
 <?php
- include 'template/navbar.php'; 
 	switch ($get) {
-        case 'listar-produtos':
-           
+        case 'listar-produtos':       
+            include 'template/navbar.php';     
             include 'pages/listar-orcamentos.php';
             break;
-        case 'new-product':
+        case 'new-product': 
+            include 'template/navbar.php';     
             include 'pages/new-product.php';
             break;
         case 'list-table':
-            include 'pages/list-table.php';
+            include 'template/navbar.php'; 
+            include 'template/navbar.php'; include 'pages/list-table.php';
         case 'home-page':
+            include 'template/navbar.php';     
             include 'pages/home.php';
             break;
         case 'delete-products':
+            include 'template/navbar.php';     
             include 'pages/delete-products.php';
             break;
         case 'list-products':
+            include 'template/navbar.php';     
             include 'pages/list-products.php';
             break;
         case 'alter-products':
+            include 'template/navbar.php';     
             include 'pages/alter-products.php';
             break;
         case 'user-register':
+            include 'template/navbar.php';     
             include 'pages/user-register.php';
             break;
         case 'add-product':
+            include 'template/navbar.php';     
             include 'assets/php/add-product.php';
             break;
         case 'edit-product':
+            include 'template/navbar.php';     
             include 'assets/php/edit-product.php';
             break;
         case 'new-sectors':
+            include 'template/navbar.php';     
             include 'pages/new-sectors.php';
             break;
         case 'list-sectors':
+            include 'template/navbar.php';     
             include 'pages/list-sectors.php';
             break;
         case 'add-sector':
+            include 'template/navbar.php';     
             include 'assets/php/add-sector.php';
             break;
         case 'alter-sectors':
+            include 'template/navbar.php';     
             include 'pages/alter-sectors.php';
             break;
         case 'edit-sectors':
+            include 'template/navbar.php';     
             include 'assets/php/edit-sectors.php';
             break;
         case 'delete-sectors': 
+            include 'template/navbar.php';     
             include 'pages/delete-sectors.php';
-        case 'add-command';
-            include 'template/navbar.php'; 
+        case 'add-command'; 
+            include 'template/navbar.php';     
             include 'pages/add-command.php';
             break;
         default:
