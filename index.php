@@ -7,8 +7,6 @@ include 'template/header.php';
 
 ?>
 
-<div class="container-fluid">
-
 <?php
 	switch ($get) {
         case 'listar-produtos':       
@@ -86,12 +84,8 @@ require "assets/php/conect.php";
 //Pega usuario e senha criptografando
 $inputId = isset($_POST["userId"]) ? addslashes(trim($_POST["userId"])) : FALSE;
 $inputPass = isset($_POST["userPass"]) ? (trim($_POST["userPass"])) : FALSE;
+if(isset($_POST["userId"]) && isset($_POST["userPass"])){
 
-//Verifica se foi digitado algo
-if(!$inputId || !$inputPass){
-    //  login_mensage(); 
-    exit;
-}
 //Consulta o banco, caso $result_id for diferente de vazio ganha 1 como login valido
 $validate = "SELECT id, usuario, nivel_de_permissao, senha, email, setores_id FROM usuarios 
 WHERE usuario = '$inputId'";
@@ -114,27 +108,27 @@ if($total == 1){
     }else{
         ?>
     <script>
-        $.notify("Login ou senha incorretos.", { position:"b c", className: 'error' } );
+        $.notify("Login ou senha incorretos.", { position:"top center", className: 'error' } );
     </script>
     <?php
     unset ($_SESSION['userId']);
     unset ($_SESSION['userPass']);
     exit; 
-    //Login inexistente 
     }
-}
-else{
+//Login inexistente 
+}else{
+    if($total == 0){
     ?>
     <script>
-        $.notify( document.getElementById("teste"), "Login ou senha incorretos.", { position:"botton center", className: 'error' } );
+        $.notify("Login inexistente.", { position:"top center", className: 'error' } );
     </script>
     <?php
     unset ($_SESSION['userId']);
     unset ($_SESSION['userPass']);
     exit; 
+    }
 }
-?>
-
-</div>
+}
+?>  
 
 <?php include 'template/footer.php' ?>
