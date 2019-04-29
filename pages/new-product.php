@@ -11,7 +11,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
 ?>
 
 
-<form action="?page=add-product.php" method="post">
+<form action="?page=add-product" method="post">
 <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 col-md-4"></div>

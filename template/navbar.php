@@ -36,7 +36,7 @@
         <li>
             <a class="nav-link" href="html-components.html">Produção</a>
         </li>
-        <li <?php echo active($get, 'list-produtcs'); ?>>
+        <li>
             <div class="dropdown">
             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Produtos

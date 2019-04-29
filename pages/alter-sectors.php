@@ -16,7 +16,7 @@
 <form action="?page=edit-sectors" method="post">
     <div class="container-fluid">
         <div class="row">        
-            <div class="col-sm-12 col-md-4">
+            <div class="col-sm-12 col-md-4"></div>
             <div class="col-sm-12 col-md-4">
                     <div class="card transparencia">
                         <div class="card-header bg-dark txt-white">
