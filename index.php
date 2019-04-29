@@ -20,8 +20,8 @@ include 'template/header.php';
             include 'pages/new-product.php';
             break;
         case 'list-table':
-            include 'template/navbar.php'; 
             include 'template/navbar.php'; include 'pages/list-table.php';
+            break;
         case 'home-page':
             include 'template/navbar.php';     
             include 'pages/home.php';
