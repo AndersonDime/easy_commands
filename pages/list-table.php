@@ -10,7 +10,8 @@ $list = mysql_getdata("SELECT * FROM mesas");
 <div class="container list-table">
     <div class="row">
         <?php 
-            foreach ($list as  $key =>$value){            
+            foreach ($list as  $key =>$value){   
+                echo $value["numero"];;         
         ?>
         <div class="col-xs-6 col-md-4">
             <div class="card">

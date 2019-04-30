@@ -1,5 +1,4 @@
 <?php
-error_reporting(E_ALL);
 require 'assets/services/session-validate.php';
 include_once("assets/services/products-service.php");
 

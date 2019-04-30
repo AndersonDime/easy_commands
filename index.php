@@ -19,7 +19,7 @@ include 'template/header.php';
             break;
         case 'list-table':
             include 'template/navbar.php'; 
-            include 'template/navbar.php'; include 'pages/list-table.php';
+            include 'pages/list-table.php';
         case 'home-page':
             include 'template/navbar.php';     
             include 'pages/home.php';
@@ -71,7 +71,7 @@ include 'template/header.php';
         case 'delete-sectors': 
             include 'template/navbar.php';     
             include 'pages/delete-sectors.php';
-        case 'add-command'; 
+        case 'add-command': 
             include 'template/navbar.php';     
             include 'pages/add-command.php';
             break;

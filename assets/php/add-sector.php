@@ -17,6 +17,4 @@ if ($show > 0) {
 }else{
     echo "<script type='text/javascript'>window.top.location='?page=new-sectors&fail=1';</script>"; exit;
 }
-
-
 ?>

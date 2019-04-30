@@ -16,15 +16,15 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
         <div class="col-sm-12 col-md-6">
             <table class="table table-dark">
             <thead>
-            <a class="btn-black btn-block" > Lista de Setores </a>
+                <a class="btn-black btn-block" > Lista de Setores </a>
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Setor</th>                   
                 </tr>
             </thead>
-                <?php 
-                    foreach ($list as  $key =>$value){
-                ?>
+            <?php 
+                foreach ($list as  $key =>$value){
+            ?>
             <tbody>
                 <tr>
                     <th><?php echo $value["id"];?></th>
@@ -37,26 +37,25 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                 ?>
             </tbody>
             </table>
-            <a class="btn btn-info" href="?page=new-sectors" > Novo Setor + </a>
-            <?php
-					//se orçamento foi inserido com sucesso mostra essa mensagem:
+                <a class="btn btn-info" href="?page=new-sectors" > Novo Setor + </a>
+                <?php
+                    //se orçamento foi inserido com sucesso mostra essa mensagem:
                     if ($success):
-                    ?>
-                    <script>
-                        $.notify( "Alterado com sucesso", { position:"top center", className: 'success' } );
-                    </script>
-                    <?php endif; ?>
+                ?>
+                <script>
+                    $.notify( "Alterado com sucesso", { position:"top center", className: 'success' } );
+                </script>
+                <?php endif; ?>
 
-                     <?php
-					// se houver erro no formulario mostra essa mensagem:
+                    <?php
+                    // se houver erro no formulario mostra essa mensagem:
                     if ($fail):
-                    ?>
-                    <script>
-                        $.notify( "Excluido com sucesso", { position:"top center" } );
-                    </script>
-                    <?php endif; ?>
+                ?>
+                <script>
+                    $.notify( "Excluido com sucesso", { position:"top center" } );
+                </script>
+                <?php endif; ?>
                 
-        </div>
         </div>
         <div class="col-sm-12 col-md-3"></div>
     </div>
