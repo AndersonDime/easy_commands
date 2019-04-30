@@ -11,6 +11,12 @@
     }
 
 ?>
+<script>
+    $('.navbar-nav li ').click(function() {
+       $('.navbar-nav li').removeClass('active');
+       $(this).addClass('active');
+   }); 
+</script>
 <!--navbar funcionando-->
 <!--
 <nav id="navbar cssmenu" class="navbar navbar-expand-lg navbar-dark bg-black">
@@ -23,12 +29,9 @@
 -->
     <!-- nova navbar -->
     <div id='cssmenu' id="navbar1">
-    <ul class="navbar-nav ml-auto"> 
+    <ul class="navbar-nav ml-auto">
     <nav id="navbar cssmenu">
-	    <a class="navbar-brand txt-blue" href="#">Easy Commands</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+	    <a class="navbar-brand txt-blue 'active' <?php echo active($get, 'home-page'); ?>" href="?page=home-page">Easy Commands</a>
         <!-- nova navbar -->
         <li class='active' <?php echo active($get, 'home-page'); ?>>
             <a class="nav-link" href="?page=home-page">Home <span class="sr-only">(current)</span></a>
@@ -36,9 +39,9 @@
         <li>
             <a class="nav-link" href="html-components.html">Produção</a>
         </li>
-        <li <?php echo active($get, 'list-produtcs'); ?>>
+        <li class="" <?php echo active($get, 'list-produtcs'); ?>>
             <div class="dropdown">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Produtos
             </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -49,7 +52,7 @@
         </li>
         <li>
             <div class="dropdown">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="ddlSetores" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="dropdown-toggle" href="#" role="button" id="ddlSetores" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Setores
             </a>
                 <div class="dropdown-menu" aria-labelledby="ddlSetores">
@@ -66,7 +69,7 @@
         </li>
         <li <?php echo active($get, ''); ?>>
             <div class="dropdown">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="ddlUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="dropdown-toggle" href="#" role="button" id="ddlUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Config
             </a>
                 <div class="dropdown-menu" aria-labelledby="ddlUser">
@@ -74,8 +77,8 @@
                 </div>
             </div>
         </li>
-        <li class="last" <?php echo active($get, 'logout'); ?>>
-        <button class="btn" onclick = "functionConfirm();">Sair</button>
+        <li <?php echo active($get, 'logout'); ?>>
+        <a <button class="btn" onclick = "functionConfirm();">Sair</button></a>
         </li>
     </ul>
   </div>

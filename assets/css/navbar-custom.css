@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
 #cssmenu {
-  background: #6c757d;
+  background: #343a40;
   width: auto;
 }
 #cssmenu ul {
@@ -47,7 +47,7 @@
   transition: color .25s;
 }
 #cssmenu ul li a:hover {
-  color: #333333;
+  color: #17a2b8;
 }
 #cssmenu ul li a:hover:before {
   width: 100%;
@@ -60,7 +60,7 @@
   top: 19px;
   height: 6px;
   width: 6px;
-  background: #ffffff;
+  background: #696868;
   opacity: .5;
 }
 #cssmenu ul li a:before {
@@ -71,7 +71,7 @@
   bottom: 0;
   height: 3px;
   width: 0;
-  background: #333333;
+  background: #17a2b8;
   -webkit-transition: width .25s;
   -moz-transition: width .25s;
   -ms-transition: width .25s;
@@ -83,7 +83,7 @@
   display: none;
 }
 #cssmenu ul li.active a {
-  color: #333333;
+  color: #17a2b8;
 }
 #cssmenu ul li.active a:before {
   width: 100%;
@@ -117,4 +117,18 @@
   #cssmenu ul li a:before {
     display: none;
   }
+}
+.navbar-brand{
+  margin-right: 310px;
+  margin-left: 20px;
+  color: #17a2b8;
+}
+.dropdown-item{
+  background-color: #343a40;
+}
+.dropdown-menu.show{
+  background-color: #343a40;  
+}
+.dropdown-item:focus, .dropdown-item:hover{
+  background-color: #343a40;  
 }
