@@ -2,7 +2,7 @@
 require 'assets/services/session-validate.php';
 include_once("assets/services/products-service.php");
 
-$list = mysql_getdata("SELECT * FROM produtos INNER JOIN categorias ON produtos.categoria_produtos_id = categorias.id_categoria");
+$list = mysql_getdata("SELECT produtos.id AS 'idProduto', produtos.nome AS 'nomeProduto', produtos.categoria_produtos_id, produtos.preco, categorias.id AS 'idCategoria', categorias.nome AS 'nomeCategoria', categorias.setores_id  FROM produtos INNER JOIN categorias ON produtos.categoria_produtos_id = categorias.id");
 
 $success= isset($_GET["success"]) ? $_GET["success"] : "";
 
@@ -31,14 +31,14 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                 ?>
             <tbody>
                 <tr>
-                    <th><?php echo $value["id"];?> </th>
-                    <td><?php echo $value["nome"]; ?></td>
+                    <th><?php echo $value["idProduto"];?> </th>
+                    <td><?php echo $value["nomeProduto"]; ?></td>
                     <td><?php echo $newprice; ?></td>
-                    <td><?php echo $value["nome_categoria"]; ?></td>
-                    <td>  <a class="btn btn-sm btn-info" href="?page=alter-products&id=<?php echo $value["id"] ?>" > 
+                    <td><?php echo $value["nomeCategoria"]; ?></td>
+                    <td>  <a class="btn btn-sm btn-info" href="?page=alter-products&id=<?php echo $value["idProduto"] ?>" > 
                         Editar
                     </a> </td>
-                    <td> <a class="btn btn-sm btn-danger" href="?page=delete-products&id=<?php echo $value["id"] ?> ">Excluir</a> </td>               
+                    <td> <a class="btn btn-sm btn-danger" href="?page=delete-products&id=<?php echo $value["idProduto"] ?> ">Excluir</a> </td>               
                 </tr>
                 <?php
                     }

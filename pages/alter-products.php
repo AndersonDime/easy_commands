@@ -37,8 +37,8 @@
                                 foreach ($categ as $value){
                             ?>
 
-                            <option value="<?php echo $value["id_categoria"];?>"> 
-                                <?php echo $value["nome_categoria"]; ?>
+                            <option value="<?php echo $value["id"];?>"> 
+                                <?php echo $value["nome"]; ?>
                             </option>
 
                             <?php 
@@ -58,7 +58,7 @@
                     if ($success):
                 ?>
                 <script>
-                    $.notify( "Cadastrado com sucesso", { position:"top center", className: 'success' } );
+                    $.notify( "Atualizado item com sucesso", { position:"top center", className: 'success' } );
                 </script>
                 <?php 
                     endif; 
@@ -69,7 +69,7 @@
                     if ($fail):
                 ?>
                 <script>
-                    $.notify( "Erro ao cadastrar o item", { position:"top center" } );
+                    $.notify( "Falha para atualizar item", { position:"top center" } );
                 </script>
                 <?php 
                     endif; 
