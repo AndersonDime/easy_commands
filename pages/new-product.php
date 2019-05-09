@@ -11,7 +11,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
 ?>
 
 
-<form action="?page=add-product" method="post">
+<form action="?page=add-product.php" method="post">
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12 col-md-4"></div>
@@ -27,12 +27,14 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                             <label>Categoria do produto</label>
                             <select class="form-control" name="category">
                                 <?php 
-                                foreach ($categ as $value){
+                                    foreach ($categ as $value){
                                 ?>
 
                                 <option value="<?php echo $value["id"];?>"> <?php echo $value["nome"]; ?></option>
 
-                                <?php } ?>
+                                <?php 
+                                    } 
+                                ?>
                             </select>
                         </div>
                         <div class="form-group">
@@ -40,7 +42,6 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                             <input  type="text" class="form-control" id="valor" pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$" name="price" required>
                         </div>
                         <input type="submit" class="btn btn-blue" value="Cadastrar">
-
                     </div>
                 </div>
                 <?php
