@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.0.1
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 12-Abr-2019 às 03:07
--- Versão do servidor: 5.7.11-log
--- PHP Version: 5.6.15
+-- Generation Time: 10-Maio-2019 às 01:03
+-- Versão do servidor: 10.1.32-MariaDB
+-- PHP Version: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,8 +21,9 @@ SET time_zone = "+00:00";
 --
 -- Database: `easycomands`
 --
-CREATE SCHEMA IF NOT EXISTS `easycomands` DEFAULT CHARACTER SET utf8 ;
-USE `easycomands` ;
+CREATE DATABASE IF NOT EXISTS `easycomands` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `easycomands`;
+
 -- --------------------------------------------------------
 
 --
@@ -28,8 +31,8 @@ USE `easycomands` ;
 --
 
 CREATE TABLE `categorias` (
-  `id_categoria` tinyint(3) NOT NULL,
-  `nome_categoria` varchar(10) NOT NULL,
+  `id` tinyint(3) NOT NULL,
+  `nome` varchar(10) NOT NULL,
   `setores_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -37,9 +40,31 @@ CREATE TABLE `categorias` (
 -- Extraindo dados da tabela `categorias`
 --
 
-INSERT INTO `categorias` (`id_categoria`, `nome_categoria`, `setores_id`) VALUES
-(1, 'Bebidas', 1),
-(2, 'Comida', 2);
+INSERT INTO `categorias` (`id`, `nome`, `setores_id`) VALUES
+(1, 'rodizio', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `mesas`
+--
+
+CREATE TABLE `mesas` (
+  `id` int(3) NOT NULL,
+  `numero` int(3) NOT NULL,
+  `preferencia` bit(1) NOT NULL,
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `mesas`
+--
+
+INSERT INTO `mesas` (`id`, `numero`, `preferencia`, `status`) VALUES
+(2, 1, b'0', 0),
+(3, 2, b'0', 1),
+(5, 4, b'0', 3),
+(8, 8, b'0', 2);
 
 -- --------------------------------------------------------
 
@@ -49,10 +74,17 @@ INSERT INTO `categorias` (`id_categoria`, `nome_categoria`, `setores_id`) VALUES
 
 CREATE TABLE `pedidos` (
   `id` tinyint(3) NOT NULL,
-  `mesa` int(10) NOT NULL,
+  `mesa` tinyint(3) NOT NULL,
   `data` date NOT NULL,
   `hora` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `pedidos`
+--
+
+INSERT INTO `pedidos` (`id`, `mesa`, `data`, `hora`) VALUES
+(1, 1, '2019-04-24', '20:02:00');
 
 -- --------------------------------------------------------
 
@@ -77,7 +109,7 @@ CREATE TABLE `produtos` (
   `id` tinyint(3) NOT NULL,
   `nome` varchar(20) NOT NULL,
   `categoria_produtos_id` tinyint(3) NOT NULL,
-  `preco` decimal(6,2) NOT NULL
+  `preco` tinyint(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -85,8 +117,8 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id`, `nome`, `categoria_produtos_id`, `preco`) VALUES
-(1, 'coca', 1, '3.50'),
-(2, 'cebola', 2, '1.50');
+(1, 'Pizza doce', 1, 30),
+(2, 'Copa', 1, 30);
 
 -- --------------------------------------------------------
 
@@ -104,8 +136,8 @@ CREATE TABLE `setores` (
 --
 
 INSERT INTO `setores` (`id`, `nome`) VALUES
-(1, 'Copa'),
-(2, 'Cozinha');
+(1, 'cozinha'),
+(2, 'Copa');
 
 -- --------------------------------------------------------
 
@@ -127,7 +159,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `nivel_de_permissao`, `senha`, `email`, `setores_id`) VALUES
-(1, 'victor', 1, '012345', 'victor@victor.com', 2);
+(1, 'Joao', 1, '123456', 'joao@email.com', 1);
 
 --
 -- Indexes for dumped tables
@@ -137,14 +169,22 @@ INSERT INTO `usuarios` (`id`, `usuario`, `nivel_de_permissao`, `senha`, `email`,
 -- Indexes for table `categorias`
 --
 ALTER TABLE `categorias`
-  ADD PRIMARY KEY (`id_categoria`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `fk_categoria_produtos_setores1_idx` (`setores_id`);
+
+--
+-- Indexes for table `mesas`
+--
+ALTER TABLE `mesas`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `pedidos`
 --
 ALTER TABLE `pedidos`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_pedido_mesa_idx` (`mesa`),
+  ADD KEY `fk_pedidos_mesa_idx` (`mesa`);
 
 --
 -- Indexes for table `pedidos_has_produtos`
@@ -182,27 +222,38 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id_categoria` tinyint(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` tinyint(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `mesas`
+--
+ALTER TABLE `mesas`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT for table `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id` tinyint(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` tinyint(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `produtos`
 --
 ALTER TABLE `produtos`
   MODIFY `id` tinyint(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `setores`
 --
 ALTER TABLE `setores`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- Constraints for dumped tables
 --
@@ -212,6 +263,12 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `categorias`
   ADD CONSTRAINT `fk_categoria_produtos_setores1` FOREIGN KEY (`setores_id`) REFERENCES `setores` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `pedidos`
+--
+ALTER TABLE `pedidos`
+  ADD CONSTRAINT `fk_mesa_id` FOREIGN KEY (`mesa`) REFERENCES `pedidos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `pedidos_has_produtos`
@@ -224,13 +281,14 @@ ALTER TABLE `pedidos_has_produtos`
 -- Limitadores para a tabela `produtos`
 --
 ALTER TABLE `produtos`
-  ADD CONSTRAINT `fk_produtos_categoria_produtos` FOREIGN KEY (`categoria_produtos_id`) REFERENCES `categorias` (`id_categoria`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_produtos_categoria_produtos` FOREIGN KEY (`categoria_produtos_id`) REFERENCES `categorias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `fk_funcionarios_setores1` FOREIGN KEY (`setores_id`) REFERENCES `setores` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
