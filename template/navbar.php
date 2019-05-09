@@ -11,29 +11,13 @@
     }
 
 ?>
-<script>
-    $('.navbar-nav li ').click(function() {
-       $('.navbar-nav li').removeClass('active');
-       $(this).addClass('active');
-   }); 
-</script>
-<!--navbar funcionando-->
-<!--
-<nav id="navbar cssmenu" class="navbar navbar-expand-lg navbar-dark bg-black">
-	<a class="navbar-brand txt-blue" href="#">Easy Commands</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbar1">
-    <ul class="navbar-nav ml-auto"> 
--->
     <!-- nova navbar -->
     <div id='cssmenu' id="navbar1">
     <ul class="navbar-nav ml-auto">
     <nav id="navbar cssmenu">
 	    <a class="navbar-brand txt-blue 'active' <?php echo active($get, 'home-page'); ?>" href="?page=home-page">Easy Commands</a>
         <!-- nova navbar -->
-        <li class='active' <?php echo active($get, 'home-page'); ?>>
+        <li id="home" <?php echo active($get, 'home-page'); ?>>
             <a class="nav-link" href="?page=home-page">Home <span class="sr-only">(current)</span></a>
         </li>
         <li>
@@ -83,6 +67,15 @@
     </ul>
   </div>
 </nav>
+<script>
+  //  $('#home').addClass('active');
+    $('.navbar-nav a ').click(function() {
+        $(this).addClass('active').siblings().removeClass('active');
+      // $('.navbar-nav li').removeClass('active');
+      // $('#home').removeClass('active');
+      // $(this).addClass('active');
+   }); 
+</script>
 <div id="confirm" class="card transparencia">
 	 <div class="message"></div>
 	 <button class="yes btn-info">Sim</button>
