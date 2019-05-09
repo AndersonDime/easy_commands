@@ -37,7 +37,7 @@
                     if ($success):
                 ?>
                 <script>
-                    $.notify( "Cadastrado com sucesso", { position:"top center", className: 'success' } );
+                    $.notify( "Alterado setor com sucesso", { position:"top center", className: 'success' } );
                 </script>
                 <?php 
                     endif; 
@@ -48,7 +48,7 @@
                     if ($fail):
                 ?>
                 <script>
-                    $.notify( "Erro ao cadastrar o item", { position:"top center" } );
+                    $.notify( "Falha ao editar setor", { position:"top center" } );
                 </script>
                 <?php 
                     endif; 

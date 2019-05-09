@@ -7,7 +7,7 @@ $id = $_POST["id"];
 $sec = $_POST["sector"];
 
 
-$valid = mysql_getdata("SELECT * FROM setores WHERE nome='$sec'");
+$valid = mysql_getdata("SELECT * FROM setores WHERE nome='$sec' AND id != '$id' ");
 
 
 if(count($valid)==0){

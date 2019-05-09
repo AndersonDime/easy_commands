@@ -12,7 +12,7 @@ $price = $_POST["price"];
 
 $newprice = str_replace(",", ".",$price);
 
-$valid = mysql_getdata("SELECT * FROM produtos WHERE nome='$name'");
+$valid = mysql_getdata("SELECT * FROM produtos WHERE nome='$name' AND id != '$id' ");
 
 
 if(count($valid)==0){
