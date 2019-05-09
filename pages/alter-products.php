@@ -3,7 +3,7 @@
     $ident =  $_GET["id"];
 
     include_once("assets/services/products-service.php");
-
+    $prodName = mysql_getdata("SELECT nome FROM produtos WHERE id='$ident'");
     $categ = mysql_getdata("SELECT * FROM categorias");
 
     $success= isset($_GET["success"]) ? $_GET["success"] : "";
@@ -25,8 +25,11 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label>Nome do produto</label>
-                            <input type="text" class="form-control" id="prod" name="product" required>
-
+                            <?php foreach($prodName as $value){
+                                
+                            ?>
+                            <input type="text" class="form-control" id="prod" name="product" value="<?php echo $value["nome"]; ?>" required>
+                            <?php }?>
                             <input type="hidden" name="id" value="<?php echo $ident?>">
                         
                         </div>
