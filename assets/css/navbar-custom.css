@@ -119,9 +119,12 @@
   }
 }
 .navbar-brand{
-  margin-right: 310px;
+  margin-right: 300px;
   margin-left: 20px;
+  border-radius: 8px;
+  background-color: #343a40;
   color: #17a2b8;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.637);
 }
 .dropdown-item{
   background-color: #343a40;
@@ -132,3 +135,13 @@
 .dropdown-item:focus, .dropdown-item:hover{
   background-color: #343a40;  
 }
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.637);
+  z-index: 1;
+}
+.dropdown-content a:hover {background-color: #343a40;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
