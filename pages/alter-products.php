@@ -3,7 +3,7 @@
     $ident =  $_GET["id"];
 
     include_once("assets/services/products-service.php");
-    $prodName = mysql_getdata("SELECT nome FROM produtos WHERE id='$ident'");
+    $prodName = mysql_getdata("SELECT nome,preco FROM produtos WHERE id='$ident'");
     $categ = mysql_getdata("SELECT * FROM categorias");
 
     $success= isset($_GET["success"]) ? $_GET["success"] : "";
@@ -51,7 +51,13 @@
                         </div>
                         <div class="form-group">
                             <label>Preço</label>
-                            <input  type="text" class="form-control" id="valor" pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$" name="price" required>
+                            <?php foreach($prodName as $value){
+                                
+                            ?>
+                            <input  type="text" class="form-control" id="valor" pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$" name="price" value="<?php echo $value["preco"] ?>" required>
+                            <?php
+                            } 
+                            ?>
                         </div>
                         <input type="submit" class="btn btn-blue" value="Atualizar">
                     </div>
