@@ -3,7 +3,7 @@
     $ident =  $_GET["id"];
 
     include_once("assets/services/products-service.php");
-
+    $prodName = mysql_getdata("SELECT nome FROM produtos WHERE id='$ident'");
     $categ = mysql_getdata("SELECT * FROM categorias");
 
     $success= isset($_GET["success"]) ? $_GET["success"] : "";
@@ -25,8 +25,11 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label>Nome do produto</label>
-                            <input type="text" class="form-control" id="prod" name="product" required>
-
+                            <?php foreach($prodName as $value){
+                                
+                            ?>
+                            <input type="text" class="form-control" id="prod" name="product" value="<?php echo $value["nome"]; ?>" required>
+                            <?php }?>
                             <input type="hidden" name="id" value="<?php echo $ident?>">
                         
                         </div>
@@ -37,8 +40,8 @@
                                 foreach ($categ as $value){
                             ?>
 
-                            <option value="<?php echo $value["id_categoria"];?>"> 
-                                <?php echo $value["nome_categoria"]; ?>
+                            <option value="<?php echo $value["id"];?>"> 
+                                <?php echo $value["nome"]; ?>
                             </option>
 
                             <?php 
@@ -58,7 +61,7 @@
                     if ($success):
                 ?>
                 <script>
-                    $.notify( "Cadastrado com sucesso", { position:"top center", className: 'success' } );
+                    $.notify( "Atualizado item com sucesso", { position:"top center", className: 'success' } );
                 </script>
                 <?php 
                     endif; 
@@ -69,7 +72,7 @@
                     if ($fail):
                 ?>
                 <script>
-                    $.notify( "Erro ao cadastrar o item", { position:"top center" } );
+                    $.notify( "Falha para atualizar item", { position:"top center" } );
                 </script>
                 <?php 
                     endif; 
