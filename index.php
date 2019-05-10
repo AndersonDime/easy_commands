@@ -71,9 +71,9 @@ include 'template/header.php';
         case 'delete-sectors': 
             include 'template/navbar.php';     
             include 'pages/delete-sectors.php';
-        case 'add-command': 
+        case 'new-command': 
             include 'template/navbar.php';     
-            include 'pages/add-command.php';
+            include 'pages/new-command.php';
             break;
         default:
             include 'pages/login.php';
