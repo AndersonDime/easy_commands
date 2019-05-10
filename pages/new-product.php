@@ -30,7 +30,9 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                                     foreach ($categ as $value){
                                 ?>
 
-                                <option value="<?php echo $value["id"];?>"> <?php echo $value["nome"]; ?></option>
+                                <option value="<?php echo $value["id"];?>"> 
+                                    <?php echo $value["nome"]; ?>
+                                </option>
 
                                 <?php 
                                     } 

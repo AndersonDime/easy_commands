@@ -4,7 +4,7 @@
 
     include_once("assets/services/products-service.php");
 
-    $categ = mysql_getdata("SELECT * FROM setores");
+    $categ = mysql_getdata("SELECT * FROM setores WHERE id='$ident'");
 
     $success= isset($_GET["success"]) ? $_GET["success"] : "";
 
@@ -25,7 +25,13 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Nome do Setor</label>
-                                <input type="text" class="form-control" id="sec" name="sector" required>
+                                <?php foreach($categ as $value){
+                                
+                                ?>
+                                <input type="text" class="form-control" id="sec" name="sector" value="<?php echo $value["nome"] ?>" required>
+                                <?php 
+                                    } 
+                                ?>
                                 <input type="hidden" name="id" value="<?php echo $ident?>">
                             </div>                                        
                             <input type="submit" class="btn btn-blue" value="Cadastrar">

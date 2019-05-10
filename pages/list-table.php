@@ -35,7 +35,7 @@ $list = mysql_getdata("SELECT * FROM mesas");
                     </h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <a href="?page=new-product" class="btn btn-black">Detalhes</a>
-                    <a href="?page=add-command" class="btn btn-success">Fazer Pedido</a>
+                    <a href="?page=new-command" class="btn btn-success">Fazer Pedido</a>
                 </div>
             </div>
         </div> 
