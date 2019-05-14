@@ -31,6 +31,8 @@
                 <div class="dropdown-content" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" href="?page=new-product">Cadastrar Item</a>
                     <a class="dropdown-item" href="?page=list-products">Lista de Item</a>
+                    <a class="dropdown-item" href="?page=new-category">Cadastrar Categoria</a>
+                    <a class="dropdown-item" href="?page=list-categorys">Lista de Categorias</a>
                 </div>
             </div>
         </li>

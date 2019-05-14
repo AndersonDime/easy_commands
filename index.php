@@ -17,6 +17,10 @@ include 'template/header.php';
             include 'template/navbar.php';     
             include 'pages/new-product.php';
             break;
+        case 'new-category': 
+            include 'template/navbar.php';     
+            include 'pages/new-category.php';
+            break;
         case 'list-table':
             include 'template/navbar.php'; 
             include 'pages/list-table.php';
@@ -28,13 +32,25 @@ include 'template/header.php';
             include 'template/navbar.php';     
             include 'pages/delete-products.php';
             break;
+        case 'delete-categorys':
+            include 'template/navbar.php';     
+            include 'pages/delete-categorys.php';
+            break;
         case 'list-products':
             include 'template/navbar.php';     
             include 'pages/list-products.php';
             break;
+        case 'list-categorys':
+            include 'template/navbar.php';     
+            include 'pages/list-categorys.php';
+            break;
         case 'alter-products':
             include 'template/navbar.php';     
             include 'pages/alter-products.php';
+            break;
+        case 'alter-categorys':
+            include 'template/navbar.php';     
+            include 'pages/alter-categorys.php';
             break;
         case 'user-register':
             include 'template/navbar.php';     
@@ -43,6 +59,10 @@ include 'template/header.php';
         case 'add-product':
             include 'template/navbar.php';     
             include 'assets/php/add-product.php';
+            break;
+        case 'add-category':
+            include 'template/navbar.php';     
+            include 'assets/php/add-category.php';
             break;
         case 'edit-product':
             include 'template/navbar.php';     
@@ -67,6 +87,10 @@ include 'template/header.php';
         case 'edit-sectors':
             include 'template/navbar.php';     
             include 'assets/php/edit-sectors.php';
+            break;
+        case 'edit-category':
+            include 'template/navbar.php';     
+            include 'assets/php/edit-category.php';
             break;
         case 'delete-sectors': 
             include 'template/navbar.php';     
