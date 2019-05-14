@@ -15,7 +15,12 @@ include 'template/navbar.php';
         case 'new-product':      
             include 'pages/new-product.php';
             break;
-        case 'list-table': 
+        case 'new-category': 
+            include 'template/navbar.php';     
+            include 'pages/new-category.php';
+            break;
+        case 'list-table':
+            include 'template/navbar.php'; 
             include 'pages/list-table.php';
         case 'home-page':     
             include 'pages/home.php';
@@ -23,19 +28,39 @@ include 'template/navbar.php';
         case 'delete-products':     
             include 'pages/delete-products.php';
             break;
-        case 'list-products':     
+        case 'delete-categorys':
+            include 'template/navbar.php';     
+            include 'pages/delete-categorys.php';
+            break;
+        case 'list-products':
+            include 'template/navbar.php';     
             include 'pages/list-products.php';
             break;
-        case 'alter-products':     
+        case 'list-categorys':
+            include 'template/navbar.php';     
+            include 'pages/list-categorys.php';
+            break;
+        case 'alter-products':
+            include 'template/navbar.php';     
             include 'pages/alter-products.php';
             break;
-        case 'user-register':     
+        case 'alter-categorys':
+            include 'template/navbar.php';     
+            include 'pages/alter-categorys.php';
+            break;
+        case 'user-register':
+            include 'template/navbar.php';     
             include 'pages/user-register.php';
             break;
         case 'add-product':     
             include 'assets/php/add-product.php';
             break;
-        case 'edit-product':     
+        case 'add-category':
+            include 'template/navbar.php';     
+            include 'assets/php/add-category.php';
+            break;
+        case 'edit-product':
+            include 'template/navbar.php';     
             include 'assets/php/edit-product.php';
             break;
         case 'new-sectors':     
@@ -53,7 +78,12 @@ include 'template/navbar.php';
         case 'edit-sectors':     
             include 'assets/php/edit-sectors.php';
             break;
-        case 'delete-sectors':      
+        case 'edit-category':
+            include 'template/navbar.php';     
+            include 'assets/php/edit-category.php';
+            break;
+        case 'delete-sectors': 
+            include 'template/navbar.php';     
             include 'pages/delete-sectors.php';
         case 'new-command':      
             include 'pages/new-command.php';
