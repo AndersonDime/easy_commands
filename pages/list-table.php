@@ -9,9 +9,17 @@ $list = mysql_getdata("SELECT * FROM mesas");
 <br>
 <div class="container list-table">
     <div class="row">
+        <div class="col">
+            <form action="?page=add-table" method="post">
+                <input type="submit" class="btn btn-primary" value="Nova Mesa">
+            </form>
+        </div>
+        <br>
+        <br>
+    </div>
+    <div class="row">
         <?php 
-            foreach ($list as  $key =>$value){   
-                echo $value["numero"];;         
+            foreach ($list as  $key =>$value){     
         ?>
         <div class="col-xs-6 col-md-4">
             <div class="card">

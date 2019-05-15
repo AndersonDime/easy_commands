@@ -17,7 +17,7 @@ $prod = mysql_getdata("SELECT * FROM produtos");
                     <h4 class="text-center">Cadastrar Pedido</h4>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form action="#" method="post">
                         <div class="form-group">
                             <label for="productCtg">Categoria</label>
 
@@ -41,7 +41,7 @@ $prod = mysql_getdata("SELECT * FROM produtos");
                             <input class="form-control" type="number" id="productQtd" name="productQtd">
                         </div>
                         <input  class="btn btn-danger" type="reset" value="Cancelar">
-                        <button class="btn btn-primary">Adicionar</button>
+                        <input type="submit" class="btn btn-blue" value="Adicionar">
                     </form>
                 </div>
             </div>
