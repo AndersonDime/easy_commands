@@ -1,29 +1,22 @@
 <?php
-
     $get = isset($_GET['page'])? $_GET['page']:'';
 
-    function active($get, $link=''){
-        if ($get == $link)
-        {
-            return 'class="nav-item active"';
-        }
-        return  'class="nav-item"';
-    }
 
 ?>
     <!-- nova navbar -->
     <div id='cssmenu' id="navbar1">
     <ul class="navbar-nav ml-auto">
     <nav id="navbar cssmenu">
-	    <a class="navbar-brand logo <?php echo active($get, 'home-page'); ?>" href="?page=home-page">Easy Commands</a>
-        <!-- nova navbar -->
-        <li id="home" <?php echo active($get, 'home-page'); ?>>
-            <a class="nav-link" href="?page=home-page">Home <span class="sr-only">(current)</span></a>
+        <div class="navbar-brand">
+	        <a class="logo" href="?page=home-page">Easy Commands</a>
+        </div>
+        <li class="item-menu active">
+            <a class="nav-link" href="?page=home-page">Home <span class="sr-only"></span></a>
         </li>
-        <li>
+        <li class="item-menu">
             <a class="nav-link" href="html-components.html">Produção</a>
         </li>
-        <li class="" <?php echo active($get, 'list-produtcs'); ?>>
+        <li class="item-menu">
             <div class="dropdown">
             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Produtos
@@ -31,10 +24,12 @@
                 <div class="dropdown-content" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" href="?page=new-product">Cadastrar Item</a>
                     <a class="dropdown-item" href="?page=list-products">Lista de Item</a>
+                    <a class="dropdown-item" href="?page=new-category">Cadastrar Categoria</a>
+                    <a class="dropdown-item" href="?page=list-categorys">Lista de Categorias</a>
                 </div>
             </div>
         </li>
-        <li>
+        <li class="item-menu">
             <div class="dropdown">
             <a class="dropdown-toggle" href="#" role="button" id="ddlSetores" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Setores
@@ -45,38 +40,46 @@
                 </div>
             </div>
         </li>
-        <li>
+        <li class="item-menu">
             <a class="nav-link" href="html-components.html">Caixa</a>
         </li>
-        <li>
+        <li class="item-menu">
             <a class="nav-link" href="?page=list-table">Salão</a>
         </li>
-        <li <?php echo active($get, ''); ?>>
+        <li class="item-menu ">
             <div class="dropdown">
-            <a class="dropdown-toggle" href="#" role="button" id="ddlUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Config
-            </a>
+                <a class="dropdown-toggle" href="#" role="button" id="ddlUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Config
+                </a>
                 <div class="dropdown-content" aria-labelledby="ddlUser">
                     <a class="dropdown-item" href="?page=user-register">Cadastrar Usuario</a>
                 </div>
             </div>
         </li>
-        <li <?php echo active($get, 'logout'); ?>>
-        <a <button class="btn" onclick = "functionConfirm();">Sair</button></a>
+        <div class="divisor"></div>
+        <li class="item-menu">
+            <div class="dropdown">
+                <a class="dropdown-toggle txt-white">Joao</a>
+                <div class="dropdown-content" aria-labelledby="ddlUser">
+                    <a class="dropdown-item" <button onclick = "functionConfirm();">Sair</button></a>
+                </div>            
+            </div>
         </li>
     </ul>
   </div>
 </nav>
 <script>
-  //  $('#home').addClass('active');
-    $('.navbar-nav li ').click(function() {
-        $(".navbar-nav").find(".active").removeClass("active");
-        $(this).addClass("active");
-        debugger;
-      // $('.navbar-nav li').removeClass('active');
-      // $('#home').removeClass('active');
-      // $(this).addClass('active');
-   }); 
+
+
+ $(document).ready(function(){   
+    var loc = window.location.search;
+    $('nav > li').find('a').not(".dropdown-toggle").parents(".item-menu").removeClass('active');
+    
+    $('nav > li').find('a').not(".dropdown-toggle").each(function() {
+        if($(this).attr('href') == loc)
+            $(this).parents(".item-menu").addClass('active');
+    });
+});
 </script>
 <div id="confirm" class="card transparencia">
 	 <div class="message"></div>

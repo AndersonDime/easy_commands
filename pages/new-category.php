@@ -11,18 +11,30 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
 ?>
 
 
-<form action="?page=add-sector" method="post">
+<form action="?page=add-category" method="post">
 <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 col-md-4"></div>
             <div class="col-sm-12 col-md-4">
                 <div class="card transparencia">
-                <div class="card-header bg-dark txt-white">Cadastro De Setor</div>
+                <div class="card-header bg-dark txt-white">Cadastro de categoria</div>
                     <div class="card-body">
                     <div class="form-group">
-                        <label>Nome do Setor</label>
-                    <input type="text" class="form-control" id="sec" name="sector" required>
+                        <label>Nome da categoria</label>
+                    <input type="text" class="form-control" id="cat" name="categ" required>
                     </div>
+                    <div class="form-group">
+                     <label>Setor da categoria</label>
+                            <select class="form-control" name="secid">
+                                <?php 
+                                foreach ($categ as $value){
+                                ?>
+
+                                <option value="<?php echo $value["id"];?>"> <?php echo $value["nome"]; ?></option>
+
+                                <?php } ?>
+                            </select>
+                        </div>
                         
                     <input type="submit" class="btn btn-blue" value="Cadastrar">
 
@@ -42,7 +54,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                     if ($fail):
                     ?>
                     <script>
-                        $.notify( "Erro ao cadastrar o item", { position:"top center" } );
+                        $.notify( "Erro ao cadastrar categoria", { position:"top center" } );
                     </script>
                     <?php endif; ?>
             </div>
