@@ -63,7 +63,18 @@
   background: #d1d1d1;
   opacity: .5;
 }
-#cssmenu ul li dropdown a:after {
+#dropdown a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -3px;
+  top: 19px;
+  height: 6px;
+  width: 6px;
+  background: #d1d1d1;
+  opacity: .5;
+}
+#cssmenu  dropdown :after {
   content: "";
   display: block;
   position: absolute;
@@ -139,13 +150,24 @@
 }
 .navbar-brand{
   text-align: center;
-  margin-right: 270px;
+  margin-right: 100px;
   margin-left: 20px;
   width: 200px;
   border-radius: 8px;
   background-color: #343a40;
   color: #17a2b8;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.607);
+}
+.username{
+  float: right;
+}
+.divisor {
+  background-color: #3e8e41;
+  height: 20px;/*Altura da linha*/
+  width: 5px;
+  box-sizing: border-box;
+  float: right;
+  border-left: 2px solid;/* Adiciona borda esquerda na div como ser fosse uma linha.*/
 }
 .dropdown-item{
   background-color: #343a40;

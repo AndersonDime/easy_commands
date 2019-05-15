@@ -46,18 +46,24 @@
         <li class="item-menu">
             <a class="nav-link" href="?page=list-table">Salão</a>
         </li>
-        <li class="item-menu">
+        <li class="item-menu ">
             <div class="dropdown">
-            <a class="dropdown-toggle" href="#" role="button" id="ddlUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Config
-            </a>
+                <a class="dropdown-toggle" href="#" role="button" id="ddlUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Config
+                </a>
                 <div class="dropdown-content" aria-labelledby="ddlUser">
                     <a class="dropdown-item" href="?page=user-register">Cadastrar Usuario</a>
                 </div>
             </div>
         </li>
+        <div class="divisor"></div>
         <li class="item-menu">
-        <a <button class="btn" onclick = "functionConfirm();">Sair</button></a>
+            <div class="dropdown">
+                <a class="dropdown-toggle txt-white">Joao</a>
+                <div class="dropdown-content" aria-labelledby="ddlUser">
+                    <a class="dropdown-item" <button onclick = "functionConfirm();">Sair</button></a>
+                </div>            
+            </div>
         </li>
     </ul>
   </div>

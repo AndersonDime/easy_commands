@@ -4,15 +4,16 @@ session_start();
 $get = isset($_GET['page'])? $_GET['page']:'';
 
 include 'template/header.php';
-include 'template/navbar.php';
 ?>
 
 <?php
 	switch ($get) {
         case 'listar-produtos':
+            include 'template/navbar.php';
             include 'pages/listar-orcamentos.php';
             break;
         case 'new-product':      
+            include 'template/navbar.php';
             include 'pages/new-product.php';
             break;
         case 'new-category': 
@@ -23,9 +24,11 @@ include 'template/navbar.php';
             include 'template/navbar.php'; 
             include 'pages/list-table.php';
         case 'home-page':     
+            include 'template/navbar.php';
             include 'pages/home.php';
             break;
         case 'delete-products':     
+            include 'template/navbar.php';
             include 'pages/delete-products.php';
             break;
         case 'delete-categorys':
@@ -53,6 +56,7 @@ include 'template/navbar.php';
             include 'pages/user-register.php';
             break;
         case 'add-product':     
+            include 'template/navbar.php';
             include 'assets/php/add-product.php';
             break;
         case 'add-category':
@@ -64,18 +68,23 @@ include 'template/navbar.php';
             include 'assets/php/edit-product.php';
             break;
         case 'new-sectors':     
+            include 'template/navbar.php';
             include 'pages/new-sectors.php';
             break;
-        case 'list-sectors':     
+        case 'list-sectors':
+            include 'template/navbar.php';     
             include 'pages/list-sectors.php';
             break;
         case 'add-sector':     
             include 'assets/php/add-sector.php';
+            include 'template/navbar.php';
             break;
-        case 'alter-sectors':     
+        case 'alter-sectors':
+            include 'template/navbar.php';     
             include 'pages/alter-sectors.php';
             break;
-        case 'edit-sectors':     
+        case 'edit-sectors':
+            include 'template/navbar.php';     
             include 'assets/php/edit-sectors.php';
             break;
         case 'edit-category':
@@ -85,7 +94,8 @@ include 'template/navbar.php';
         case 'delete-sectors': 
             include 'template/navbar.php';     
             include 'pages/delete-sectors.php';
-        case 'new-command':      
+        case 'new-command':  
+            include 'template/navbar.php';    
             include 'pages/new-command.php';
             break;
         default:
