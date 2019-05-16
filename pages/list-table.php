@@ -43,3 +43,4 @@ $list = mysql_getdata("SELECT * FROM mesas");
             }
         ?>
     </div>
+</div>

@@ -59,7 +59,7 @@ $(document).ready(function() {
                             <label for="password">Senha</label>
                             <input type="password" class="form-control" id="exampleInputPassword1" name="inputPass" required minlength="6">
                         </div>
-                        <button type="submit" class="btn btn-outline-success btn-block">Entrar</button> 
+                        <button type="submit" class="btn btn-outline-success btn-block">Cadastrar</button> 
                     </form>
                 </div>
                 </a>

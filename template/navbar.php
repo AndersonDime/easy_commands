@@ -1,7 +1,9 @@
 <?php
     $get = isset($_GET['page'])? $_GET['page']:'';
 
-
+    if(isset($_SESSION["userUsername"])){
+        $username = $_SESSION["userUsername"];
+    }
 ?>
     <!-- nova navbar -->
     <div id='cssmenu' id="navbar1">
@@ -14,7 +16,7 @@
             <a class="nav-link" href="?page=home-page">Home <span class="sr-only"></span></a>
         </li>
         <li class="item-menu">
-            <a class="nav-link" href="html-components.html">Produção</a>
+            <a class="nav-link" href="#">Produção</a>
         </li>
         <li class="item-menu">
             <div class="dropdown">
@@ -56,21 +58,21 @@
                 </div>
             </div>
         </li>
-        <div class="divisor"></div>
+        <a class="pipe text-white">|</a>
         <li class="item-menu">
             <div class="dropdown">
-                <a class="dropdown-toggle txt-white">Joao</a>
-                <div class="dropdown-content" aria-labelledby="ddlUser">
-                    <a class="dropdown-item" <button onclick = "functionConfirm();">Sair</button></a>
-                </div>            
-            </div>
+                <a class="dropdown-toggle" style="cursor: pointer;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <?php echo $username ?>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#"<button onclick = "functionConfirm();">Sair</button></a>
+                </div>
+            </div>            
         </li>
     </ul>
   </div>
 </nav>
 <script>
-
-
  $(document).ready(function(){   
     var loc = window.location.search;
     $('nav > li').find('a').not(".dropdown-toggle").parents(".item-menu").removeClass('active');

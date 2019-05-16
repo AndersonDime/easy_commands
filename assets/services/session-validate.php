@@ -1,6 +1,6 @@
 <?php
 if(!isset($_SESSION["sessionId"])){
-    header("Location: index.php");
+    echo "<script type='text/javascript'>window.top.location='../easy_commands/index.php';</script>"; exit;
     exit;
 }
 ?>
