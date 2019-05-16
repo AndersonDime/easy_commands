@@ -17,7 +17,7 @@ $prod = mysql_getdata("SELECT * FROM produtos");
                     <h4 class="text-center">Cadastrar Pedido</h4>
                 </div>
                 <div class="card-body">
-                    <form action="#" method="post">
+                    <form action="../assets/php/add-command.php&produto_id=<?php echo $row['id']?>" method="post">
                         <div class="form-group">
                             <label for="productCtg">Categoria</label>
 

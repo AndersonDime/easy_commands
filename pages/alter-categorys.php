@@ -1,6 +1,7 @@
 <?php
     require 'assets/services/session-validate.php';
     $ident =  $_GET["id"];
+    $selsect = $_GET["sect"];
 
     include_once("assets/services/products-service.php");
 
@@ -41,7 +42,7 @@
                                 foreach ($sec as $value){
                             ?>
 
-                            <option value="<?php echo $value["id"];?>"> 
+                            <option value="<?php echo $value["id"];?>" <?php echo ($value["id"] == $selsect) ? "selected" : ""; ?> > 
                                 <?php echo $value["nome"]; ?>
                             </option>
 

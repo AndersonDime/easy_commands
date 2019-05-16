@@ -1,6 +1,6 @@
 <?php
 require 'assets/services/session-validate.php';
-include_once("assets/services/tables-service.php");
+include_once("assets/services/products-service.php");
 
 $list = mysql_getdata("SELECT * FROM mesas");
 
@@ -40,11 +40,12 @@ $list = mysql_getdata("SELECT * FROM mesas");
                     <?php }else{ ?>
                     <span class="badge badge-danger txt-white">Indisponivel</span>                  
                     <?php } ?>
+                    <a href="?page=delete-table&id=<?php echo $value["id"] ?>" class="btn float-right btn-danger">X</a>
                     </h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <a href="?page=new-product" class="btn btn-black">Detalhes</a>
                     <a href="?page=new-command" class="btn btn-success">Fazer Pedido</a>
-                    <a href="?page=delete-table&id=<?php echo $value["id"] ?>" class="btn btn-primary">Excluir</a>
+                    
                 </div>
             </div>
         </div> 
