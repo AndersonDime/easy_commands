@@ -94,6 +94,9 @@ include 'template/header.php';
         case 'delete-sectors': 
             include 'template/navbar.php';     
             include 'pages/delete-sectors.php';
+        case 'delete-table': 
+            include 'template/navbar.php';     
+            include 'assets/php/delete-table.php';
         case 'new-command':  
             include 'template/navbar.php';    
             include 'pages/new-command.php';
