@@ -35,10 +35,14 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                     <td><?php echo $value["nomeProduto"]; ?></td>
                     <td><?php echo $newprice; ?></td>
                     <td><?php echo $value["nomeCategoria"]; ?></td>
-                    <td>  <a class="btn btn-sm btn-info" href="?page=alter-products&id=<?php echo $value["idProduto"] ?>" > 
+                    <td>  <a class="btn btn-sm btn-info" href="?page=alter-products&id=<?php echo $value["idProduto"] ?>&cat=<?php echo $value["idCategoria"] ?> "> 
                         Editar
                     </a> </td>
-                    <td> <a class="btn btn-sm btn-danger" href="?page=delete-products&id=<?php echo $value["idProduto"] ?> ">Excluir</a> </td>               
+                    <td> 
+                        <a class="btn btn-sm btn-danger" href="?page=delete-products&id=<?php echo $value["idProduto"] ?> ">
+                            Excluir
+                        </a> 
+                    </td>               
                 </tr>
                 <?php
                     }
