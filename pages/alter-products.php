@@ -1,7 +1,7 @@
 <?php
     require 'assets/services/session-validate.php';
     $ident =  $_GET["id"];
-    $teste = $_GET["cat"];
+    $selcat = $_GET["cat"];
 
     include_once("assets/services/products-service.php");
     $prodName = mysql_getdata("SELECT nome,preco FROM produtos WHERE id='$ident'");
@@ -41,7 +41,7 @@
                                 foreach ($categ as $value){
                             ?>
 
-                            <option value="<?php echo $value["id"];?>" <?php echo ($value["id"] == $teste) ? "selected" : ""; ?> > 
+                            <option value="<?php echo $value["id"];?>" <?php echo ($value["id"] == $selcat) ? "selected" : ""; ?> > 
                                 <?php echo $value["nome"]; ?>
                             </option>
 

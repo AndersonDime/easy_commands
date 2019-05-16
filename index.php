@@ -23,6 +23,7 @@ include 'template/header.php';
         case 'list-table':
             include 'template/navbar.php'; 
             include 'pages/list-table.php';
+            break;
         case 'home-page':     
             include 'template/navbar.php';
             include 'pages/home.php';
