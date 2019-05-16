@@ -1,6 +1,7 @@
 <?php
     require 'assets/services/session-validate.php';
     $ident =  $_GET["id"];
+    $teste = $_GET["cat"];
 
     include_once("assets/services/products-service.php");
     $prodName = mysql_getdata("SELECT nome,preco FROM produtos WHERE id='$ident'");
@@ -40,7 +41,7 @@
                                 foreach ($categ as $value){
                             ?>
 
-                            <option value="<?php echo $value["id"];?>"> 
+                            <option value="<?php echo $value["id"];?>" <?php echo ($value["id"] == $teste) ? "selected" : ""; ?> > 
                                 <?php echo $value["nome"]; ?>
                             </option>
 
@@ -52,9 +53,9 @@
                         <div class="form-group">
                             <label>Preço</label>
                             <?php foreach($prodName as $value){
-                                
+                            $newprice = str_replace(".", ",",$value["preco"]);  
                             ?>
-                            <input  type="text" class="form-control" id="valor" pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$" name="price" value="<?php echo $value["preco"] ?>" required>
+                            <input  type="text" class="form-control" id="valor" pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$" name="price" value="<?php echo $newprice; ?>" required>
                             <?php
                             } 
                             ?>
