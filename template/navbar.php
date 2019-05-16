@@ -15,9 +15,11 @@
         <li class="item-menu active">
             <a class="nav-link" href="?page=home-page">Home <span class="sr-only"></span></a>
         </li>
+        <a class="pipe text-white">|</a>
         <li class="item-menu">
             <a class="nav-link" href="#">Produção</a>
         </li>
+        <a class="pipe text-white">|</a>
         <li class="item-menu">
             <div class="dropdown">
             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -31,6 +33,7 @@
                 </div>
             </div>
         </li>
+        <a class="pipe text-white">|</a>
         <li class="item-menu">
             <div class="dropdown">
             <a class="dropdown-toggle" href="#" role="button" id="ddlSetores" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -42,12 +45,15 @@
                 </div>
             </div>
         </li>
+        <a class="pipe text-white">|</a>
         <li class="item-menu">
             <a class="nav-link" href="html-components.html">Caixa</a>
         </li>
+        <a class="pipe text-white">|</a>
         <li class="item-menu">
             <a class="nav-link" href="?page=list-table">Salão</a>
         </li>
+        <a class="pipe text-white">|</a>
         <li class="item-menu ">
             <div class="dropdown">
                 <a class="dropdown-toggle" href="#" role="button" id="ddlUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -58,7 +64,7 @@
                 </div>
             </div>
         </li>
-        <a class="pipe text-white">|</a>
+        <a class="pipe text-white" style="margin-right: 30px;">|</a>
         <li class="item-menu">
             <div class="dropdown">
                 <a class="dropdown-toggle" style="cursor: pointer;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
