@@ -2,7 +2,7 @@
 require 'assets/services/session-validate.php';
 include_once("assets/services/products-service.php");
 
-$list = mysql_getdata("SELECT * FROM mesas");
+$list = mysql_getdata("SELECT * FROM mesas order by numero");
 
 ?>
 
