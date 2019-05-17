@@ -15,11 +15,9 @@
         <li class="item-menu active">
             <a class="nav-link" href="?page=home-page">Home <span class="sr-only"></span></a>
         </li>
-        <a class="pipe text-white">|</a>
         <li class="item-menu">
             <a class="nav-link" href="#">Produção</a>
         </li>
-        <a class="pipe text-white">|</a>
         <li class="item-menu">
             <div class="dropdown">
             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -33,7 +31,6 @@
                 </div>
             </div>
         </li>
-        <a class="pipe text-white">|</a>
         <li class="item-menu">
             <div class="dropdown">
             <a class="dropdown-toggle" href="#" role="button" id="ddlSetores" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -45,15 +42,13 @@
                 </div>
             </div>
         </li>
-        <a class="pipe text-white">|</a>
         <li class="item-menu">
             <a class="nav-link" href="html-components.html">Caixa</a>
         </li>
-        <a class="pipe text-white">|</a>
         <li class="item-menu">
             <a class="nav-link" href="?page=list-table">Salão</a>
         </li>
-        <a class="pipe text-white">|</a>
+
         <li class="item-menu ">
             <div class="dropdown">
                 <a class="dropdown-toggle" href="#" role="button" id="ddlUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -64,17 +59,18 @@
                 </div>
             </div>
         </li>
-        <a class="pipe text-white" style="margin-right: 30px;">|</a>
-        <li class="item-menu">
-            <div class="dropdown">
-                <a class="dropdown-toggle" style="cursor: pointer;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <?php echo $username ?>
+        <a class="pipe text-white" style="margin-right: 5px;">|</a>   
+        <div class="dropdown user" style="display: inline-block;">
+            <div id="circle">
+                <img src="./assets/img/admin.png" heigth="30px" width="30px">
+            </div>
+                <a class="dropdown-toggle" style="cursor: pointer;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?php echo $username ?>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="#"<button onclick = "functionConfirm();">Sair</button></a>
-                </div>
-            </div>            
-        </li>
+            </div>
+        </div>
     </ul>
   </div>
 </nav>

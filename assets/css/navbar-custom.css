@@ -65,9 +65,6 @@
 #cssmenu ul li a:hover:before {
   width: 100%;
 }
-#cssmenu  ul li a:after {
-
-} 
 #cssmenu ul li a:before {
   content: "";
   display: block;
@@ -136,9 +133,20 @@
 .logo{
   color: #17a2b8;
 }
+#circle {
+  width: 30px;
+  display: inline-block;
+  height: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  background: red;
+}
 .navbar-brand{
   text-align: center;
-  margin-right: 105px;
+  margin-right: 92px;
   margin-left: 20px;
   width: 200px;
   border-radius: 8px;
@@ -176,3 +184,99 @@
 .dropdown-content a:hover {background-color: #343a40;}
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
+.user{
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  padding: 15px 25px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  position: relative;
+  -webkit-transition: color .25s;
+  -moz-transition: color .25s;
+  -ms-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color .25s;
+}
+.user:hover .wrapper {
+  color: #17a2b8;
+}
+
+.user:hover:before {
+  width: 100%;
+}
+.user.last > .user:after,
+.user:last-child > .user:after {
+  display: none;
+}
+.user.active > div > a {
+  color: #17a2b8;
+}
+.user.active > div > a:before {
+  width: 100%;
+}
+.user.active > a {
+  color: #17a2b8;
+}
+.user.active > a:before {
+  width: 100%;
+}
+.user.align-right .user.last > a:after,
+.user.align-right .user:last-child > a:after {
+  display: block;
+}
+#cssmenu.align-right li:first-child a:after {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .user {
+    float: none;
+    display: block;
+  }
+  .user {
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .user.last > a,
+  .user:last-child > a {
+    border: 0;
+  }
+  .user:after {
+    display: none;
+  }
+  .user:before {
+    display: none;
+  }
+}
+.user:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: #17a2b8;
+  -webkit-transition: width .25s;
+  -moz-transition: width .25s;
+  -ms-transition: width .25s;
+  -o-transition: width .25s;
+  transition: width .25s;
+}
+#circle:hover {
+  background-color: #17a2b8;
+}
+#circle:before {
+  content: "";
+  display: block;
+  background: #17a2b8;
+  -webkit-transition: width .25s;
+  -moz-transition: width .25s;
+  -ms-transition: width .25s;
+  -o-transition: width .25s;
+  transition: width .25s;
+}
