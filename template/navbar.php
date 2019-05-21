@@ -16,7 +16,7 @@
             <a class="nav-link" href="?page=home-page">Home <span class="sr-only"></span></a>
         </li>
         <li class="item-menu">
-            <a class="nav-link" href="#">Produção</a>
+            <a class="nav-link" href="?page=list-production">Produção</a>
         </li>
         <li class="item-menu">
             <div class="dropdown">

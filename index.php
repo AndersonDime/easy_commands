@@ -12,6 +12,10 @@ include 'template/header.php';
             include 'template/navbar.php';
             include 'pages/listar-orcamentos.php';
             break;
+        case 'list-production':
+            include 'template/navbar.php';
+            include 'pages/list-production.php';
+            break;
         case 'new-product':      
             include 'template/navbar.php';
             include 'pages/new-product.php';
@@ -52,6 +56,10 @@ include 'template/header.php';
             include 'template/navbar.php';     
             include 'pages/alter-categorys.php';
             break;
+        case 'alter-productions':
+            include 'template/navbar.php';     
+            include 'pages/alter-productions.php';
+            break;
         case 'user-register':
             include 'template/navbar.php';     
             include 'pages/user-register.php';
@@ -67,6 +75,10 @@ include 'template/header.php';
         case 'edit-product':
             include 'template/navbar.php';     
             include 'assets/php/edit-product.php';
+            break;
+        case 'edit-production':
+            include 'template/navbar.php';     
+            include 'assets/php/edit-production.php';
             break;
         case 'new-sectors':     
             include 'template/navbar.php';
