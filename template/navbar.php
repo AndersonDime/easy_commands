@@ -43,7 +43,7 @@
             </div>
         </li>
         <li class="item-menu">
-            <a class="nav-link" href="html-components.html">Caixa</a>
+            <a class="nav-link" href="?page=cashier">Caixa</a>
         </li>
         <li class="item-menu">
             <a class="nav-link" href="?page=list-table">Salão</a>
@@ -59,11 +59,12 @@
                 </div>
             </div>
         </li>
-        <a class="pipe text-white" style="margin-right: 5px;">|</a>   
-        <div class="dropdown user" style="display: inline-block;">
+        <a class="pipe text-white" style="margin-right: 5px;">|</a>
+        <li>
             <div id="circle">
-                <img src="./assets/img/admin.png" heigth="30px" width="30px">
-            </div>
+                <img src="./assets/img/admin.png" heigth="30px" width="30px" style="margin: 0px auto">
+            </div>   
+        <div class="dropdown user" style="display: inline-block;">
                 <a class="dropdown-toggle" style="cursor: pointer;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <?php echo $username ?>
                 </a>
@@ -71,6 +72,7 @@
                     <a class="dropdown-item" href="#"<button onclick = "functionConfirm();">Sair</button></a>
             </div>
         </div>
+</li>
     </ul>
   </div>
 </nav>

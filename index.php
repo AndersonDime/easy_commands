@@ -32,6 +32,10 @@ include 'template/header.php';
             include 'template/navbar.php';
             include 'pages/delete-products.php';
             break;
+        case 'cashier':     
+            include 'template/navbar.php';
+            include 'pages/cashier.php';
+            break;
         case 'delete-categorys':
             include 'template/navbar.php';     
             include 'pages/delete-categorys.php';

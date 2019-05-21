@@ -13,11 +13,8 @@
 }
 .pipe{
   content: "|";
-
   opacity: 0.3;
-
   padding-right: -1px;
-
   padding-left: -1px;
 }
 
@@ -135,18 +132,19 @@
 }
 #circle {
   width: 30px;
+  position: relative;
+  top: 3px;
   display: inline-block;
   height: 30px;
-  margin-right: 10px;
   margin-left: 10px;
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
-  border-radius: 25px;
-  background: red;
+  border: #343a40 3px solid;
+  border-radius: 5px;
 }
 .navbar-brand{
   text-align: center;
-  margin-right: 92px;
+  margin-right: 133px;
   margin-left: 20px;
   width: 200px;
   border-radius: 8px;
@@ -184,23 +182,10 @@
 .dropdown-content a:hover {background-color: #343a40;}
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
-.user{
-  color: #ffffff;
-  text-decoration: none;
-  display: block;
-  padding: 15px 25px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 14px;
-  position: relative;
-  -webkit-transition: color .25s;
-  -moz-transition: color .25s;
-  -ms-transition: color .25s;
-  -o-transition: color .25s;
-  transition: color .25s;
+.user:hover {
+  color: #17a2b8;
 }
-.user:hover .wrapper {
+.user:hover #circle {
   color: #17a2b8;
 }
 
@@ -268,7 +253,7 @@
   transition: width .25s;
 }
 #circle:hover {
-  background-color: #17a2b8;
+  border: #17a2b8 3px solid;
 }
 #circle:before {
   content: "";

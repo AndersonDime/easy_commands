@@ -16,11 +16,7 @@ $(document).ready(function() {
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12 col-md-4"></div>
-        <div class="col-sm-12 col-md-4">
-            <center>
-            </br>   
-                <div class="logo"></br></div>
-            </center>
+        <div class="col-sm-12 col-md-4">    
             <div class="card transparencia">
             <div class="card-header text-center bg-dark txt-white">Cadastro de Usuário</div>
                 <div class="card-body">
@@ -62,9 +58,9 @@ $(document).ready(function() {
                         <button type="submit" class="btn btn-outline-success btn-block">Cadastrar</button> 
                     </form>
                 </div>
-                </a>
             </div>
         </div>
+    <br>
         <?php
 		//se orçamento foi inserido com sucesso mostra essa mensagem:
         if ($success):
