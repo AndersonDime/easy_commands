@@ -48,3 +48,8 @@
 .list-table .card{
     margin-bottom: 20px;
 }
+
+.trash{
+    float: right;
+    color: #333;
+}
