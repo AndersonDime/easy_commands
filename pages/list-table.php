@@ -40,7 +40,7 @@ $list = mysql_getdata("SELECT * FROM mesas order by numero");
                     <?php }else{ ?>
                     <span class="badge badge-danger txt-white">Indisponivel</span>                  
                     <?php } ?>
-                    <a href="?page=delete-table&id=<?php echo $value["id"] ?>" class="btn float-right btn-danger">X</a>
+                    <a href="?page=delete-table&id=<?php echo $value["id"] ?>" class="trash"><i class="fas fa-trash-alt"></i></a>
                     </h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <a href="?page=new-product" class="btn btn-black">Detalhes</a>
