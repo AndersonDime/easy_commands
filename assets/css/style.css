@@ -91,3 +91,16 @@
 #confirm .message {
   text-align: center;
 }
+.foda{
+  border: 1px solid #654444bf;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: .375rem .75rem;
+  border-radius: .25rem;
+  background-color: white;
+  color: black;
+  margin: 2px;
+  position: relative;
+  left: 7px;
+  top: 2px;
+}

@@ -1,27 +1,52 @@
 <?php
 require 'assets/services/session-validate.php';
 include_once("assets/services/products-service.php");
+$select = mysql_getdata("SELECT * FROM categorias");
+$list = mysql_getdata("SELECT produtos.id AS 'idProduto', produtos.nome AS 'nomeProduto', produtos.categoria_produtos_id, produtos.preco, categorias.id AS 'idCategoria', categorias.nome AS 'nomeCategoria', categorias.setores_id  FROM produtos INNER JOIN categorias ON produtos.categoria_produtos_id = categorias.id");
 ?>
-
-
-
-
-
-
-
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
             <div class="card transparencia">
                 <div class="card-header text-center bg-dark txt-white">Adicionar Itens</div>
-                <div class="card-body">
-                    <br>
-                    <div class="list-group">
-                        <a class="funkyradio funkyradio-primary">Camarao</a>
-                        <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-                    </div>    
+                <div class="card-header bg-dark">
+                    <div class="input-group mb-2 mr-sm-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Categoria</div>
+                        </div>
+                        <select id="category" class="form-control" name="inputProduct">
+                        <?php foreach($select as $key =>$value){?>
+                        <option value="<?php echo $value["id"] ?>"><?php echo $value["nome"] ?></option>
+                        <?php } ?>
+                    </select>
+                    <i class="fas fa-search"<button style="cursor: pointer; margin-left: 10px; top: 10px; position: relative;" onclick = "();"></button></i>
+                </div>
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Produto</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Add</th>                    
+                        </tr>
+                    </thead>
+                        <?php 
+                        foreach ($list as  $key =>$value){
+                        $newprice = str_replace(".", ",",$value["preco"]);
+                        ?>
+                    <tbody>
+                        <tr>
+                            <td><?php echo $value["nomeProduto"]; ?></td>
+                            <td><?php echo $newprice; ?></td>
+                            <td>  <a class="btn btn-sm btn-info" href="?page=alter-products&id=<?php echo $value["idProduto"] ?>&cat=<?php echo $value["idCategoria"] ?> "> 
+                            +
+                            </a> </td>             
+                        </tr>
+                        <?php
+                            }
+                        ?>
+                    </tbody>
+                </table>
             </div>
-        </div>
         <div class=".col-6 .col-md-4">
             <form>
                 <div class="card transparencia">
