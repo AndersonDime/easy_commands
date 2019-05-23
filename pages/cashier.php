@@ -14,12 +14,15 @@ $list = mysql_getdata("SELECT produtos.id AS 'idProduto', produtos.nome AS 'nome
                         <div class="input-group-prepend">
                             <div class="input-group-text">Categoria</div>
                         </div>
+                        <label for"category">adgasd</label>
                         <select id="category" class="form-control" name="inputProduct">
                         <?php foreach($select as $key =>$value){?>
+                            
                         <option value="<?php echo $value["id"] ?>"><?php echo $value["nome"] ?></option>
-                        <?php } ?>
+                        <?php $categoriaId == $value["id"]; }
+                        ?>
                     </select>
-                    <i class="fas fa-search"<button style="cursor: pointer; margin-left: 10px; top: 10px; position: relative;" onclick = "();"></button></i>
+                    <i class="fas fa-search" <button style="cursor: pointer; margin-left: 10px; top: 10px; position: relative;" onclick = "search();"></button></i>
                 </div>
                 <table class="table table-dark">
                     <thead>
@@ -29,9 +32,10 @@ $list = mysql_getdata("SELECT produtos.id AS 'idProduto', produtos.nome AS 'nome
                             <th scope="col">Add</th>                    
                         </tr>
                     </thead>
-                        <?php 
+                        <?php                         
                         foreach ($list as  $key =>$value){
-                        $newprice = str_replace(".", ",",$value["preco"]);
+                            if($qualquer == $value["idCategoria"]){
+                            $newprice = str_replace(".", ",",$value["preco"]);
                         ?>
                     <tbody>
                         <tr>
@@ -43,16 +47,46 @@ $list = mysql_getdata("SELECT produtos.id AS 'idProduto', produtos.nome AS 'nome
                         </tr>
                         <?php
                             }
+                            }
                         ?>
                     </tbody>
                 </table>
             </div>
-        <div class=".col-6 .col-md-4">
+        </div>    
+    </div>
+    <div class=".col-6 col-md-2"></div>
+    <div class="col-sm-12 col-md-6">
             <form>
                 <div class="card transparencia">
-                    
+                    <div class="card-header text-center bg-dark txt-white"><h3>PEDIDO</h3></div>
+                    <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Produto</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Add</th>                    
+                        </tr>
+                    </thead>
+                        <?php                         
+                        foreach ($list as  $key =>$value){
+                            if($qualquer == $value["idCategoria"]){
+                            $newprice = str_replace(".", ",",$value["preco"]);
+                        ?>
+                    <tbody>
+                        <tr>
+                            <td><?php echo $value["nomeProduto"]; ?></td>
+                            <td><?php echo $newprice; ?></td>
+                            <td>  <a class="btn btn-sm btn-info" href="?page=alter-products&id=<?php echo $value["idProduto"] ?>&cat=<?php echo $value["idCategoria"] ?> "> 
+                            +
+                            </a> </td>             
+                        </tr>
+                        <?php
+                            }
+                            }
+                        ?>
+                    </tbody>
+                </table>        
                 </div>
             </form>
-        </div>
     </div>
 </div>
