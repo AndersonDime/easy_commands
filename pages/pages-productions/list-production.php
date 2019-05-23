@@ -8,7 +8,7 @@
 
     $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
 
-    $teste = 0;
+    $teste = isset($_GET["teste"]) ? $_GET["teste"] : "";
 
     $msg = "";
 
@@ -16,8 +16,8 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-12 col-md-3"></div>
-        <div class="col-sm-12 col-md-6">
+        <div class="col-sm-12 col-md-2"></div>
+        <div class="col-sm-12 col-md-8">
             <table class="table table-dark">
                 <thead>
                     <tr>
@@ -31,7 +31,6 @@
                 </thead>
                     <?php 
                         foreach ($list as  $key =>$value){
-                        $teste = $value["status"];
                     ?>
                 <tbody>
                     <tr>
@@ -39,15 +38,20 @@
                         <td><?php echo $value["data"]; ?></td>
                         <td><?php echo $value["hora"]; ?></td>
                         <?php 
-                            if ($teste == 0){
+                            if ($value["status"] == 0){
                                 $msg =  "Disponivel"; 
-                            }else if ($teste == 1){
+                            }else if ($value["status"] == 1){
                                 $msg = "Em produção";
                             }else{
                                 $msg = "Finalizado";
                             }
                         ?>
-                        <td><?php echo $msg; ?></td>
+                        <td>
+                                <select style="width: 100%;" class="form-control" name="stats">
+                                <option value="0" <?php echo ($value["status"] == 0) ? "selected" : ""; ?>> Disponivel </option>
+                                <option value="1" <?php echo ($value["status"] == 1) ? "selected" : ""; ?>> Em produção </option>
+                                <option value="2" <?php echo ($value["status"] == 2) ? "selected" : ""; ?>> Finalizado </option>
+                        </td>
                         <td>  <a class="btn btn-sm btn-info" href="?page=alter-productions&id=<?php echo $value["id"] ?>&stats=<?php echo $value["status"] ?> "> 
                             Editar Status
                         </a> </td>
@@ -61,6 +65,7 @@
                     <?php
                         }
                     ?>
+                    </select>
                 </tbody>
             </table>
         
@@ -86,7 +91,7 @@
             ?>
                 
         </div>
-        <div class="col-sm-12 col-md-3">
+        <div class="col-sm-12 col-md-2">
             <?php 
                 foreach ($list as  $key =>$value){
             ?>

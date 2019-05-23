@@ -15,7 +15,7 @@ $alter = mysql_insert("UPDATE pedidos SET status='$stat' WHERE id = '$id'");
 
 if ($alter > 0) {
     //sleep(3);
-    echo "<script type='text/javascript'>window.top.location='?page=list-production&success=1';</script>"; exit;
+    echo "<script type='text/javascript'>window.top.location='?page=list-production&success=1&teste=$stat';</script>"; exit;
 }
 
 }else{

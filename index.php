@@ -14,15 +14,15 @@ include 'template/header.php';
             break;
         case 'list-production':
             include 'template/navbar.php';
-            include 'pages/list-production.php';
+            include 'pages/pages-productions/list-production.php';
             break;
         case 'new-product':      
             include 'template/navbar.php';
-            include 'pages/new-product.php';
+            include 'pages/pages-products/new-product.php';
             break;
         case 'new-category': 
             include 'template/navbar.php';     
-            include 'pages/new-category.php';
+            include 'pages/pages-categorys/new-category.php';
             break;
         case 'list-table':
             include 'template/navbar.php'; 
@@ -34,7 +34,7 @@ include 'template/header.php';
             break;
         case 'delete-products':     
             include 'template/navbar.php';
-            include 'pages/delete-products.php';
+            include 'pages/pages-products/delete-products.php';
             break;
         case 'cashier':     
             include 'template/navbar.php';
@@ -42,27 +42,27 @@ include 'template/header.php';
             break;
         case 'delete-categorys':
             include 'template/navbar.php';     
-            include 'pages/delete-categorys.php';
+            include 'pages/pages-categorys/delete-categorys.php';
             break;
         case 'list-products':
             include 'template/navbar.php';     
-            include 'pages/list-products.php';
+            include 'pages/pages-products/list-products.php';
             break;
         case 'list-categorys':
             include 'template/navbar.php';     
-            include 'pages/list-categorys.php';
+            include 'pages/pages-categorys/list-categorys.php';
             break;
         case 'alter-products':
             include 'template/navbar.php';     
-            include 'pages/alter-products.php';
+            include 'pages/pages-products/alter-products.php';
             break;
         case 'alter-categorys':
             include 'template/navbar.php';     
-            include 'pages/alter-categorys.php';
+            include 'pages/pages-categorys/alter-categorys.php';
             break;
         case 'alter-productions':
             include 'template/navbar.php';     
-            include 'pages/alter-productions.php';
+            include 'pages/pages-productions/alter-productions.php';
             break;
         case 'user-register':
             include 'template/navbar.php';     
@@ -86,11 +86,11 @@ include 'template/header.php';
             break;
         case 'new-sectors':     
             include 'template/navbar.php';
-            include 'pages/new-sectors.php';
+            include 'pages/pages-sectors/new-sectors.php';
             break;
         case 'list-sectors':
             include 'template/navbar.php';     
-            include 'pages/list-sectors.php';
+            include 'pages/pages-sectors/list-sectors.php';
             break;
         case 'add-sector':     
             include 'assets/php/add-sector.php';
@@ -98,7 +98,7 @@ include 'template/header.php';
             break;
         case 'alter-sectors':
             include 'template/navbar.php';     
-            include 'pages/alter-sectors.php';
+            include 'pages/pages-sectors/alter-sectors.php';
             break;
         case 'edit-sectors':
             include 'template/navbar.php';     
@@ -110,7 +110,7 @@ include 'template/header.php';
             break;
         case 'delete-sectors': 
             include 'template/navbar.php';     
-            include 'pages/delete-sectors.php';
+            include 'pages/pages-sectors/delete-sectors.php';
         case 'delete-table': 
             include 'template/navbar.php';     
             include 'assets/php/delete-table.php';
