@@ -14,7 +14,30 @@
 
 
 ?>
+<style>
+#retangulo1{
+	width: 20px;
+	/* quadrados são retangulos com width = height  */
+	height: 20px;
+	background-color: #FF0000;
+    
+}
 
+#retangulo2{
+	width: 20px;
+	/* quadrados são retangulos com width = height  */
+	height: 20px;
+	background-color: #FFFF00;
+}
+
+#retangulo3{
+	width: 20px;
+	/* quadrados são retangulos com width = height  */
+	height: 20px;
+	background-color: #7CFC00;
+}
+
+</style>
 <script> 
     $(document).ready(function(){
 
@@ -65,6 +88,7 @@
                         <th scope="col">Hora</th>
                         <th scope="col">Status</th>
                         <th scope="col">Editar</th>
+                        <th scope="col">Teste</th>
                         <th scope="col">Detalhes</th>                   
                     </tr>
                 </thead>
@@ -83,7 +107,26 @@
                                 <option value="2" <?php echo ($value["status"] == 2) ? "selected" : ""; ?>> Finalizado</option>
                         </td>
                         <td>  <a class="btn btn-sm btn-info" id="edit"> <i class="fas fa-pencil-alt"></i>
-                        </a> </td>
+                        </a> 
+                        </td>
+                        <?php if($value["status"] == 0){
+                        ?>
+                        <td>
+                            <div id="retangulo1"></div>
+                        </td>
+                        <?php }?>
+                        <?php if($value["status"] == 1){
+                        ?>
+                        <td>
+                            <div id="retangulo2"></div>
+                        </td>
+                        <?php }?>
+                        <?php if($value["status"] == 2){
+                        ?>
+                        <td>
+                            <div id="retangulo3"></div>
+                        </td>
+                        <?php }?>
                         <td>
                             <a class="btn btn-sm btn-info" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                                 Detalhes do pedido
