@@ -10,9 +10,48 @@
 
     $teste = isset($_GET["teste"]) ? $_GET["teste"] : "";
 
-    $msg = "";
+
+
 
 ?>
+
+<script> 
+    $(document).ready(function(){
+
+        $("#edit").click(function(e){
+
+            debugger;
+
+             $.ajax({
+                url : "assets/php/edit-production.php",
+                type : 'post',
+                data : {
+                    id : e.target.parentElement.parentElement.id,
+                    stats :$("#stats_"+e.target.parentElement.parentElement.id).val()
+                }
+            })
+            .done(function(msg){
+                //$("#resultado").html(msg);
+                if(msg > 0){
+                    $.notify( "Alterado o Status com sucesso", { position:"top center", className: 'success' } );
+                }
+                else{
+
+                    $.notify( "Falha ao alterar o Status", { position:"top center" } );
+                }
+                
+            })
+            .fail(function(jqXHR, textStatus, msg){
+                alert(msg);
+            }); 
+
+        })
+
+        
+        
+    })
+
+</script>
 
 <div class="container-fluid">
     <div class="row">
@@ -33,27 +72,17 @@
                         foreach ($list as  $key =>$value){
                     ?>
                 <tbody>
-                    <tr>
+                    <tr id="<?php echo $value["id"] ?>">
                         <td><?php echo $value["mesa"]; ?></td>
                         <td><?php echo $value["data"]; ?></td>
                         <td><?php echo $value["hora"]; ?></td>
-                        <?php 
-                            if ($value["status"] == 0){
-                                $msg =  "Disponivel"; 
-                            }else if ($value["status"] == 1){
-                                $msg = "Em produção";
-                            }else{
-                                $msg = "Finalizado";
-                            }
-                        ?>
                         <td>
-                                <select style="width: 100%;" class="form-control" name="stats">
-                                <option value="0" <?php echo ($value["status"] == 0) ? "selected" : ""; ?>> Disponivel </option>
-                                <option value="1" <?php echo ($value["status"] == 1) ? "selected" : ""; ?>> Em produção </option>
-                                <option value="2" <?php echo ($value["status"] == 2) ? "selected" : ""; ?>> Finalizado </option>
+                                <select style="width: 100%;" class="form-control" id="stats_<?php echo $value["id"] ?>" name="stats">
+                                <option value="0" <?php echo ($value["status"] == 0) ? "selected" : ""; ?>> Disponivel</option>
+                                <option value="1" <?php echo ($value["status"] == 1) ? "selected" : ""; ?>> Em produção</option>
+                                <option value="2" <?php echo ($value["status"] == 2) ? "selected" : ""; ?>> Finalizado</option>
                         </td>
-                        <td>  <a class="btn btn-sm btn-info" href="?page=alter-productions&id=<?php echo $value["id"] ?>&stats=<?php echo $value["status"] ?> "> 
-                            Editar Status
+                        <td>  <a class="btn btn-sm btn-info" id="edit"> <i class="fas fa-pencil-alt"></i>
                         </a> </td>
                         <td>
                             <a class="btn btn-sm btn-info" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
