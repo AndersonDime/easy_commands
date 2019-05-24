@@ -1,6 +1,5 @@
 <?php
     $get = isset($_GET['page'])? $_GET['page']:'';
-
     if(isset($_SESSION["userUsername"])){
         $username = $_SESSION["userUsername"];
     }

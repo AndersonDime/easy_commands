@@ -4,7 +4,7 @@
 }
 
 .bg-white{
-    background-color: #f2f2f2!important;
+    background-color: #e2e6ea!important;
 }
 
 .bg-blue{
@@ -49,7 +49,35 @@
     margin-bottom: 20px;
 }
 
-.trash{
+.card-icon{
     float: right;
     color: #333;
+    margin: 0 10px;
 }
+
+.numeroMesa{
+    width: 40px;
+    display: inline-block;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+}
+
+.add-table{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1vh;
+    font-size: 4vh;
+    border-radius: 50%;
+    height: 8vh;
+    width: 8vh;
+    position: fixed;
+    bottom: 3vh;
+}
+
+.add-table{
+    color: white;
+    animation-name: fab;
+}
+
