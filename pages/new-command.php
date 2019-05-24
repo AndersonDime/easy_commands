@@ -6,9 +6,17 @@ require 'assets/services/session-validate.php';
 $categ = mysql_getdata("SELECT * FROM categorias");
 $prod = mysql_getdata("SELECT * FROM produtos");
 
+$numero_mesa = $_GET["numero"];
+
+
 ?>
 
 <div class="container-fluid">
+    <div class="row">
+    <div class="col">
+        <h3>Mesa <?php echo $numero_mesa; ?></h3>
+    </div>
+    </div>
     <div class="row">
         <div class="col">
         <br>
@@ -17,7 +25,6 @@ $prod = mysql_getdata("SELECT * FROM produtos");
                     <h4 class="text-center">Cadastrar Pedido</h4>
                 </div>
                 <div class="card-body">
-                    <form action="../assets/php/add-command.php&produto_id=<?php echo $row['id']?>" method="post">
                         <div class="form-group">
                             <label for="productCtg">Categoria</label>
 
@@ -41,8 +48,7 @@ $prod = mysql_getdata("SELECT * FROM produtos");
                             <input class="form-control" type="number" id="productQtd" name="productQtd">
                         </div>
                         <input  class="btn btn-danger" type="reset" value="Cancelar">
-                        <input type="submit" class="btn btn-blue" value="Adicionar">
-                    </form>
+                        <Button type="button" onclick="addOrder()" class="btn btn-primary" >Adicionar</Button>
                 </div>
             </div>
         </div>
@@ -84,4 +90,15 @@ $(document).ready(function(){
         }
     });
 });
+
+function addOrder(){
+    $.ajax({
+        type:'POST',
+        url:'./assets/php/add-command.php',
+        data:'numero_mesa=' + <?php echo $numero_mesa; ?>,
+        success:function(html){
+            $('#product').html(html);
+        }
+    }); 
+}
 </script>
