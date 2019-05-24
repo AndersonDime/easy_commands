@@ -14,7 +14,6 @@ $list = mysql_getdata("SELECT produtos.id AS 'idProduto', produtos.nome AS 'nome
                         <div class="input-group-prepend">
                             <div class="input-group-text">Categoria</div>
                         </div>
-                        <label for"category">adgasd</label>
                         <select id="category" class="form-control" name="inputProduct">
                         <?php foreach($select as $key =>$value){?>
                             
@@ -23,7 +22,7 @@ $list = mysql_getdata("SELECT produtos.id AS 'idProduto', produtos.nome AS 'nome
                         ?>
                     </select>
                     <i class="fas fa-search" <button style="cursor: pointer; margin-left: 10px; top: 10px; position: relative;" onclick = "search();"></button></i>
-                </div>
+                    </div>
                 <table class="table table-dark">
                     <thead>
                         <tr>
@@ -34,14 +33,15 @@ $list = mysql_getdata("SELECT produtos.id AS 'idProduto', produtos.nome AS 'nome
                     </thead>
                         <?php                         
                         foreach ($list as  $key =>$value){
-                            if($qualquer == $value["idCategoria"]){
+                            if(//$qualquer == 
+                                $value["idCategoria"]){
                             $newprice = str_replace(".", ",",$value["preco"]);
                         ?>
                     <tbody>
                         <tr>
                             <td><?php echo $value["nomeProduto"]; ?></td>
                             <td><?php echo $newprice; ?></td>
-                            <td>  <a class="btn btn-sm btn-info" href="?page=alter-products&id=<?php echo $value["idProduto"] ?>&cat=<?php echo $value["idCategoria"] ?> "> 
+                            <td>  <a class="btn btn-sm btn-info"> 
                             +
                             </a> </td>             
                         </tr>
@@ -56,10 +56,9 @@ $list = mysql_getdata("SELECT produtos.id AS 'idProduto', produtos.nome AS 'nome
     </div>
     <div class=".col-6 col-md-2"></div>
     <div class="col-sm-12 col-md-6">
-            <form>
-                <div class="card transparencia">
-                    <div class="card-header text-center bg-dark txt-white"><h3>PEDIDO</h3></div>
-                    <table class="table table-dark">
+        <div class="card transparencia">
+            <div class="card-header text-center bg-dark txt-white"><h3>PEDIDO</h3></div>
+                <table class="table table-dark">
                     <thead>
                         <tr>
                             <th scope="col">Produto</th>
@@ -69,24 +68,23 @@ $list = mysql_getdata("SELECT produtos.id AS 'idProduto', produtos.nome AS 'nome
                     </thead>
                         <?php                         
                         foreach ($list as  $key =>$value){
-                            if($qualquer == $value["idCategoria"]){
+                            if($value["idCategoria"]){
                             $newprice = str_replace(".", ",",$value["preco"]);
                         ?>
                     <tbody>
                         <tr>
                             <td><?php echo $value["nomeProduto"]; ?></td>
                             <td><?php echo $newprice; ?></td>
-                            <td>  <a class="btn btn-sm btn-info" href="?page=alter-products&id=<?php echo $value["idProduto"] ?>&cat=<?php echo $value["idCategoria"] ?> "> 
-                            +
-                            </a> </td>             
+                            <td><a class="btn btn-sm btn-info">+</a> </td>             
                         </tr>
                         <?php
                             }
-                            }
+                        }
                         ?>
                     </tbody>
-                </table>        
-                </div>
-            </form>
+                </table>
+                
+            </div>        
+        </div>
     </div>
 </div>
