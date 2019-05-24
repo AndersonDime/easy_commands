@@ -1,4 +1,4 @@
-<pre>
+
 <?php
 function mysql_getdata($script){
 
@@ -45,7 +45,7 @@ function mysql_update($script){
 
     $atualizou = mysqli_affected_rows($con);
     
-    echo $atualizou;
+    //echo $atualizou;
     
     mysqli_close($con);
 
@@ -61,11 +61,10 @@ function mysql_delete($script){
 
     $deletou = mysqli_affected_rows($con);
     
-    echo $deletou;
+    //echo $deletou;
     
     mysqli_close($con);
 
     return $deletou;
 }
 ?>
-</pre>

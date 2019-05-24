@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10/05/2019 às 01:52
+-- Tempo de geração: 22/05/2019 às 02:27
 -- Versão do servidor: 5.7.11-log
 -- Versão do PHP: 5.6.15
 
@@ -19,8 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `easycomands`
 --
-CREATE SCHEMA IF NOT EXISTS `easycomands` DEFAULT CHARACTER SET utf8 ;
-USE `easycomands` ;
+CREATE DATABASE IF NOT EXISTS `easycomands` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `easycomands`;
 
 -- --------------------------------------------------------
 
@@ -74,15 +74,17 @@ CREATE TABLE `pedidos` (
   `id` tinyint(3) NOT NULL,
   `mesa` tinyint(3) NOT NULL,
   `data` date NOT NULL,
-  `hora` time DEFAULT NULL
+  `hora` time DEFAULT NULL,
+  `status` tinyint(3) NOT NULL,
+  `detalhes` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Fazendo dump de dados para tabela `pedidos`
 --
 
-INSERT INTO `pedidos` (`id`, `mesa`, `data`, `hora`) VALUES
-(1, 1, '2019-04-24', '20:02:00');
+INSERT INTO `pedidos` (`id`, `mesa`, `data`, `hora`, `status`, `detalhes`) VALUES
+(1, 1, '2019-04-24', '20:02:00', 0, 'pizza salgada sem tomate e sem cebola');
 
 -- --------------------------------------------------------
 
