@@ -16,8 +16,9 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
     <div class="row">
         <div class="col-sm-12 col-md-4"></div>
         <div class="col-sm-12 col-md-4">
+        <br>
             <div class="card transparencia">
-                <div  class="card-header bg-dark txt-white">Cadastro de Itens</div>
+                <div  class="card-header bg-dark txt-white text-center"> <h4> Cadastro de Itens </h4> </div>
                     <div class="card-body">
                         <div class="form-group">
                             <label>Nome do produto</label>
@@ -39,7 +40,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                             <label>Preço</label>
                             <input  type="text" class="form-control" id="valor" pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$" name="price" required>
                         </div>
-                        <input type="submit" class="btn btn-blue" value="Cadastrar">
+                        <input type="submit" class="btn btn-primary" value="Cadastrar">
 
                     </div>
                 </div>

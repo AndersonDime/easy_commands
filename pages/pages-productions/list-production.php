@@ -80,8 +80,10 @@
     <div class="row">
         <div class="col-sm-12 col-md-2"></div>
         <div class="col-sm-12 col-md-8">
+        <br>        
             <table class="table table-dark">
                 <thead>
+                <a class="btn-black btn-block card-header text-center" > <h4> Lista de Produção </h4> </a>
                     <tr>
                         <th scope="col">Mesa</th>
                         <th scope="col">Data</th>
@@ -95,7 +97,7 @@
                     <?php 
                         foreach ($list as  $key =>$value){
                     ?>
-                <tbody>
+                <tbody class="text-center">
                     <tr id="<?php echo $value["id"] ?>">
                         <td><?php echo $value["mesa"]; ?></td>
                         <td><?php echo $value["data"]; ?></td>
