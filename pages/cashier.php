@@ -8,7 +8,7 @@ $list = mysql_getdata("SELECT produtos.id AS 'idProduto', produtos.nome AS 'nome
   calculator();
 </script>
 <div class="container">
-    <div class="row">
+    <div class="row">   
         <div class="col-sm-4">
         <br>
             <div class="card transparencia">

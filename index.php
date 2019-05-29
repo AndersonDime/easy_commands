@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 $get = isset($_GET['page'])? $_GET['page']:'';
