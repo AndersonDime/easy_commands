@@ -15,13 +15,15 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
     <div class="row">
         <div class="col-sm-12 col-md-3"></div>
         <div class="col-sm-12 col-md-6">
+        <br>
             <table class="table table-dark">
             <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Categoria</th>
-                    <th scope="col">Setor da categoria</th>                   
-                </tr>
+                <a class="btn-black btn-block card-header text-center" > <h4> Lista de Categorias </h4> </a>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Setor da categoria</th>                   
+                    </tr>
             </thead>
             <?php 
                 foreach ($list as  $key =>$value){
@@ -39,7 +41,6 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                 ?>
             </tbody>
             </table>
-                <a class="btn btn-info" href="?page=new-category" > Nova Categoria + </a>
                 <?php
                     //se orçamento foi inserido com sucesso mostra essa mensagem:
                     if ($success):
@@ -59,6 +60,10 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                 <?php endif; ?>
                 
         </div>
-        <div class="col-sm-12 col-md-3"></div>
+        <div class="col-md-1">
+            <a class="btn btn-info add-table" href="?page=new-category" >
+                <i class="fas fa-plus"></i>
+            </a>
+        </div>
     </div>
 </div>

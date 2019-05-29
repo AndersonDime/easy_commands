@@ -16,7 +16,8 @@ $(document).ready(function() {
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12 col-md-4"></div>
-        <div class="col-sm-12 col-md-4">    
+        <div class="col-sm-12 col-md-4">  
+        <br>  
             <div class="card transparencia">
             <div class="card-header text-center bg-dark txt-white">Cadastro de Usuário</div>
                 <div class="card-body">
