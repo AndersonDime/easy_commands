@@ -30,7 +30,7 @@ include 'template/header.php';
             break;
         case 'home-page':     
             include 'template/navbar.php';
-            include 'pages/home.php';
+            include 'pages/list-table.php';
             break;
         case 'delete-products':     
             include 'template/navbar.php';

@@ -8,7 +8,6 @@ $prod = mysql_getdata("SELECT * FROM produtos");
 
 $numero_mesa = $_GET["numero"];
 
-
 ?>
 
 <div class="container-fluid">
