@@ -11,7 +11,7 @@ $valid = mysql_getdata("SELECT * FROM categorias WHERE nome='$categor'");
 if(count($valid)==0){
     $show = mysql_insert("INSERT INTO categorias VALUES(DEFAULT, '{$categor}', '{$secid}')");
 
-if ($show > 0) {
+if ($show > 0) 
     //sleep(3);
     echo "<script type='text/javascript'>window.top.location='?page=new-category&success=1';</script>"; exit;
 }

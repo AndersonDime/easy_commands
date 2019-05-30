@@ -1,8 +1,10 @@
 <?php
 require 'conect.php';
-include_once("../services/table-service.php");
+date_default_timezone_set('America/Sao_Paulo'); 
+include_once("../services/products-service.php");
 
-$numeroMesa = 1;
+$numeroMesa = $_POST["numero_mesa"];
+$descPedido = "teste";
 
 //Consulta o BD procurando o ID correspondente ao numero da mesa
 $idMesa = "SELECT id FROM mesas WHERE numero = '$numeroMesa'";
@@ -14,25 +16,22 @@ $id_found = mysqli_affected_rows($con);
 if($id_found == 1){
     //Pega os dados para tratamento, da array que armazena os dados da consulta
     $data_mesa = mysqli_fetch_array($result_id);
- 
-    $pedido = "SELECT * FROM pedidos WHERE mesa = '$data_mesa[id]'";
-    $result_idPedido = mysqli_query($con,$pedido) or die(mysqli_error($con));
+    foreach ($data_mesa as $value){
+        $mesa_id = $value["0"]; 
+    }
+    $pedido = "SELECT * FROM pedidos WHERE mesa = '$mesa_id'";
+    $result_idPedido = mysqli_query($con,$pedido) or die(mysqli_error());
+    print_r($result_idPedido);
     $id_foundPedido = mysqli_affected_rows($con);
 
     if($id_foundPedido == 1){
+        $data_pedido = mysqli_fetch_array($result_idPedido);
 
     }else{
-        date_default_timezone_set('America/Sao_Paulo'); 
+        //Codigo que cria pedido
         $dataAtual = date('Y-m-d'); 
         $horaAtual = date('H:i:s', time());
-
-        //Codigo que cria pedido
-        
-        $data_pedido = mysqli_fetch_array($result_idPedido);
-        foreach ($data_pedido as $value){
-            $pedido_id = $value["id"];
-        }
-        $createCommand = mysql_insert("INSERT INTO pedidos values (DEFAULT, '{$pedido_id}', '{$dataAtual}', '{$horaAtual}')");
+        $createCommand = mysql_insert("INSERT INTO pedidos values (DEFAULT, '{$mesa_id}', '{$dataAtual}', '{$horaAtual}', '0', {$descPedido}')");
     }
     
 }else{
