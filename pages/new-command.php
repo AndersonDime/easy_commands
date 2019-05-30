@@ -47,7 +47,7 @@ $numero_mesa = $_GET["numero"];
                             <input class="form-control" type="number" id="productQtd" name="productQtd">
                         </div>
                         <input  class="btn btn-danger" type="reset" value="Cancelar">
-                        <Button type="button" onclick="addOrder()" class="btn btn-primary" >Adicionar</Button>
+                        <Button type="button" onclick="addOrder()"class="btn btn-primary" >Adicionar</Button>
                 </div>
             </div>
         </div>
@@ -77,7 +77,7 @@ $(document).ready(function(){
         var productCtgId = $(this).val();
         if(productCtgId){
             $.ajax({
-                type:'POST',
+                type:'POST',    
                 url:'./assets/php/ajax-product-select.php',
                 data:'categoria_produtos_id=' + productCtgId,
                 success:function(html){
@@ -94,9 +94,10 @@ function addOrder(){
     $.ajax({
         type:'POST',
         url:'./assets/php/add-command.php',
-        data:'numero_mesa=' + <?php echo $numero_mesa; ?>,
+        data:'numero_mesa' + <?php echo $numero_mesa; ?>,
         success:function(html){
             $('#product').html(html);
+            //window.top.location='/easy_commands/assets/php/add-command.php';
         }
     }); 
 }
