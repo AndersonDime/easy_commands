@@ -5,84 +5,72 @@
     }
 ?>
     <!-- nova navbar -->
-    <div id='cssmenu' id="navbar1">
-    <ul class="navbar-nav ml-auto">
-    <nav id="navbar cssmenu">
-        <div class="navbar-brand">
-	        <a class="logo" href="?page=home-page">Easy Commands</a>
-        </div>
-        <li class="item-menu active">
-            <a class="nav-link" href="?page=home-page">Home <span class="sr-only"></span></a>
-        </li>
-        <li class="item-menu">
-            <a class="nav-link" href="?page=list-production">Produção</a>
-        </li>
-        <li class="item-menu">
-            <div class="dropdown">
-            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Produtos
-            </a>
-                <div class="dropdown-content" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="?page=new-product">Cadastrar Item</a>
-                    <a class="dropdown-item" href="?page=list-products">Lista de Item</a>
-                    <a class="dropdown-item" href="?page=new-category">Cadastrar Categoria</a>
-                    <a class="dropdown-item" href="?page=list-categorys">Lista de Categorias</a>
-                </div>
-            </div>
-        </li>
-        <li class="item-menu">
-            <div class="dropdown">
-            <a class="dropdown-toggle" href="#" role="button" id="ddlSetores" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Setores
-            </a>
-                <div class="dropdown-content" aria-labelledby="ddlSetores">
-                    <a class="dropdown-item" href="?page=new-sectors">Cadastrar Setor</a>
-                    <a class="dropdown-item" href="?page=list-sectors">Lista de Setores</a>
-                </div>
-            </div>
-        </li>
-        <li class="item-menu">
-            <a class="nav-link" href="?page=cashier">Caixa</a>
-        </li>
-        <li class="item-menu">
-            <a class="nav-link" href="?page=list-table">Salão</a>
-        </li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" style="display: inline-block" href="?page=home-page">Easy Commands</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="?page=home-page">Home <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="?page=list-production">Produção</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="produtoDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Produtos
+                    </a>
+                        <div class="dropdown-menu" aria-labelledby="produtoDropdown">
+                            <a class="dropdown-item" href="?page=new-product">Cadastrar Item</a>
+                            <a class="dropdown-item" href="?page=list-products">Lista de Item</a>
+                            <a class="dropdown-item" href="?page=new-category">Cadastrar Categoria</a>
+                            <a class="dropdown-item" href="?page=list-categorys">Lista de Categorias</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="setoresDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Setores
+                    </a>
+                        <div class="dropdown-menu" aria-labelledby="setoresDropdown">
+                            <a class="dropdown-item" href="?page=new-sectors">Cadastrar Setor</a>
+                            <a class="dropdown-item" href="?page=list-sectors">Lista de Setores</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="?page=cashier">Caixa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="?page=list-table">Salão</a>
+                </li>
 
-        <li class="item-menu ">
-            <div class="dropdown">
-                <a class="dropdown-toggle" href="#" role="button" id="ddlUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Config
-                </a>
-                <div class="dropdown-content" aria-labelledby="ddlUser">
-                    <a class="dropdown-item" href="?page=user-register">Cadastrar Usuario</a>
-                </div>
-            </div>
-        </li>
-        <a class="pipe text-white" style="margin-right: 5px;">|</a>
-        <li>
-            <div id="circle">
-                <img src="./assets/img/admin.png" heigth="30px" width="30px" style="margin: 0px auto">
-            </div>   
-        <div class="dropdown user" style="display: inline-block;">
-                <a class="dropdown-toggle" style="cursor: pointer;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <?php echo $username ?>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#"<button onclick = "functionConfirm();">Sair</button></a>
-            </div>
+                <li class="nav-item ">
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="configDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Config
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="configDropdown">
+                            <a class="dropdown-item" href="?page=user-register">Cadastrar Usuario</a>
+                            <a class="dropdown-item" href="#"<button onclick = "functionConfirm();">Sair</button></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
-</li>
-    </ul>
-  </div>
-</nav>
+    </nav>
 <script>
  $(document).ready(function(){   
     var loc = window.location.search;
-    $('nav > li').find('a').not(".dropdown-toggle").parents(".item-menu").removeClass('active');
+    $('nav > li').find('a').not(".dropdown-toggle").parents(".nav-item").removeClass('active');
     
     $('nav > li').find('a').not(".dropdown-toggle").each(function() {
         if($(this).attr('href') == loc)
-            $(this).parents(".item-menu").addClass('active');
+            $(this).parents(".nav-item").addClass('active');
     });
 });
 </script>

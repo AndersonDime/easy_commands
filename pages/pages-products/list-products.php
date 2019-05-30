@@ -21,8 +21,6 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Produto</th>
-                        <th scope="col">Valor</th>
-                        <th scope="col">Categoria</th>
                         <th scope="col">Editar</th>
                         <th scope="col">Excluir</th>                    
                     </tr>
@@ -35,8 +33,6 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                     <tr>
                         <th><?php echo $value["idProduto"];?> </th>
                         <td><?php echo $value["nomeProduto"]; ?></td>
-                        <td><?php echo $newprice; ?></td>
-                        <td><?php echo $value["nomeCategoria"]; ?></td>
                         <td>  <a class="btn btn-sm btn-info" href="?page=alter-products&id=<?php echo $value["idProduto"] ?>&cat=<?php echo $value["idCategoria"] ?> "> 
                             Editar
                         </a> </td>
