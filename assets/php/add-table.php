@@ -5,7 +5,7 @@ $ArraynumberTable = mysql_getdata("SELECT numero FROM mesas ORDER BY numero DESC
 /* $numberTable = $ArraynumberTable[0]; */
 $numberTable = $ArraynumberTable[0]['numero'] + 1;
 
-mysql_insert("INSERT INTO mesas VALUES(DEFAULT, '{$numberTable}', '{0}', '{0}')");
+mysql_insert("INSERT INTO mesas VALUES(DEFAULT, '{$numberTable}',0, 0)");
 
 
 header("Location: ../../index.php?page=list-table");

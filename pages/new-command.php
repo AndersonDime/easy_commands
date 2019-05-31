@@ -9,7 +9,7 @@ $prod = mysql_getdata("SELECT * FROM produtos");
 $numero_mesa = $_GET["numero"];
 
 ?>
-
+<div class="div" id="cachorra"></div>
 <div class="container-fluid">
     <div class="row">
     <div class="col">
@@ -46,7 +46,7 @@ $numero_mesa = $_GET["numero"];
                             <label for="productQtd">Quantidade</label>
                             <input class="form-control" type="number" id="productQtd" name="productQtd">
                         </div>
-                        <input  class="btn btn-danger" type="reset" value="Cancelar">
+                        <input  class="btn btn-danger" onclick="cancel()" type="reset" value="Cancelar">
                         <Button type="button" onclick="addOrder()"class="btn btn-primary" >Adicionar</Button>
                 </div>
             </div>
@@ -70,6 +70,11 @@ $numero_mesa = $_GET["numero"];
     </div>
 </div>
 
+<script type="text/javascript">
+    function cancel(){
+        window.top.location='?page=list-table';
+    }
+</script>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -91,13 +96,17 @@ $(document).ready(function(){
 });
 
 function addOrder(){
+    numeroMesa = <?php echo $numero_mesa; ?>;
     $.ajax({
         type:'POST',
         url:'./assets/php/add-command.php',
-        data:'numero_mesa' + <?php echo $numero_mesa; ?>,
+        data: { 
+            numero_mesa: numeroMesa,
+            product_qtd: $('#productQtd').val(),
+            product_name: $('#product').val()
+        },
         success:function(html){
-            $('#product').html(html);
-            //window.top.location='/easy_commands/assets/php/add-command.php';
+            $('#cachorra').html(html);
         }
     }); 
 }
