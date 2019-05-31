@@ -14,30 +14,7 @@
 
 
 ?>
-<style>
-#retangulo1{
-	width: 20px;
-	/* quadrados são retangulos com width = height  */
-	height: 20px;
-	background-color: #FF0000;
-    
-}
 
-#retangulo2{
-	width: 20px;
-	/* quadrados são retangulos com width = height  */
-	height: 20px;
-	background-color: #FFFF00;
-}
-
-#retangulo3{
-	width: 20px;
-	/* quadrados são retangulos com width = height  */
-	height: 20px;
-	background-color: #7CFC00;
-}
-
-</style>
 <script> 
     $(document).ready(function(){
 
@@ -49,11 +26,12 @@
                 url : "assets/php/edit-production.php",
                 type : 'post',
                 data : {
-                    id : e.target.parentElement.parentElement.id,
-                    stats :$("#stats_"+e.target.parentElement.parentElement.id).val()
+                    id : this.parentElement.parentElement.id,
+                    stats :$("#stats_"+this.parentElement.parentElement.id).val()
                 }
             })
             .done(function(msg){
+                debugger;
                 //$("#resultado").html(msg);
                 if(msg > 0){
                     $.notify( "Alterado o Status com sucesso", { position:"top center", className: 'success' } );
@@ -86,11 +64,9 @@
                 <a class="btn-black btn-block card-header text-center" > <h4> Lista de Produção </h4> </a>
                     <tr>
                         <th scope="col">Mesa</th>
-                        <th scope="col">Data</th>
                         <th scope="col">Hora</th>
                         <th scope="col">Status</th>
                         <th scope="col">Editar</th>
-                        <th scope="col">Teste</th>
                         <th scope="col">Detalhes</th>                   
                     </tr>
                 </thead>
@@ -100,7 +76,6 @@
                 <tbody class="text-center">
                     <tr id="<?php echo $value["id"] ?>">
                         <td><?php echo $value["mesa"]; ?></td>
-                        <td><?php echo $value["data"]; ?></td>
                         <td><?php echo $value["hora"]; ?></td>
                         <td>
                                 <select style="width: 100%;" class="form-control" id="stats_<?php echo $value["id"] ?>" name="stats">
@@ -111,27 +86,9 @@
                         <td>  <a class="btn btn-sm btn-info" id="edit"> <i class="fas fa-pencil-alt"></i>
                         </a> 
                         </td>
-                        <?php if($value["status"] == 0){
-                        ?>
-                        <td>
-                            <div id="retangulo1"></div>
-                        </td>
-                        <?php }?>
-                        <?php if($value["status"] == 1){
-                        ?>
-                        <td>
-                            <div id="retangulo2"></div>
-                        </td>
-                        <?php }?>
-                        <?php if($value["status"] == 2){
-                        ?>
-                        <td>
-                            <div id="retangulo3"></div>
-                        </td>
-                        <?php }?>
                         <td>
                             <a class="btn btn-sm btn-info" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                Detalhes do pedido
+                            <i class="fas fa-info-circle"></i>
                             </a>
                         </td>
 
