@@ -14,7 +14,7 @@ if(count($valid)==0){
 if ($show > 0) 
     //sleep(3);
     echo "<script type='text/javascript'>window.top.location='?page=new-category&success=1';</script>"; exit;
-}
+
 
 }else{
     echo "<script type='text/javascript'>window.top.location='?page=new-category&fail=1';</script>"; exit;

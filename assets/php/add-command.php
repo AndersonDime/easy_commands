@@ -4,6 +4,9 @@ date_default_timezone_set('America/Sao_Paulo');
 include_once("../services/products-service.php");
 
 $numeroMesa = $_POST["numero_mesa"];
+$product_qtd = $_POST["product_qtd"];
+$product_name = $_POST["product_name"];
+
 $descPedido = "teste";
 
 //Consulta o BD procurando o ID correspondente ao numero da mesa
@@ -21,17 +24,18 @@ if($id_found == 1){
     }
     $pedido = "SELECT * FROM pedidos WHERE mesa = '$mesa_id'";
     $result_idPedido = mysqli_query($con,$pedido) or die(mysqli_error());
-    print_r($result_idPedido);
     $id_foundPedido = mysqli_affected_rows($con);
 
     if($id_foundPedido == 1){
         $data_pedido = mysqli_fetch_array($result_idPedido);
 
+
     }else{
         //Codigo que cria pedido
         $dataAtual = date('Y-m-d'); 
         $horaAtual = date('H:i:s', time());
-        $createCommand = mysql_insert("INSERT INTO pedidos values (DEFAULT, '{$mesa_id}', '{$dataAtual}', '{$horaAtual}', '0', {$descPedido}')");
+        $createCommand = mysql_insert("INSERT INTO pedidos values (DEFAULT, '{$mesa_id}', '{$dataAtual}', '{$horaAtual}', '0', '{$descPedido}')");
+        echo "<script type='text/javascript'>alert('Pedido Cadastrado');</script>";
     }
     
 }else{
@@ -48,6 +52,5 @@ if(count($idMesa) > 0){
 
 }
 
- print_r($idMesa);
 ?>
 
