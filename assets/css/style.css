@@ -1,3 +1,19 @@
+body{
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.login {
+  display: table-cell;
+  vertical-align: middle;
+  background-image: url(../img/register_food.jpg);
+  background-size: 100%;
+}
+
 .funkyradio div {
   clear: both;
   overflow: hidden;
@@ -103,4 +119,22 @@
   position: relative;
   left: 7px;
   top: 2px;
+}
+
+.card{
+  border-radius: 0px;
+}
+
+.card-login{
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+}
+
+.btn{
+  border-radius: 0px;
+}
+
+.form-control{
+  border-radius: 0px;
 }
