@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22/05/2019 às 02:27
+-- Tempo de geração: 04/06/2019 às 03:07
 -- Versão do servidor: 5.7.11-log
 -- Versão do PHP: 5.6.15
 
@@ -62,7 +62,8 @@ INSERT INTO `mesas` (`id`, `numero`, `preferencia`, `status`) VALUES
 (2, 1, b'0', 0),
 (3, 2, b'0', 1),
 (5, 4, b'0', 3),
-(8, 8, b'0', 2);
+(8, 8, b'0', 2),
+(9, 9, b'0', 0);
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,9 @@ CREATE TABLE `pedidos` (
 --
 
 INSERT INTO `pedidos` (`id`, `mesa`, `data`, `hora`, `status`, `detalhes`) VALUES
-(1, 1, '2019-04-24', '20:02:00', 0, 'pizza salgada sem tomate e sem cebola');
+(1, 1, '2019-04-24', '20:02:00', 0, 'pizza salgada sem tomate e sem cebola'),
+(2, 2, '2019-06-03', '19:17:33', 0, 'teste'),
+(3, 3, '2019-06-03', '21:13:32', 0, 'teste');
 
 -- --------------------------------------------------------
 
@@ -93,11 +96,37 @@ INSERT INTO `pedidos` (`id`, `mesa`, `data`, `hora`, `status`, `detalhes`) VALUE
 --
 
 CREATE TABLE `pedidos_has_produtos` (
+  `id` int(10) NOT NULL,
   `pedidos_id` tinyint(3) NOT NULL,
   `produtos_id` tinyint(3) NOT NULL,
-  `quantidade` int(10) NOT NULL,
-  `status` tinyint(3) NOT NULL
+  `quantidade` tinyint(2) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `observacoes` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Fazendo dump de dados para tabela `pedidos_has_produtos`
+--
+
+INSERT INTO `pedidos_has_produtos` (`id`, `pedidos_id`, `produtos_id`, `quantidade`, `status`, `observacoes`) VALUES
+(1, 2, 3, 1, 0, NULL),
+(2, 2, 3, 1, 0, NULL),
+(3, 2, 3, 1, 0, '           a                 '),
+(4, 2, 3, 1, 0, '           a                 '),
+(5, 3, 3, 1, 0, '           QUERO SEM SAL SEM TOMATE COM CEBOLA SEM MOLHO DE SAL                 '),
+(6, 3, 1, 1, 0, '                            '),
+(7, 3, 1, 1, 0, '                            '),
+(8, 3, 1, 1, 0, '                            '),
+(9, 3, 2, 1, 0, '                            '),
+(10, 3, 2, 1, 0, '                            '),
+(11, 3, 1, 1, 0, '                            '),
+(12, 3, 2, 1, 0, '                            '),
+(13, 3, 3, 1, 0, '                            '),
+(14, 3, 1, 1, 0, '                            '),
+(15, 3, 1, 1, 0, '                            '),
+(16, 3, 1, 1, 0, '                            '),
+(17, 3, 1, 1, 0, '                            '),
+(18, 3, 1, 1, 0, '                            ');
 
 -- --------------------------------------------------------
 
@@ -118,7 +147,8 @@ CREATE TABLE `produtos` (
 
 INSERT INTO `produtos` (`id`, `nome`, `categoria_produtos_id`, `preco`) VALUES
 (1, 'Pizza salgada', 1, '5.50'),
-(2, 'Coca', 1, '8.99');
+(2, 'Coca', 1, '8.99'),
+(3, 'foda', 1, '12.00');
 
 -- --------------------------------------------------------
 
@@ -190,9 +220,7 @@ ALTER TABLE `pedidos`
 -- Índices de tabela `pedidos_has_produtos`
 --
 ALTER TABLE `pedidos_has_produtos`
-  ADD PRIMARY KEY (`pedidos_id`,`produtos_id`),
-  ADD KEY `fk_pedidos_has_produtos_produtos1_idx` (`produtos_id`),
-  ADD KEY `fk_pedidos_has_produtos_pedidos1_idx` (`pedidos_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices de tabela `produtos`
@@ -227,17 +255,22 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de tabela `mesas`
 --
 ALTER TABLE `mesas`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT de tabela `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id` tinyint(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` tinyint(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de tabela `pedidos_has_produtos`
+--
+ALTER TABLE `pedidos_has_produtos`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` tinyint(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` tinyint(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de tabela `setores`
 --
@@ -263,13 +296,6 @@ ALTER TABLE `categorias`
 --
 ALTER TABLE `pedidos`
   ADD CONSTRAINT `fk_mesa_id` FOREIGN KEY (`mesa`) REFERENCES `pedidos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Restrições para tabelas `pedidos_has_produtos`
---
-ALTER TABLE `pedidos_has_produtos`
-  ADD CONSTRAINT `fk_pedidos_has_produtos_pedidos1` FOREIGN KEY (`pedidos_id`) REFERENCES `pedidos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_pedidos_has_produtos_produtos1` FOREIGN KEY (`produtos_id`) REFERENCES `produtos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para tabelas `produtos`
