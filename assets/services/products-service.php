@@ -67,4 +67,3 @@ function mysql_delete($script){
 
     return $deletou;
 }
-?>

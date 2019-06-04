@@ -46,6 +46,11 @@ $numero_mesa = $_GET["numero"];
                             <label for="productQtd">Quantidade</label>
                             <input class="form-control" type="number" id="productQtd" name="productQtd">
                         </div>
+                        <div class="form-group">
+                            <label for="observacoes">Observações</label>
+                            <textarea class="form-control" id="observacoes" name="observacoes" maxlength="100">
+                            </textarea>
+                        </div>
                         <input  class="btn btn-danger" onclick="cancel()" type="reset" value="Cancelar">
                         <Button type="button" onclick="addOrder()"class="btn btn-primary" >Adicionar</Button>
                 </div>
@@ -58,10 +63,8 @@ $numero_mesa = $_GET["numero"];
                     <h4 class="text-center">Preview da Comanda</h4>
                 </div>
                 <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
+                    <ul id="comanda" class="list-group list-group-flush">
+                        
                     </ul>
                 </div>
             </div>
@@ -103,10 +106,11 @@ function addOrder(){
         data: { 
             numero_mesa: numeroMesa,
             product_qtd: $('#productQtd').val(),
-            product_name: $('#product').val()
+            product_id: $('#product').val(),
+            observation: $('#observacoes').val()
         },
         success:function(html){
-            $('#cachorra').html(html);
+            $('#comanda').html(html);
         }
     }); 
 }
