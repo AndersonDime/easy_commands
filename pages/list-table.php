@@ -26,17 +26,17 @@ $list = mysql_getdata("SELECT * FROM mesas order by numero");
 
                                 if($value["status"] == 0){
                             ?>
-                            <span class="badge badge-primary txt-white">D</span>
+                            <span class="badge badge-primary txt-white">Disponível</span>
                             <?php
                                 }else if($value["status"] == 1){
                             ?>
-                            <span class="badge badge-secondary txt-white">O</span>
+                            <span class="badge badge-secondary txt-white">Ocupada</span>
                             <?php
                                 }else if($value["status"] == 2){
                             ?>
-                            <span class="badge badge-warning txt-white">R</span>
+                            <span class="badge badge-warning txt-white">Resevada</span>
                             <?php }else{ ?>
-                            <span class="badge badge-danger txt-white">I</span>                  
+                            <span class="badge badge-danger txt-white">Indisponível</span>                  
                             <?php } ?>
                             <a href="?page=delete-table&id=<?php echo $value["id"] ?>" class="card-icon"><i class="fas fa-trash-alt"></i></a>
                             <a onclick="editarMesa(<?php echo $value['numero']; ?>)" href="#" class="card-icon"><i class="fas fa-pen"></i></a>
