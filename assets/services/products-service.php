@@ -56,12 +56,19 @@ function mysql_update($script){
 function mysql_delete($script){
 
     $con = mysqli_connect("localhost","root","root","easycomands") or die(mysqli_connect_error());
+    
+    try{
 
-    $dados = mysqli_query($con, $script) or die(mysqli_error());
+        $dados = mysqli_query($con, $script);
+    }
 
+    catch (Exception $ex)
+    {
+        return $ex->getMessage();
+    }
+    
     $deletou = mysqli_affected_rows($con);
     
-    //echo $deletou;
     
     mysqli_close($con);
 

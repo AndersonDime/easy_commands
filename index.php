@@ -110,15 +110,18 @@ include 'template/header.php';
         case 'delete-sectors': 
             include 'template/navbar.php';     
             include 'pages/pages-sectors/delete-sectors.php';
+            break;
         case 'delete-table': 
             include 'template/navbar.php';     
             include 'assets/php/delete-table.php';
+            break;
         case 'new-command':  
             include 'template/navbar.php';    
             include 'pages/new-command.php';
             break;
         default:
             include 'pages/login.php';
+            break;
     }
 
 //Conecta com o banco
