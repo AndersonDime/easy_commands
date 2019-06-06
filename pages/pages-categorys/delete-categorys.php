@@ -7,9 +7,12 @@ $id = $_GET["id"];
 
 $delet = mysql_delete("DELETE FROM categorias WHERE id = $id");
 
-
-if ($delet > 0) {
-    echo "<script type='text/javascript'>window.top.location='?page=list-categories&fail=1';</script>"; exit;
+if($delet == -1)
+{
+    echo "<script type='text/javascript'>window.top.location='?page=list-categorys&fail=1';</script>"; exit;
+}
+elseif ($delet > 0) {
+    echo "<script type='text/javascript'>window.top.location='?page=list-categorys&success=2';</script>"; exit;
 }
 
 ?>

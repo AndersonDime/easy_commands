@@ -40,19 +40,29 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
             </table>
                 <?php
                     //se orçamento foi inserido com sucesso mostra essa mensagem:
-                    if ($success):
+                if ($success == 1):
                 ?>
                 <script>
                     $.notify( "Alterado com sucesso", { position:"top center", className: 'success' } );
                 </script>
                 <?php endif; ?>
 
-                    <?php
-                    // se houver erro no formulario mostra essa mensagem:
-                    if ($fail):
+
+                <?php
+                    //se orçamento foi inserido com sucesso mostra essa mensagem:
+                    if ($success == 2):
                 ?>
                 <script>
-                    $.notify( "Excluido com sucesso", { position:"top center" } );
+                    $.notify( "Excluído com sucesso", { position:"top center", className: 'success' } );
+                </script>
+                <?php endif; ?>
+
+                <?php
+                    // se houver erro no formulario mostra essa mensagem:
+                if ($fail==1):
+                ?>
+                <script>
+                    $.notify( "Existe um produto...", { position:"top center" } );
                 </script>
                 <?php endif; ?>
                 

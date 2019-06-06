@@ -21,10 +21,9 @@ $alter = mysql_insert("UPDATE produtos SET nome='$name',categoria_produtos_id='$
 if ($alter > 0) {
     //sleep(3);
     echo "<script type='text/javascript'>window.top.location='?page=list-products&success=1';</script>"; exit;
-}
-
 }else{
-    echo "<script type='text/javascript'>window.top.location='?page=alter-products&fail=1&id=$id';</script>"; exit;
+    echo "<script type='text/javascript'>window.top.location='?page=alter-products&fail=1&id=$id&cat=$cat';</script>"; exit;
+}
 }
 
 
