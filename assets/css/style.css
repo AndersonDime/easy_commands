@@ -14,6 +14,14 @@ body{
   background-size: 100%;
 }
 
+.production-page{
+  background-image: url(../img/cozinha.jpg)!important; 
+  background-attachment:fixed;
+  background-size: 100%;
+  height: 100%;
+
+}
+
 .funkyradio div {
   clear: both;
   overflow: hidden;
@@ -137,4 +145,29 @@ body{
 
 .form-control{
   border-radius: 0px;
+}
+
+.comanda-detalhes{
+    margin-top: 47px;
+}
+
+.tape-a {
+    position: absolute;
+    left: -8%;
+    top: 0px;
+    width: 48px;
+    height: 18px;
+    background-color: #ffeb9988;
+    transform: rotate(-37deg);
+}
+
+
+.tape-b{
+    position: absolute;
+    right: -5%;
+    top: 0px;
+    width: 41px;
+    height: 18px;
+    background-color: #ffeb9988;
+    transform: rotate(37deg);
 }

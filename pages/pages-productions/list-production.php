@@ -53,87 +53,96 @@
     })
 
 </script>
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-12 col-md-2"></div>
-        <div class="col-sm-12 col-md-8">
-        <br>        
-            <table class="table table-dark">
-                <thead>
-                <a class="btn-black btn-block card-header text-center" > <h4> Lista de Produção </h4> </a>
-                    <tr>
-                        <th scope="col">Mesa</th>
-                        <th scope="col">Hora</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Editar</th>
-                        <th scope="col">Detalhes</th>                   
-                    </tr>
-                </thead>
-                    <?php 
-                        foreach ($list as  $key =>$value){
-                    ?>
-                <tbody class="text-center">
-                    <tr id="<?php echo $value["id"] ?>">
-                        <td><?php echo $value["mesa"]; ?></td>
-                        <td><?php echo $value["hora"]; ?></td>
-                        <td>
-                                <select style="width: 100%;" class="form-control" id="stats_<?php echo $value["id"] ?>" name="stats">
-                                <option value="0" <?php echo ($value["status"] == 0) ? "selected" : ""; ?>> Disponivel</option>
-                                <option value="1" <?php echo ($value["status"] == 1) ? "selected" : ""; ?>> Em produção</option>
-                                <option value="2" <?php echo ($value["status"] == 2) ? "selected" : ""; ?>> Finalizado</option>
-                        </td>
-                        <td>  <a class="btn btn-sm btn-info" id="edit"> <i class="fas fa-pencil-alt"></i>
-                        </a> 
-                        </td>
-                        <td>
-                            <a class="btn btn-sm btn-info" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                            <i class="fas fa-info-circle"></i>
-                            </a>
-                        </td>
-
-                    </tr>
-                    <?php
-                        }
-                    ?>
-                    </select>
-                </tbody>
-            </table>
-        
-            <?php
-                //se orçamento foi inserido com sucesso mostra essa mensagem:
-                if ($success):
-            ?>
-                <script>
-                    $.notify( "Alterado com sucesso", { position:"top center", className: 'success' } );
-                </script>
-            <?php 
-                endif; 
-            ?>
-            <?php
-                // se houver erro no formulario mostra essa mensagem:
-                if ($fail):
-            ?>
-            <script>
-                $.notify( "Excluido com sucesso", { position:"top center" } );
-            </script>
-            <?php 
-                endif; 
-            ?>
-                
-        </div>
-        <div class="col-sm-12 col-md-2">
-            <?php 
-                foreach ($list as  $key =>$value){
-            ?>
-                <div class="collapse" id="collapseExample">
-                    <div class="card card-body">
-                        <a> <?php echo $value["detalhes"]; ?> </a>
-                    </div>
+<div class="production-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-2"></div>
+            <div class="col-sm-12 col-md-8">
+            <br>   
+            <div class="card">
+                <div class="card-header bg-success">
+                    <h4 class="text-light text-center">
+                        Lista de Produção
+                    </h4>
                 </div>
-            <?php
-                }
-            ?>
+                <table class="table table-striped">
+                    <thead class="text-center">
+                        <tr>
+                            <th scope="col">Mesa</th>
+                            <th scope="col">Hora</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Confirma</th>
+                            <th scope="col">Detalhes</th>                   
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <?php 
+                            foreach ($list as  $key =>$value){
+                        ?>
+                        <tr id="<?php echo $value["id"] ?>">
+                            <td><?php echo $value["mesa"]; ?></td>
+                            <td><?php echo $value["hora"]; ?></td>
+                            <td>
+                                    <select style="width: 100%;" class="form-control" id="stats_<?php echo $value["id"] ?>" name="stats">
+                                    <option value="0" <?php echo ($value["status"] == 0) ? "selected" : ""; ?>> Disponivel</option>
+                                    <option value="1" <?php echo ($value["status"] == 1) ? "selected" : ""; ?>> Em produção</option>
+                                    <option value="2" <?php echo ($value["status"] == 2) ? "selected" : ""; ?>> Finalizado</option>
+                                </select>
+                            </td>
+                            <td>  <a class="btn btn-sm" id="edit"> <i class="fas fa-check text-success"></i>
+                            </a> 
+                            </td>
+                            <td>
+                                <a class="btn btn-sm" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                <i class="fas fa-info-circle text-secondary"></i>
+                                </a>
+                            </td>
+    
+                        </tr>
+                        <?php
+                            }
+                        ?>                    
+                    </tbody>
+                </table>
+            </div>     
+            
+                <?php
+                    //se orçamento foi inserido com sucesso mostra essa mensagem:
+                    if ($success):
+                ?>
+                    <script>
+                        $.notify( "Alterado com sucesso", { position:"top center", className: 'success' } );
+                    </script>
+                <?php 
+                    endif; 
+                ?>
+                <?php
+                    // se houver erro no formulario mostra essa mensagem:
+                    if ($fail):
+                ?>
+                <script>
+                    $.notify( "Excluido com sucesso", { position:"top center" } );
+                </script>
+                <?php 
+                    endif; 
+                ?>
+                    
+            </div>
+            <div class="col-sm-12 col-md-2">
+                <?php 
+                    foreach ($list as  $key =>$value){
+                ?>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body comanda-detalhes">
+                            <div class="tape-a"></div>
+                            <div class="tape-b"></div>
+                            <a> <?php echo $value["detalhes"]; ?> </a>
+                        </div>
+                    </div>
+                <?php
+                    }
+                ?>
+            </div>
         </div>
     </div>
 </div>
