@@ -2,7 +2,10 @@
     require 'assets/services/session-validate.php';
     include_once("assets/services/products-service.php");
 
-    $list = mysql_getdata("SELECT * FROM pedidos");
+    $list = mysql_getdata("SELECT p.nome AS 'product_name', php.quantidade AS 'product_qtd', php.observacoes AS 'product_obs', ped.status AS 'order_status', ped.hora AS 'order_time', ped.mesa AS 'order_table_number', m.id AS 'order_table_id' FROM produtos AS p
+    INNER JOIN pedidos_has_produtos AS php ON p.id = php.pedidos_id
+    INNER JOIN pedidos AS ped ON php.pedidos_id = ped.id
+    INNER JOIN mesas AS m ON m.numero = ped.mesa");
 
     $success= isset($_GET["success"]) ? $_GET["success"] : "";
 
@@ -53,7 +56,7 @@
     <div class="container-fluid">
         <div class="row">
             <?php 
-                    foreach ($list as  $key =>$value){
+                    foreach ($list AS  $key =>$value){
                         ?>
                         <div class="col-md-4">
                         <div class="card comanda-detalhes">
@@ -62,11 +65,11 @@
                             <div class="card-header">
                                 <div class="row">
                                     <div class="col">
-                                        <h5 class="text-left text-danger text-bold"><?php echo '#'.$value["mesa"]; ?></h5>
+                                        <h5 class="text-left text-danger text-bold"><?php echo '#'.$value["order_table_number"]; ?></h5>
                                     </div>
                                     <div class="col">
                                         <h5 class="text-right text-danger">
-                                            <?php echo $value["hora"]; ?>
+                                            <?php echo $value["order_time"]; ?>
                                         </h5>
                                     </div>
                                 </div>
@@ -74,7 +77,7 @@
                             <div class="card-body">
 
                                 <!-- PRODUTOS VEM AQUI-->
-                                <a> <?php echo $value["detalhes"]; ?> </a>
+                                <a> <?php echo $value["product_obs"]; ?> </a>
                             </div>
                             <div class="card-footer text-center text-secondary">
                                 <div class="row">
