@@ -149,6 +149,11 @@ body{
 
 .comanda-detalhes{
     margin-top: 47px;
+    background-image: url(../img/paper.jpg)!important;
+    background-size: 100%;
+    background-position-y: -20px;
+    line-height: 24px;
+    font-family: 'Handlee', cursive;
 }
 
 .tape-a {

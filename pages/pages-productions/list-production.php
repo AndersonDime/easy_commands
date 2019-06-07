@@ -9,12 +9,7 @@
     $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
 
     $teste = isset($_GET["teste"]) ? $_GET["teste"] : "";
-
-
-
-
 ?>
-
 <script> 
     $(document).ready(function(){
 
@@ -53,96 +48,52 @@
     })
 
 </script>
+
 <div class="production-page">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12 col-md-2"></div>
-            <div class="col-sm-12 col-md-8">
-            <br>   
-            <div class="card">
-                <div class="card-header bg-success">
-                    <h4 class="text-light text-center">
-                        Lista de Produção
-                    </h4>
-                </div>
-                <table class="table table-striped">
-                    <thead class="text-center">
-                        <tr>
-                            <th scope="col">Mesa</th>
-                            <th scope="col">Hora</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Confirma</th>
-                            <th scope="col">Detalhes</th>                   
-                        </tr>
-                    </thead>
-                    <tbody class="text-center">
-                        <?php 
-                            foreach ($list as  $key =>$value){
-                        ?>
-                        <tr id="<?php echo $value["id"] ?>">
-                            <td><?php echo $value["mesa"]; ?></td>
-                            <td><?php echo $value["hora"]; ?></td>
-                            <td>
-                                    <select style="width: 100%;" class="form-control" id="stats_<?php echo $value["id"] ?>" name="stats">
-                                    <option value="0" <?php echo ($value["status"] == 0) ? "selected" : ""; ?>> Disponivel</option>
-                                    <option value="1" <?php echo ($value["status"] == 1) ? "selected" : ""; ?>> Em produção</option>
-                                    <option value="2" <?php echo ($value["status"] == 2) ? "selected" : ""; ?>> Finalizado</option>
-                                </select>
-                            </td>
-                            <td>  <a class="btn btn-sm" id="edit"> <i class="fas fa-check text-success"></i>
-                            </a> 
-                            </td>
-                            <td>
-                                <a class="btn btn-sm" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                <i class="fas fa-info-circle text-secondary"></i>
-                                </a>
-                            </td>
-    
-                        </tr>
-                        <?php
-                            }
-                        ?>                    
-                    </tbody>
-                </table>
-            </div>     
-            
-                <?php
-                    //se orçamento foi inserido com sucesso mostra essa mensagem:
-                    if ($success):
-                ?>
-                    <script>
-                        $.notify( "Alterado com sucesso", { position:"top center", className: 'success' } );
-                    </script>
-                <?php 
-                    endif; 
-                ?>
-                <?php
-                    // se houver erro no formulario mostra essa mensagem:
-                    if ($fail):
-                ?>
-                <script>
-                    $.notify( "Excluido com sucesso", { position:"top center" } );
-                </script>
-                <?php 
-                    endif; 
-                ?>
-                    
-            </div>
-            <div class="col-sm-12 col-md-2">
-                <?php 
+            <?php 
                     foreach ($list as  $key =>$value){
-                ?>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body comanda-detalhes">
+                        ?>
+                        <div class="col-md-4">
+                        <div class="card comanda-detalhes">
                             <div class="tape-a"></div>
                             <div class="tape-b"></div>
-                            <a> <?php echo $value["detalhes"]; ?> </a>
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="text-left text-danger text-bold"><?php echo '#'.$value["mesa"]; ?></h5>
+                                    </div>
+                                    <div class="col">
+                                        <h5 class="text-right text-danger">
+                                            <?php echo $value["hora"]; ?>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+
+                                <!-- PRODUTOS VEM AQUI-->
+                                <a> <?php echo $value["detalhes"]; ?> </a>
+                            </div>
+                            <div class="card-footer text-center text-secondary">
+                                <div class="row">
+                                    <div class="col">
+                                        <a href="#"><i class="fa fa-clock"></i></a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="#"><i class="fa fa-play"></i></a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="#"><i class="fa fa-concierge-bell"></i></a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        </div>
                 <?php
                     }
                 ?>
-            </div>
         </div>
     </div>
 </div>
