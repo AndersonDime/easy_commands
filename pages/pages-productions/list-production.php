@@ -3,8 +3,8 @@
     include_once("assets/services/products-service.php");
 
     $list = mysql_getdata("SELECT p.nome AS 'product_name', php.quantidade AS 'product_qtd', php.observacoes AS 'product_obs', ped.status AS 'order_status', ped.hora AS 'order_time', ped.mesa AS 'order_table_number', m.id AS 'order_table_id' FROM produtos AS p
-    INNER JOIN pedidos_has_produtos AS php ON p.id = php.pedidos_id
-    INNER JOIN pedidos AS ped ON php.pedidos_id = ped.id
+    INNER JOIN pedidos AS php ON p.id = php.produtos_id
+    INNER JOIN comandas AS ped ON php.pedidos_id = ped.id
     INNER JOIN mesas AS m ON m.numero = ped.mesa");
 
     $success= isset($_GET["success"]) ? $_GET["success"] : "";

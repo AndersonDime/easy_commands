@@ -5,7 +5,7 @@
 
     include_once("assets/services/products-service.php");
 
-    $categ = mysql_getdata("SELECT * FROM pedidos WHERE id='$ident'");
+    $categ = mysql_getdata("SELECT * FROM comandas WHERE id='$ident'");
 
     $success= isset($_GET["success"]) ? $_GET["success"] : "";
 

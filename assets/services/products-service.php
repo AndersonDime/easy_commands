@@ -2,7 +2,7 @@
 <?php
 function mysql_getdata($script){
 
-$con = mysqli_connect("localhost","root","root","easycomands") or die(mysqli_connect_error());
+$con = mysqli_connect("localhost","root","root","easycommands") or die(mysqli_connect_error());
 
 $valor = mysqli_query($con,$script) or die();
 
@@ -22,7 +22,7 @@ return $resp;
 
 function mysql_insert($script){
 
-    $con = mysqli_connect("localhost","root","root","easycomands") or die(mysqli_connect_error());
+    $con = mysqli_connect("localhost","root","root","easycommands") or die(mysqli_connect_error());
     //echo $script;
     $dados = mysqli_query($con, $script) or die(mysqli_error($con));
 
@@ -39,7 +39,7 @@ function mysql_insert($script){
 
 function mysql_update($script){
 
-    $con = mysqli_connect("localhost","root","root","easycomands") or die(mysqli_connect_error());
+    $con = mysqli_connect("localhost","root","root","easycommands") or die(mysqli_connect_error());
 
     $dados = mysqli_query($con, $script) or die(mysqli_error());
 
@@ -55,7 +55,7 @@ function mysql_update($script){
 
 function mysql_delete($script){
 
-    $con = mysqli_connect("localhost","root","root","easycomands") or die(mysqli_connect_error());
+    $con = mysqli_connect("localhost","root","root","easycommands") or die(mysqli_connect_error());
     
     try{
 

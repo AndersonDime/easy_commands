@@ -3,7 +3,7 @@
 
     function mysql_getdata($script){
 
-        $con = mysqli_connect("localhost","root","root","easycomands") or die(mysqli_connect_error());
+        $con = mysqli_connect("localhost","root","root","easycommands") or die(mysqli_connect_error());
 
 
         $value = mysqli_query($con,$script) or die();

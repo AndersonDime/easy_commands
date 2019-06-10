@@ -15,8 +15,8 @@ function list_products(){
     foreach($tableInformation as $value){
         $mesa_Id = $value["0"];
     }
-    $orderInformation = mysql_getdata("SELECT * FROM pedidos WHERE mesa_id = '$mesa_Id'"); 
-    $orderInformationCard = mysql_getdata("SELECT * FROM pedidos_has_produtos WHERE pedidos_id = '$pedido_id'");   
+    $orderInformation = mysql_getdata("SELECT * FROM comandas WHERE mesa_id = '$mesa_Id'"); 
+    $orderInformationCard = mysql_getdata("SELECT * FROM comandas WHERE pedidos_id = '$pedido_id'");   
     foreach($orderInformationCard as $value){
     $nomeProduto = mysql_getdata("SELECT * FROM produtos WHERE id = '$product_id'");            
     echo '<li> '.$nomeProduto["nome"].'</li>';
@@ -38,23 +38,23 @@ if($id_found == 1){
     foreach ($data_mesa as $value){
         $mesa_id = $value["0"]; 
     }
-    $pedido = "SELECT * FROM pedidos WHERE mesa = '$mesa_id'";
+    $pedido = "SELECT * FROM comandas WHERE mesa = '$mesa_id'";
     $result_idPedido = mysqli_query($con,$pedido) or die(mysqli_error());
     $id_foundPedido = mysqli_affected_rows($con);
 
     if($id_foundPedido == 1){
         $data_pedido = mysqli_fetch_array($result_idPedido);
         $pedido_id = $data_pedido[0];
-        $registerProductInOrder = mysql_insert("INSERT INTO pedidos_has_produtos values (DEFAULT,'{$pedido_id}', '{$product_id}', '{$product_qtd}', '0', '{$observation}')");
+        $registerProductInOrder = mysql_insert("INSERT INTO comandas values (DEFAULT,'{$pedido_id}', '{$product_id}', '{$product_qtd}', '0', '{$observation}')");
         list_products();
     }else{
         //Codigo que cria pedido
         $dataAtual = date('Y-m-d'); 
         $horaAtual = date('H:i:s', time());
-        $createCommand = mysql_insert("INSERT INTO pedidos values (DEFAULT, '{$mesa_id}', '{$dataAtual}', '{$horaAtual}', '0', '{$descPedido}')");
+        $createCommand = mysql_insert("INSERT INTO comandas values (DEFAULT, '{$mesa_id}', '{$dataAtual}', '{$horaAtual}', '0', '{$descPedido}')");
         $data_pedido = mysqli_fetch_array($result_idPedido);
         $pedido_id = $data_pedido[0];
-        $registerProductInOrder = mysql_insert("INSERT INTO pedidos_has_produtos values (DEFAULT, '{$pedido_id}', '{$product_id}', '{$product_qtd}', '0', '{$observation}')");
+        $registerProductInOrder = mysql_insert("INSERT INTO comandas values (DEFAULT, '{$pedido_id}', '{$product_id}', '{$product_qtd}', '0', '{$observation}')");
         echo "<script type='text/javascript'>alert('Pedido Cadastrado');</script>";
     }
     

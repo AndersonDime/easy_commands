@@ -2,7 +2,7 @@
 require 'assets/services/session-validate.php';
 include_once("assets/services/products-service.php");
 
-$list = mysql_getdata("SELECT produtos.id AS 'idProduto', produtos.nome AS 'nomeProduto', produtos.categoria_produtos_id, produtos.preco, categorias.id AS 'idCategoria', categorias.nome AS 'nomeCategoria', categorias.setores_id  FROM produtos INNER JOIN categorias ON produtos.categoria_produtos_id = categorias.id");
+$list = mysql_getdata("SELECT produtos.id AS 'idProduto', produtos.nome AS 'nomeProduto' produtos.categorias_id, categorias.id AS 'idCategoria,' FROM produtos INNER JOIN categorias ON categorias.id =  produtos.categorias_id");
 
 $success= isset($_GET["success"]) ? $_GET["success"] : "";
 
@@ -27,12 +27,11 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                 </thead>
                     <?php 
                         foreach ($list as  $key =>$value){
-                        $newprice = str_replace(".", ",",$value["preco"]);
                     ?>
                 <tbody>
                     <tr>
-                        <th><?php echo $value["idProduto"];?> </th>
-                        <td><?php echo $value["nomeProduto"]; ?></td>
+                        <td><?php echo $value["idProduto"];?> </td>
+                        <td><?php echo $value["nomeProduto"];?></td>
                         <td>  <a class="btn btn-sm btn-info" href="?page=alter-products&id=<?php echo $value["idProduto"] ?>&cat=<?php echo $value["idCategoria"] ?> "> 
                             Editar
                         </a> </td>

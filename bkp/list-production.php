@@ -2,7 +2,7 @@
     require 'assets/services/session-validate.php';
     include_once("assets/services/products-service.php");
 
-    $list = mysql_getdata("SELECT * FROM pedidos");
+    $list = mysql_getdata("SELECT * FROM comandas");
 
     $success= isset($_GET["success"]) ? $_GET["success"] : "";
 
