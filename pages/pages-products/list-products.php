@@ -2,7 +2,7 @@
 require 'assets/services/session-validate.php';
 include_once("assets/services/products-service.php");
 
-$list = mysql_getdata("SELECT produtos.id AS 'idProduto', produtos.nome AS 'nomeProduto' produtos.categorias_id, categorias.id AS 'idCategoria,' FROM produtos INNER JOIN categorias ON categorias.id =  produtos.categorias_id");
+$list = mysql_getdata("SELECT produtos.id AS 'idProduto', produtos.nome AS 'nomeProduto', produtos.categorias_id, categorias.id AS 'idCategoria,' FROM produtos INNER JOIN categorias ON categorias.id =  produtos.categorias_id");
 
 $success= isset($_GET["success"]) ? $_GET["success"] : "";
 

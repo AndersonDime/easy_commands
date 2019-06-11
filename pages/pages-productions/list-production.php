@@ -2,10 +2,10 @@
     require 'assets/services/session-validate.php';
     include_once("assets/services/products-service.php");
 
-    $list = mysql_getdata("SELECT p.nome AS 'product_name', php.quantidade AS 'product_qtd', php.observacoes AS 'product_obs', ped.status AS 'order_status', ped.hora AS 'order_time', ped.mesa AS 'order_table_number', m.id AS 'order_table_id' FROM produtos AS p
+    $list = mysql_getdata("SELECT p.nome AS 'product_name', php.quantidade AS 'product_qtd', php.observacoes AS 'product_obs', com.status AS 'order_status', com.hora AS 'order_time', com.mesas_id AS 'order_table_number', m.id AS 'order_table_id', com.id as command_id FROM produtos AS p
     INNER JOIN pedidos AS php ON p.id = php.produtos_id
-    INNER JOIN comandas AS ped ON php.pedidos_id = ped.id
-    INNER JOIN mesas AS m ON m.numero = ped.mesa");
+    INNER JOIN comandas AS com ON php.comandas_id = com.id
+    INNER JOIN mesas AS m ON m.id = com.mesas_id GROUP BY com.id");
 
     $success= isset($_GET["success"]) ? $_GET["success"] : "";
 
@@ -16,7 +16,7 @@
 <script> 
     $(document).ready(function(){
 
-        $("#edit").click(function(e){
+        $(".edit").click(function(e){
 
             debugger;
 
@@ -77,17 +77,29 @@
                             <div class="card-body">
 
                                 <!-- PRODUTOS VEM AQUI-->
+                                <ul>
+                                <?php 
+                                    $produtos = mysql_getdata("SELECT * FROM comandas where comandas_id = '{$value['command_id']}'");
+                        
+                                    foreach($produtos AS $key => $pvalue){
+
+                                ?>
+                                <li><?php echo $pvalue["product_qtd"];?> x <?php echo $pvalue["product_name"]; ?> </li>
+                                    <?php } ?>
+                                <ul>
+                                <!--
                                 <a> <?php echo $value["product_obs"]; ?> </a>
+                                -->
                             </div>
                             <div class="card-footer text-center text-secondary">
-                                <div class="row">
-                                    <div class="col">
+                                <div class="row" id="<?php $value["order_table_number"]; ?>">
+                                    <div class="col edit">
                                         <a href="#"><i class="fa fa-clock"></i></a>
                                     </div>
-                                    <div class="col">
+                                    <div class="col edit">
                                         <a href="#"><i class="fa fa-play"></i></a>
                                     </div>
-                                    <div class="col">
+                                    <div class="col edit">
                                         <a href="#"><i class="fa fa-concierge-bell"></i></a>
                                     </div>
                                 </div>
