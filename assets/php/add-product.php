@@ -13,7 +13,7 @@ $newprice = str_replace(",", ".",$price);
 $valid = mysql_getdata("SELECT * FROM produtos WHERE nome='$name'");
 
 if(count($valid)==0){
-    $show = mysql_insert("INSERT INTO produtos VALUES(DEFAULT, '{$name}', '{$cat}', {$newprice})");
+    $show = mysql_insert("INSERT INTO produtos VALUES(DEFAULT, '{$name}', '{$newprice}', {$cat})");
 
 if ($show > 0) {
     //sleep(3);
