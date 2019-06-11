@@ -87,7 +87,7 @@ $(document).ready(function(){
             $.ajax({
                 type:'POST',    
                 url:'./assets/php/ajax-product-select.php',
-                data:'categoria_produtos_id=' + productCtgId,
+                data:'categorias_id=' + productCtgId,
                 success:function(html){
                     $('#product').html(html);
                 }

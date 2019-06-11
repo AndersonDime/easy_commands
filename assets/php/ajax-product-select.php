@@ -2,11 +2,11 @@
 //Include the database configuration file
 $con = mysqli_connect("localhost","root","root","easycommands") or die(mysqli_connect_error());
 
-echo $_POST["categoria_produtos_id"];
-if(!empty($_POST["categoria_produtos_id"])){
+echo $_POST["categorias_id"];
+if(!empty($_POST["categorias_id"])){
 
     //Fetch all state data
-    $query = mysqli_query($con,"SELECT * FROM produtos WHERE categoria_produtos_id = ".$_POST['categoria_produtos_id']." ");
+    $query = mysqli_query($con,"SELECT * FROM produtos WHERE categorias_id = ".$_POST['categorias_id']." ");
     
     //Count total number of rows
     $rowCount = $query->num_rows;
