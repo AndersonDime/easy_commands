@@ -8,21 +8,17 @@ $product_qtd = $_POST["product_qtd"];
 $product_id = $_POST["product_id"];
 $observation = $_POST["observation"];
 
-$descPedido = "teste";
-function list_products(){
-    $tableInformation = mysql_getdata("SELECT * FROM mesas WHERE numero = '$numeroMesa'");
-    foreach($tableInformation as $value){
-        $mesa_Id = $value["0"];
-        echo $mesa_Id;
-    }
-    $orderInformation = mysql_getdata("SELECT * FROM comandas WHERE mesas_id = '$mesa_Id'"); 
-    $orderInformationCard = mysql_getdata("SELECT * FROM pedidos WHERE comandas_id = '$comanda_id'");   
+function list_products($numeroMesa,$comanda_id, $mesas_id, $product_id){
+    $orderInformation = mysql_getdata("SELECT * FROM comandas WHERE mesas_id = '$mesas_id'"); 
+    $orderInformationCard = mysql_getdata("SELECT ped.quantidade as quantidade, prod.nome as nome, ped.observacoes as observacoes from pedidos as ped
+    inner join produtos as prod on ped.produtos_id = prod.id 
+    where ped.comandas_id = '$comanda_id'");  
     foreach($orderInformationCard as $value){
-    $nomeProduto = mysql_getdata("SELECT * FROM produtos WHERE id = '$product_id'");            
-    echo '<li> '.$nomeProduto["nome"].'</li>';
-    echo '</li>'.$value["quantidade"].'</li>'; 
+        echo '<li class="list-group-item">'.$value['quantidade']."x  ".$value['nome']."  ".$value['observacoes'].'</li>';
+    }
 }
 
+list_products();
 //Consulta o BD procurando o ID correspondente ao numero da mesa
 $idMesa = "SELECT id FROM mesas WHERE numero = '$numeroMesa'";
 //Armazena os dados da consulta acima
@@ -42,7 +38,7 @@ if($id_found == 1){
         $data_pedido = mysqli_fetch_array($result_idPedido);
         $comanda_id = $data_pedido[0];
         $registerProductInOrder = mysql_insert("INSERT INTO pedidos values (DEFAULT, '{$product_qtd}', '0', '{$observation}', '{$comanda_id}', '{$product_id}')");
-        list_products();
+        list_products($numeroMesa,$comanda_id, $mesas_id, $product_id);
     }else{
         //Codigo que cria pedido
         $dataAtual = date('Y-m-d'); 
@@ -67,5 +63,5 @@ if(count($idMesa) > 0){
     header('Location: ../../index.php?page=user-register&fail=1');
 
 }
-}
+
 ?>

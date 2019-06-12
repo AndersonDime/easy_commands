@@ -2,7 +2,7 @@
 require 'assets/services/session-validate.php';
 include_once("assets/services/products-service.php");
 require 'assets/services/session-validate.php';
-
+include_once("./assets/php/list-command.php");
 $categ = mysql_getdata("SELECT * FROM categorias");
 $prod = mysql_getdata("SELECT * FROM produtos");
 
@@ -65,7 +65,7 @@ $numero_mesa = $_GET["numero"];
                 <div class="card-body">
                     <ul id="comanda" class="list-group list-group-flush">
                         
-                    </ul>
+                     </ul>
                 </div>
             </div>
         </div>
@@ -73,6 +73,7 @@ $numero_mesa = $_GET["numero"];
     </div>
 </div>
 
+<?php listagem($numero_mesa); ?> 
 <script type="text/javascript">
     function cancel(){
         window.top.location='?page=list-table';
