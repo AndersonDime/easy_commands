@@ -5,7 +5,7 @@
     $list = mysql_getdata("SELECT p.nome AS 'product_name', php.quantidade AS 'product_qtd', php.observacoes AS 'product_obs', com.status AS 'order_status', com.hora AS 'order_time', com.mesas_id AS 'order_table_number', m.id AS 'order_table_id', com.id as command_id FROM produtos AS p
     INNER JOIN pedidos AS php ON p.id = php.produtos_id
     INNER JOIN comandas AS com ON php.comandas_id = com.id
-    INNER JOIN mesas AS m ON m.id = com.mesas_id GROUP BY com.id");
+    INNER JOIN mesas AS m ON m.id = com.mesas_id");
 
     $success= isset($_GET["success"]) ? $_GET["success"] : "";
 
@@ -55,60 +55,88 @@
 <div class="production-page">
     <div class="container-fluid">
         <div class="row">
-            <?php 
-                    foreach ($list AS  $key =>$value){
-                        ?>
-                        <div class="col-md-4">
+            <div class="col-sm-12 col-md-2"></div>
+            <div class="col-sm-12 col-md-8">
+            <br>   
+                <div class="card">
+                    <div class="card-header bg-info">
+                        <h4 class="text-light text-center">
+                            Lista de Produção
+                        </h4>
+                    </div>
+                    <table class="table table-striped">
+                        <thead class="text-center">
+                            <tr>
+                                <th scope="col">Mesa</th>
+                                <th scope="col">Hora</th>
+                                <th scope="col">Quantidade</th>
+                                <th scope="col">Produto</th>
+                                <th scope="col">Observação</th>
+                                <th scope="col">Confirma</th>                   
+                            </tr>
+                        </thead>
+                        <tbody class="text-center">
+                            <?php 
+                                foreach ($list as  $key =>$value){
+                            ?>
+                            <tr id="<?php echo $value["command_id"] ?>">
+                                <td style="width: 10%"><?php echo $value["order_table_number"]; ?></td>
+                                <td style="width: 10%"><?php echo $value["order_time"]; ?></td>
+                                <td style="width: 10%"><?php echo $value["product_qtd"]; ?> x</td>
+                                <td style="width: 10%"><?php echo $value["product_name"]; ?></td>
+                                <!--  id="stats_<?php echo $value["id"] ?>" -->
+                                <td style="width: 50%"> <?php echo $value["product_obs"]; ?></td>
+
+                                <td style="width: 10%">  <a class="btn btn-sm" id="edit"> <i class="fas fa-check text-success new-icon"></i>
+                                </a> 
+                                </td>
+
+        
+                            </tr>
+                            <?php
+                                }
+                            ?>                    
+                        </tbody>
+                    </table>
+                </div>     
+            
+                <?php
+                    //se orçamento foi inserido com sucesso mostra essa mensagem:
+                    if ($success):
+                ?>
+                    <script>
+                        $.notify( "Alterado com sucesso", { position:"top center", className: 'success' } );
+                    </script>
+                <?php 
+                    endif; 
+                ?>
+                <?php
+                    // se houver erro no formulario mostra essa mensagem:
+                    if ($fail):
+                ?>
+                <script>
+                    $.notify( "Excluido com sucesso", { position:"top center" } );
+                </script>
+                <?php 
+                    endif; 
+                ?>
+                    
+            </div>
+            <div class="col-sm-12 col-md-2">
+                <?php 
+                    foreach ($list as  $key =>$value){
+                ?>
+                    <div class="collapse" id="collapseExample">
                         <div class="card comanda-detalhes">
                             <div class="tape-a"></div>
                             <div class="tape-b"></div>
-                            <div class="card-header">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="text-left text-danger text-bold"><?php echo '#'.$value["order_table_number"]; ?></h5>
-                                    </div>
-                                    <div class="col">
-                                        <h5 class="text-right text-danger">
-                                            <?php echo $value["order_time"]; ?>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-
-                                <!-- PRODUTOS VEM AQUI-->
-                                <ul>
-                                <?php 
-                                    $produtos = mysql_getdata("SELECT * FROM comandas where comandas_id = '{$value['command_id']}'");
-                        
-                                    foreach($produtos AS $key => $pvalue){
-
-                                ?>
-                                <li><?php echo $pvalue["product_qtd"];?> x <?php echo $pvalue["product_name"]; ?> </li>
-                                    <?php } ?>
-                                <ul>
-                                <!--
-                                <a> <?php echo $value["product_obs"]; ?> </a>
-                                -->
-                            </div>
-                            <div class="card-footer text-center text-secondary">
-                                <div class="row" id="<?php $value["order_table_number"]; ?>">
-                                    <div class="col edit">
-                                        <a href="#"><i class="fa fa-clock"></i></a>
-                                    </div>
-                                    <div class="col edit">
-                                        <a href="#"><i class="fa fa-play"></i></a>
-                                    </div>
-                                    <div class="col edit">
-                                        <a href="#"><i class="fa fa-concierge-bell"></i></a>
-                                    </div>
-                                </div>
-                            </div>
+                            <a> <?php echo $value["product_obs"]; ?> </a>
                         </div>
-                        </div>
+                    </div>
                 <?php
                     }
                 ?>
+            </div>
         </div>
     </div>
 </div>

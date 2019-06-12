@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `easycommands`
 --
+CREATE DATABASE IF NOT EXISTS `easycommands` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `easycommands`;
 
 -- --------------------------------------------------------
 
