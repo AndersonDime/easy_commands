@@ -7,6 +7,14 @@ body{
   width: 100%;
 }
 
+.roll{
+  max-height: 50%;
+  overflow: scroll;
+}
+
+.roll::-webkit-scrollbar { width: 0 !important }
+
+
 .login {
   display: table-cell;
   vertical-align: middle;

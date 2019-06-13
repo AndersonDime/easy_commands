@@ -2,7 +2,7 @@
     require 'assets/services/session-validate.php';
     include_once("assets/services/products-service.php");
 
-    $list = mysql_getdata("SELECT p.nome AS 'product_name', php.quantidade AS 'product_qtd', php.observacoes AS 'product_obs', com.status AS 'order_status', com.hora AS 'order_time', com.mesas_id AS 'order_table_number', m.id AS 'order_table_id', com.id as command_id FROM produtos AS p
+    $list = mysql_getdata("SELECT p.nome AS 'product_name',php.id AS 'idPedido', php.status AS 'pedido_status', php.quantidade AS 'product_qtd', php.observacoes AS 'product_obs', com.status AS 'order_status', com.hora AS 'order_time', com.mesas_id AS 'order_table_number', m.id AS 'order_table_id', com.id as command_id FROM produtos AS p
     INNER JOIN pedidos AS php ON p.id = php.produtos_id
     INNER JOIN comandas AS com ON php.comandas_id = com.id
     INNER JOIN mesas AS m ON m.id = com.mesas_id");
@@ -58,13 +58,13 @@
             <div class="col-sm-12 col-md-2"></div>
             <div class="col-sm-12 col-md-8">
             <br>   
-                <div class="card">
-                    <div class="card-header bg-info">
-                        <h4 class="text-light text-center">
-                            Lista de Produção
-                        </h4>
-                    </div>
-                    <table class="table table-striped">
+                <div class="card-header bg-info">
+                    <h4 class="text-light text-center">
+                        Lista de Produção
+                    </h4>
+                </div>
+                <div class="card roll">                    
+                    <table class="table table-striped " >
                         <thead class="text-center">
                             <tr>
                                 <th scope="col">Mesa</th>
@@ -78,6 +78,8 @@
                         <tbody class="text-center">
                             <?php 
                                 foreach ($list as  $key =>$value){
+                                    if($value["pedido_status"] < 2){
+
                             ?>
                             <tr id="<?php echo $value["command_id"] ?>">
                                 <td style="width: 10%"><?php echo $value["order_table_number"]; ?></td>
@@ -87,7 +89,7 @@
                                 <!--  id="stats_<?php echo $value["id"] ?>" -->
                                 <td style="width: 50%"> <?php echo $value["product_obs"]; ?></td>
 
-                                <td style="width: 10%">  <a class="btn btn-sm" id="edit"> <i class="fas fa-check text-success new-icon"></i>
+                                <td style="width: 10%">  <a class="btn btn-sm" href="?page=edit-production&id=<?php echo $value["idPedido"];?>" id="edit"> <i class="fas fa-check text-success new-icon"></i>
                                 </a> 
                                 </td>
 
@@ -95,6 +97,7 @@
                             </tr>
                             <?php
                                 }
+                            }
                             ?>                    
                         </tbody>
                     </table>
@@ -105,7 +108,7 @@
                     if ($success):
                 ?>
                     <script>
-                        $.notify( "Alterado com sucesso", { position:"top center", className: 'success' } );
+                        $.notify( "Pedido Enviado com Sucesso", { position:"top center", className: 'success' } );
                     </script>
                 <?php 
                     endif; 
@@ -115,27 +118,14 @@
                     if ($fail):
                 ?>
                 <script>
-                    $.notify( "Excluido com sucesso", { position:"top center" } );
+                    $.notify( "Falha ao enviar pedido", { position:"top center" } );
                 </script>
                 <?php 
                     endif; 
                 ?>
                     
             </div>
-            <div class="col-sm-12 col-md-2">
-                <?php 
-                    foreach ($list as  $key =>$value){
-                ?>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card comanda-detalhes">
-                            <div class="tape-a"></div>
-                            <div class="tape-b"></div>
-                            <a> <?php echo $value["product_obs"]; ?> </a>
-                        </div>
-                    </div>
-                <?php
-                    }
-                ?>
+            <div class="col-sm-12 col-md-2"></div>
             </div>
         </div>
     </div>
