@@ -1,5 +1,5 @@
 <?php
-include_once("./assets/services/table-service.php");
+include_once("./assets/services/products-service.php");
 
 $id = $_GET["id"];
 

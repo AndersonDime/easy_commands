@@ -2,14 +2,13 @@
 require 'assets/services/session-validate.php';
 include_once("assets/services/products-service.php");
 require 'assets/services/session-validate.php';
-include_once("./assets/php/list-command.php");
 $categ = mysql_getdata("SELECT * FROM categorias");
 $prod = mysql_getdata("SELECT * FROM produtos");
 
 $numero_mesa = $_GET["numero"];
 
 ?>
-<div class="div" id="cachorra"></div>
+
 <div class="container-fluid">
     <div class="row">
     <div class="col">
@@ -69,11 +68,9 @@ $numero_mesa = $_GET["numero"];
                 </div>
             </div>
         </div>
-        <div class="col"></div>
     </div>
 </div>
 
-<?php listagem($numero_mesa); ?> 
 <script type="text/javascript">
     function cancel(){
         window.top.location='?page=list-table';
@@ -98,7 +95,18 @@ $(document).ready(function(){
         }
     });
 });
-
+function deleteOrder(idPedidos){
+    $.ajax({
+        type:'POST',
+        url:'./assets/php/delete-command.php',
+        data:{
+            id_pedidos: idPedidos
+        },
+        success:function(html){
+            $('#comanda').html(html);
+        }
+    });
+}
 function addOrder(){
     numeroMesa = <?php echo $numero_mesa; ?>;
     $.ajax({
@@ -115,4 +123,21 @@ function addOrder(){
         }
     }); 
 }
+
+
+function listOrder(){
+    numeroMesa = <?php echo $numero_mesa; ?>;
+    $.ajax({
+        type:'POST',
+        url:'./assets/php/list-command.php',
+        data: { 
+            numero_mesa: numeroMesa,
+        },
+        success:function(html){
+            $('#comanda').html(html);
+        }
+    }); 
+}
+
+listOrder();
 </script>

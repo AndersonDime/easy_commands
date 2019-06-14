@@ -7,14 +7,6 @@ body{
   width: 100%;
 }
 
-.roll{
-  max-height: 50%;
-  overflow: scroll;
-}
-
-.roll::-webkit-scrollbar { width: 0 !important }
-
-
 .login {
   display: table-cell;
   vertical-align: middle;
@@ -174,4 +166,9 @@ body{
     height: 18px;
     background-color: #ffeb9988;
     transform: rotate(37deg);
+}
+
+.order-delete{
+  float: right;
+  cursor: pointer;
 }

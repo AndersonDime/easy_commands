@@ -1,5 +1,7 @@
 <?php
-function listagem($numeroMesa){
+    include_once("../services/products-service.php");
+    $numeroMesa = $_POST['numero_mesa'];
+    
     require 'conect.php';    
     $mesa = mysql_getdata("SELECT * FROM mesas WHERE numero = '$numeroMesa'");
     $idMesa = $mesa[0]['id'];
@@ -10,22 +12,13 @@ function listagem($numeroMesa){
         $data_comanda = mysqli_fetch_array($result_id_comanda);
         $id_comanda = $data_comanda[0];
         $orderInformation = mysql_getdata("SELECT * FROM comandas WHERE mesas_id = '$idMesa'"); 
-        $orderInformationCard = mysql_getdata("SELECT ped.quantidade as quantidade, prod.nome as nome, ped.observacoes as observacoes from pedidos as ped
+        $orderInformationCard = mysql_getdata("SELECT ped.id as id_pedidos, ped.quantidade as quantidade, prod.nome as nome, ped.observacoes as observacoes from pedidos as ped
         inner join produtos as prod on ped.produtos_id = prod.id 
         where ped.comandas_id = '$id_comanda'");  
         foreach($orderInformationCard as $value){
-            echo '<script>
-            $("comanda").html(
-                <li class="list-group-item">'.$value['quantidade']."x  ".$value['nome']."  ".$value['observacoes'].'</li>
-            )
-          </script>' ;
+            echo '<li class="list-group-item" style="width: 100%!important">'.$value['quantidade']."x  ".$value['nome']." <small class='text-danger'> ".$value['observacoes']."</small> <i class=' fas fa-trash-alt order-delete' onclick='deleteOrder(".$value['id_pedidos'].")'></i></li>" ;
         }
     }else{
-        echo '<script>
-                console.log(document.getElementById("comanda"));
-                // innerHtml = "Não existe comanda ativa para a mesa no momento!";
-              </script>';
+        echo 'Não há nenhuma comanda atrelada a essa mesa';
     }
-}   
-
 ?>
