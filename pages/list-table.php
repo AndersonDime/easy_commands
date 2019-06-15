@@ -7,14 +7,14 @@ $list = mysql_getdata("SELECT * FROM mesas order by numero");
 ?>
 
 <br>
-<div class="container list-table">
+<div class="container-fluid list-table">
     <div class="row">
         <div class="col-md-11">
             <div class="row">
                 <?php 
                     foreach ($list as  $key =>$value){     
                 ?>
-                <div class="col-xs-6 col-md-4">
+                <div class="col-xs-6 col-md-3">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Mesa #
@@ -42,7 +42,7 @@ $list = mysql_getdata("SELECT * FROM mesas order by numero");
                             <a onclick="editarMesa(<?php echo $value['numero']; ?>)" href="#" class="card-icon"><i class="fas fa-pen"></i></a>
                             </h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="?page=new-command&numero=<?php echo $value['numero'] ?>" class="btn btn-block btn-dark">Fazer Pedido <i class="fas fa-plus"></i>
+                            <a href="?page=new-command&numero=<?php echo $value['numero'] ?>" class="btn btn-block btn-dark">Pedido <i class="fas fa-list"></i>
                             </a>
                             
                         </div>
