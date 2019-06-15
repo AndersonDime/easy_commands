@@ -35,7 +35,7 @@
                                 ?>
                                 <input type="hidden" name="id" value="<?php echo $ident?>">
                             </div>                                        
-                            <input type="submit" class="btn btn-primary" value="Cadastrar">
+                            <input type="submit" class="btn btn-info" value="Cadastrar">
 
                         </div>
                     </div>

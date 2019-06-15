@@ -54,7 +54,7 @@
                             ?>
                             </select>
                         </div>
-                        <input type="submit" class="btn btn-primary" value="Atualizar">
+                        <input type="submit" class="btn btn-info" value="Atualizar">
                     </div>
                 </div>
                 <?php

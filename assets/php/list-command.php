@@ -15,10 +15,15 @@
         $orderInformationCard = mysql_getdata("SELECT ped.id as id_pedidos, ped.quantidade as quantidade, prod.nome as nome, ped.observacoes as observacoes from pedidos as ped
         inner join produtos as prod on ped.produtos_id = prod.id 
         where ped.comandas_id = '$id_comanda'");  
-        foreach($orderInformationCard as $value){
-            echo '<li class="list-group-item" style="width: 100%!important">'.$value['quantidade']."x  ".$value['nome']." <small class='text-danger'> ".$value['observacoes']."</small> <i class=' fas fa-trash-alt order-delete' onclick='deleteOrder(".$value['id_pedidos'].")'></i></li>" ;
+        
+        if(count($orderInformationCard) > 0){
+            foreach($orderInformationCard as $value){
+                echo '<li class="list-group-item" style="width: 100%!important">'.$value['quantidade']."x  ".$value['nome']." <small class='text-danger'> ".$value['observacoes']."</small> <i class=' fas fa-trash-alt order-delete' onclick='deleteOrder(".$value['id_pedidos'].")'></i></li>" ;
+            }
+        }else{
+            echo '<li class="list-group-item text-center text-danger" style="width: 100%!important">Não há pedidos nessa Comanda</li>';
         }
     }else{
-        echo 'Não há nenhuma comanda atrelada a essa mesa';
+        echo '<li class="list-group-item text-center text-danger">Não há nenhuma comanda atrelada a essa mesa</li>';
     }
 ?>

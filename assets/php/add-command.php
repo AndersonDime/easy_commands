@@ -27,7 +27,7 @@ function list_products($numeroMesa){
             echo '<li class="list-group-item" style="width: 100%!important">'.$value['quantidade']."x  ".$value['nome']." <small class='text-danger'> ".$value['observacoes']."</small> <i class=' fas fa-trash-alt order-delete' onclick='deleteOrder(".$value['id_pedidos'].")'></i></li>" ;
         }
     }else{
-        echo 'Não há nenhuma comanda atrelada a essa mesa';
+        echo '<li class="list-group-item" style="width: 100%!important"> Não há nenhuma comanda atrelada a essa mesa </li>';
     }
 }
 
@@ -66,14 +66,5 @@ if($id_found == 1){
     //Codigo que retorna mensagem que nao achou o id da mesa
 }
 
-
-
-if(count($idMesa) > 0){
-
-}else{
-    echo "<script type='text/javascript'>alert('Usuario ja cadastrado.);</script>";
-    header('Location: ../../index.php?page=user-register&fail=1');
-
-}
 
 ?>

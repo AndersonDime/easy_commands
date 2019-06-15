@@ -37,7 +37,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                             </select>
                         </div>
                         
-                    <input type="submit" class="btn btn-primary" value="Cadastrar">
+                    <input type="submit" class="btn btn-info" value="Cadastrar">
 
                 </div>
             </div>

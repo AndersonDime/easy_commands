@@ -25,7 +25,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                     <input type="text" class="form-control" id="sec" name="sector" required>
                     </div>
                         
-                    <input type="submit" class="btn btn-primary" value="Cadastrar">
+                    <input type="submit" class="btn btn-info" value="Cadastrar">
 
                 </div>
             </div>

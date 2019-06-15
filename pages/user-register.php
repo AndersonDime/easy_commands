@@ -29,11 +29,11 @@ $(document).ready(function() {
                         <div class="form-group">
                             <label>Nivel de Permissao</label><br>
                             <div class="funkyradio">
-                            <div class="funkyradio-primary">
+                            <div class="funkyradio-info">
                                 <input type="radio" name="inputPermission" value="1" id="radio1" />
                                 <label  data-toggle="tooltip" data-placement="right" title="Faz alteracoes no sistema" for="radio1">Administrador</label>
                             </div>
-                            <div class="funkyradio-primary">
+                            <div class="funkyradio-info">
                                 <input type="radio" name="inputPermission" value="0" id="radio2" checked/>
                                 <label data-toggle="tooltip" data-placement="right" title="Apenas as tarefas" for="radio2">Padrao</label>
                             </div>                        

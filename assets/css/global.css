@@ -67,8 +67,7 @@
     font-weight: bold;
 }
 
-.add-table{
-    background-color: #333;
+.add-table, .add-table:hover{
     color: white;
     text-align: center;
     padding: 1vh;
@@ -78,12 +77,9 @@
     width: 8vh;
     position: fixed;
     bottom: 3vh;
+    transition: 0.5s;
 }
 
-.add-table{
-    color: white;
-    animation-name: fab;
-}
 
 .notifyjs-corner{
     left: 25%;

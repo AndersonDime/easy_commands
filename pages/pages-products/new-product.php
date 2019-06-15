@@ -40,7 +40,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                             <label>Preço</label>
                             <input  type="text" class="form-control" id="valor" pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$" name="price" required>
                         </div>
-                        <input type="submit" class="btn btn-primary" value="Cadastrar">
+                        <input type="submit" class="btn btn-info" value="Cadastrar">
 
                     </div>
                 </div>
