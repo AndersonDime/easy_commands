@@ -21,7 +21,7 @@ include 'template/header.php';
             break;
         case 'new-category': 
             include 'template/navbar.php';     
-            include 'pages/pages-categorys/new-category.php';
+            include 'pages/pages-categories/new-category.php';
             break;
         case 'list-table':
             include 'template/navbar.php'; 
@@ -39,25 +39,25 @@ include 'template/header.php';
             include 'template/navbar.php';
             include 'pages/cashier.php';
             break;
-        case 'delete-categorys':
+        case 'delete-categories':
             include 'template/navbar.php';     
-            include 'pages/pages-categorys/delete-categorys.php';
+            include 'pages/pages-categories/delete-categories.php';
             break;
         case 'list-products':
             include 'template/navbar.php';     
             include 'pages/pages-products/list-products.php';
             break;
-        case 'list-categorys':
+        case 'list-categories':
             include 'template/navbar.php';     
-            include 'pages/pages-categorys/list-categorys.php';
+            include 'pages/pages-categories/list-categories.php';
             break;
         case 'alter-products':
             include 'template/navbar.php';     
             include 'pages/pages-products/alter-products.php';
             break;
-        case 'alter-categorys':
+        case 'alter-categories':
             include 'template/navbar.php';     
-            include 'pages/pages-categorys/alter-categorys.php';
+            include 'pages/pages-categories/alter-categories.php';
             break;
         case 'alter-productions':
             include 'template/navbar.php';     

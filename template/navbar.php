@@ -13,7 +13,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="?page=home-page">Home <span class="sr-only"></span></a>
+                    <a class="nav-link" href="?page=home-page">Salão <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="?page=list-production">Produção</a>
@@ -27,7 +27,7 @@
                             <a class="dropdown-item" href="?page=new-product">Cadastrar Item</a>
                             <a class="dropdown-item" href="?page=list-products">Lista de Item</a>
                             <a class="dropdown-item" href="?page=new-category">Cadastrar Categoria</a>
-                            <a class="dropdown-item" href="?page=list-categorys">Lista de Categorias</a>
+                            <a class="dropdown-item" href="?page=list-categories">Lista de Categorias</a>
                         </div>
                     </div>
                 </li>
@@ -44,9 +44,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="?page=cashier">Caixa</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="?page=list-table">Salão</a>
                 </li>
 
                 <li class="nav-item ">

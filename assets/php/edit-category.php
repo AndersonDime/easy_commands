@@ -16,9 +16,9 @@ $alter = mysql_insert("UPDATE categorias SET nome='$name',setores_id='$sec' WHER
 
 if ($alter > 0) {
     //sleep(3);
-    echo "<script type='text/javascript'>window.top.location='?page=list-categorys&success=1';</script>"; exit;
+    echo "<script type='text/javascript'>window.top.location='?page=list-categories&success=1';</script>"; exit;
 }else{
-    echo "<script type='text/javascript'>window.top.location='?page=alter-categorys&fail=1&id=$id&sect=$sec';</script>"; exit;
+    echo "<script type='text/javascript'>window.top.location='?page=alter-categories&fail=1&id=$id&sect=$sec';</script>"; exit;
 }
 }
 

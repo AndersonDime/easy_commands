@@ -36,8 +36,8 @@ function addTable(){
     $.ajax({
         method: "POST",
         url: "assets/php/add-table.php",
-        success: function (html) {
-            $('#cardsRow').html(html);
+        success: function () {
+            refreshTable();
         }
     })
 }
@@ -47,8 +47,8 @@ function deleteTable(idMesa){
         method: "POST",
         url: "assets/php/delete-table.php",
         data: {id: idMesa},
-        success: function (html) {
-            $('#cardsRow').html(html);
+        success: function () {
+            refreshTable();
         }
     })
 }
@@ -70,15 +70,18 @@ function changePref(pref,numero){
     }else{
         prefChange = 0;
     }
-    alert(prefChange)
     $.ajax({
         type: 'POST',
         url: './assets/php/alter-table-pref.php',
         data: 
             {pref: prefChange, numero_mesa: numero},
         success: function () {
-            
+            refreshTable();
         }
     });  
     
 }
+
+refreshTable();
+
+

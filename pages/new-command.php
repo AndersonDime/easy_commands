@@ -11,16 +11,11 @@ $numero_mesa = $_GET["numero"];
 <div class="list-tables-page">
     <div class="container-fluid">
         <div class="row">
-        <div class="col">
-            <h3>Mesa <?php echo $numero_mesa; ?></h3>
-        </div>
-        </div>
-        <div class="row">
             <div class="col">
             <br>
                 <div class="card">
                     <div class="card-header bg-warning">
-                        <h4 class="text-center">Cadastrar Pedido</h4>
+                        <h4 class="text-center">Cadastrar Pedido - Mesa <?php echo $numero_mesa; ?></h4>
                     </div>
                     <div class="card-body">
                             <div class="form-group">
