@@ -13,3 +13,15 @@ function calculator(){
     valor1.toString();
     console.log(valor1);
 }
+function open_table(id_comanda) {
+    $.ajax({
+        type: 'POST',
+        url: './assets/php/cashier-command.php',
+        data: {
+            idComanda: id_comanda
+        },
+        success: function (html) {
+            $('#comanda').html(html);
+        }
+    });
+}
