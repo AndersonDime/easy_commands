@@ -2,8 +2,6 @@
 require 'assets/services/session-validate.php';
 include_once("assets/services/products-service.php");
 
-$list = mysql_getdata("SELECT * FROM mesas order by numero");
-
 ?>
 
 <div class="list-tables-page">
@@ -28,11 +26,24 @@ $list = mysql_getdata("SELECT * FROM mesas order by numero");
                                 </button>
                                 <a onclick="editarMesa(<?php echo $value['numero']; ?>)" href="#" class="card-icon"><i class="fas fa-pen"></i></a>
                                 </h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">
+                                    Preferência da mesa: 
+                                    <?php
+                                        $pref = "";
+                                        if($value['preferencia'] == 0){
+                                            $pref = "<b class='text-danger'>Salgado</b>";
+                                        }else{
+                                            $pref = "<b class='text-danger'>Doce</b>";
+                                        }
+
+                                        echo $pref;
+                                    ?>
+                                </p>
                                 <a href="?page=new-command&numero=<?php echo $value['numero'] ?>" class="btn btn-dark">Pedido <i class="fas fa-bars"></i>
                                 </a>
-                                <a href="?page=new-command&numero=<?php echo $value['numero'] ?>" class="btn btn-warning text-white">Preferencia <i class="fas fa-pizza-slice"></i>
-                                </a>
+                                <button onclick="changePref(<?php echo $value['preferencia'] ?>, <?php echo $value['numero'] ?>);" class="btn btn-warning text-white">
+                                    Preferencia <i class="fas fa-pizza-slice"></i>
+                                </button>
                                 
                             </div>
                         </div>

@@ -52,3 +52,33 @@ function deleteTable(idMesa){
         }
     })
 }
+
+function refreshTable(){
+    $.ajax({
+        method: "POST",
+        url: "assets/php/refresh-table.php",
+        success: function (html) {
+            $('#cardsRow').html(html);
+        }
+    })
+}
+
+function changePref(pref,numero){
+    
+    if(pref == 0){
+        prefChange = 1
+    }else{
+        prefChange = 0;
+    }
+    alert(prefChange)
+    $.ajax({
+        type: 'POST',
+        url: './assets/php/alter-table-pref.php',
+        data: 
+            {pref: prefChange, numero_mesa: numero},
+        success: function () {
+            
+        }
+    });  
+    
+}
