@@ -7,6 +7,8 @@
     INNER JOIN comandas AS com ON php.comandas_id = com.id
     INNER JOIN mesas AS m ON m.id = com.mesas_id");
 
+    $sector = mysql_getdata("SELECT * FROM setores where id != 4");
+
     $totalRodizioSelect = mysql_getdata("SELECT pedidos.quantidade AS 'qtd' FROM pedidos
     INNER JOIN produtos ON pedidos.produtos_id = produtos.id
     WHERE produtos.categorias_id = 2;");
@@ -15,6 +17,30 @@
 
     foreach($totalRodizioSelect as $key => $rodizio){
         $totalRodizio += $rodizio['qtd']; 
+    }
+
+    $totalRodizioSalgadoSelect = mysql_getdata("SELECT pedidos.quantidade AS 'qtd' FROM pedidos
+    INNER JOIN produtos ON pedidos.produtos_id = produtos.id
+    INNER JOIN comandas ON pedidos.comandas_id = comandas.id
+    INNER JOIN mesas ON mesas.id = comandas.mesas_id
+    WHERE produtos.categorias_id = 2 AND mesas.preferencia = 0");
+
+    $totalRodizioSalgado = 0;
+
+    foreach($totalRodizioSalgadoSelect as $key => $rodizio){
+        $totalRodizioSalgado += $rodizio['qtd']; 
+    }
+
+    $totalRodizioDoceSelect = mysql_getdata("SELECT pedidos.quantidade AS 'qtd' FROM pedidos
+    INNER JOIN produtos ON pedidos.produtos_id = produtos.id
+    INNER JOIN comandas ON pedidos.comandas_id = comandas.id
+    INNER JOIN mesas ON mesas.id = comandas.mesas_id
+    WHERE produtos.categorias_id = 2 AND mesas.preferencia = 1");
+
+    $totalRodizioDoce = 0;
+
+    foreach($totalRodizioDoceSelect as $key => $rodizio){
+        $totalRodizioDoce += $rodizio['qtd']; 
     }
 
     $success= isset($_GET["success"]) ? $_GET["success"] : "";
@@ -33,16 +59,9 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        Dados do Rodízio
+                        Estatisticas do Salão
                     </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">Total:
-                                <?php echo $totalRodizio ?>
-                            </div>
-                            <div class="col">Doce:</div>
-                            <div class="col">Salgada</div>
-                        </div>
+                    <div class="card-body" id="listT">
                     </div>
                 </div>
             </div>
@@ -53,9 +72,20 @@
             <div class="col-sm-12 col-md-8">
             <br>   
                 <div class="card-header bg-info">
-                    <h4 class="text-light text-center">
-                        Lista de Produção
-                    </h4>
+                <div class="row">
+                    <div class="col-md-10">
+                        <h4 class="text-light text-center">
+                            Lista de Produção
+                        </h4> 
+                    </div>
+                    <div class="col">
+                        <select class="form-control" id="filtroSetores"> 
+                            <?php foreach($sector as  $key => $value){ ?>
+                                <option value="<?php echo $value["id"] ?>"><?php echo $value["nome"] ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </div>
                 </div>
                 <div class="card roll">                    
                     <table class="table table-striped " >
@@ -142,9 +172,11 @@
 
     
 function listOrders(){
+    var sectorValue = $("#filtroSetores").val();
     $.ajax({
         type:'POST',
         url:'./assets/php/list-order.php',
+        data: {sector_value: sectorValue},
         success:function(html){
             $('#tbody').html(html);
         }
@@ -152,5 +184,17 @@ function listOrders(){
 }
 
 var refreshId = setInterval(function(){ listOrders(); }, 1000);
+
+function listTypes(){
+    $.ajax({
+        type:'POST',
+        url:'./assets/php/list-types.php',
+        success:function(html){
+            $('#listT').html(html);
+        }
+    }); 
+}
+
+var refreshId = setInterval(function(){ listTypes(); }, 1000);
 
 </script>

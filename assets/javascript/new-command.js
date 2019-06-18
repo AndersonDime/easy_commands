@@ -15,7 +15,7 @@ $(document).ready(function () {
                 }
             });
         } else {
-            $('#produto').html('<option value="">Select country first</option>');
+            $('#produto').html('<option value="">Selecione uma categoria</option>');
         }
     });
 });

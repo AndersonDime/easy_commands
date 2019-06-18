@@ -25,10 +25,10 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                         <th scope="col">Excluir</th>                    
                     </tr>
                 </thead>
+                <tbody>
                     <?php 
                         foreach ($list as  $key =>$value){
                     ?>
-                <tbody>
                     <tr>
                         <td><?php echo $value["idProduto"];?> </td>
                         <td><?php echo $value["nomeProduto"];?></td>
