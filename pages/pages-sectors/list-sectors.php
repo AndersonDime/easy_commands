@@ -23,19 +23,19 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                     <th scope="col">Setor</th>                   
                 </tr>
             </thead>
-            <?php 
-                foreach ($list as  $key =>$value){
-            ?>
             <tbody>
-                <tr>
-                    <th><?php echo $value["id"];?></th>
-                    <td><?php echo $value["nome"]; ?></td>
-                    <td>  <a class="btn btn-sm btn-info" href="?page=alter-sectors&id=<?php echo $value["id"] ?>" >Editar</a> </td>
-                    <td> <a class="btn btn-sm btn-danger" href="?page=delete-sectors&id=<?php echo $value["id"] ?>">Excluir</a> </td>               
-                </tr>
-                <?php
-                    }
+                <?php 
+                    foreach ($list as  $key =>$value){
                 ?>
+                    <tr>
+                        <th><?php echo $value["id"];?></th>
+                        <td><?php echo $value["nome"]; ?></td>
+                        <td>  <a class="btn btn-sm btn-info" href="?page=alter-sectors&id=<?php echo $value["id"] ?>" >Editar</a> </td>
+                        <td> <a class="btn btn-sm btn-danger" href="?page=delete-sectors&id=<?php echo $value["id"] ?>">Excluir</a> </td>               
+                    </tr>
+                    <?php
+                        }
+                    ?>
             </tbody>
             </table>
                 <?php

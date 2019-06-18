@@ -9,6 +9,10 @@ mysql_insert("INSERT INTO mesas VALUES(DEFAULT, '{$numberTable}',0, 0)");
 
 $listTable =  mysql_getdata("SELECT * FROM mesas ORDER BY numero");
 
+$numberTable= isset($_GET["numberTable"]) ? $_GET["NumberTable"] : "";
+
+$ArraynumberTable= isset($_GET["ArraynumberTable"]) ? $_GET["ArrayNumberTable"] : "";
+
 foreach ($listTable as $key => $value) {
     # code...
 echo '
