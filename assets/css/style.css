@@ -11,13 +11,45 @@ body{
   display: table-cell;
   vertical-align: middle;
   background-image: url(../img/login.jpg);
-  background-size: 110%;
+  background-size: 100%;
 }
 
 .production-page{
   background-image: url(../img/cozinha.jpg)!important; 
   background-attachment:fixed;
-  background-size: 110%;
+  background-size: 100%;
+  height: 100%;
+
+}
+
+.list-products-page{
+  background-image: url(../img/produtos.jpg)!important; 
+  background-attachment:fixed;
+  background-size: 100%;
+  height: 100%;
+
+}
+
+.register-page{
+  background-image: url(../img/registro.jpg)!important; 
+  background-attachment:fixed;
+  background-size: 100%;
+  height: 100%;
+
+}
+
+.list-page{
+  background-image: url(../img/lista.jpg)!important; 
+  background-attachment:fixed;
+  background-size: 100%;
+  height: 100%;
+
+}
+
+.list-sector-page{
+  background-image: url(../img/sector.jpg)!important; 
+  background-attachment:fixed;
+  background-size: 100%;
   height: 100%;
 
 }
@@ -25,7 +57,7 @@ body{
 .list-tables-page{
   background-image: url(../img/mesas.jpg)!important; 
   background-attachment:fixed;
-  background-size: 110%;
+  background-size: 100%;
   height: 100%;
 }
 

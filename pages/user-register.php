@@ -13,7 +13,7 @@ $(document).ready(function() {
 });
 </script>
 
-<div class="container-fluid">
+<div class="container-fluid register-page">
     <div class="row">
         <div class="col-sm-12 col-md-4"></div>
         <div class="col-sm-12 col-md-4">  

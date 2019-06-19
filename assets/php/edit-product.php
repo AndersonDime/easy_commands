@@ -16,7 +16,7 @@ $valid = mysql_getdata("SELECT * FROM produtos WHERE nome='$name' AND id != '$id
 
 
 if(count($valid)==0){
-$alter = mysql_insert("UPDATE produtos SET nome='$name',categoria_produtos_id='$cat', preco='$newprice' WHERE id = $id");
+$alter = mysql_insert("UPDATE produtos SET nome='$name',categorias_id='$cat', preco='$newprice' WHERE id = $id");
 
 if ($alter > 0) {
     //sleep(3);

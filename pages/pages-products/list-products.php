@@ -10,12 +10,12 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
 
 ?>
 
-<div class="container-fluid">
+<div class="container-fluid list-products-page">
     <div class="row">
         <div class="col-sm-12 col-md-3"></div>
         <div class="col-sm-12 col-md-6">
             <br>
-            <table class="table table-dark">
+            <table class="table table-light">
                 <thead>
                     <a class="btn-black btn-block card-header text-center" > <h4> Lista de Produtos </h4> </a>
                     <tr>
@@ -66,7 +66,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                     
         </div>
         <div class="col-md-1">
-            <a class="btn btn-info add-table" href="?page=new-product">
+            <a class="btn-info add-table" href="?page=new-product">
                 <i class="fas fa-plus"></i>
             </a>
         </div>
