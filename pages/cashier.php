@@ -13,7 +13,7 @@ $list_mesa = mysql_getdata("SELECT * from mesas inner join comandas on comandas.
 ?>
 
 <script>
-  calculator();
+  //calculator();
 </script>
 <div class="container">
     <div class="row">   
@@ -32,9 +32,11 @@ $list_mesa = mysql_getdata("SELECT * from mesas inner join comandas on comandas.
                     <tbody>
                         <?php                         
                             foreach ($list_mesa as  $key =>$value){
+                                $id_comanda = $value['id'];
+                               
                         ?>
                             <tr>
-                                <td><button style="width: -webkit-fill-available;"class="btn btn-sm btn-info" onclick="open_table(<?php echo $value['id_comanda']?>);" ><?php echo 'MESA '.$value["numero"]; ?></button></td>            
+                                <td><button id="teste" value="<?php echo $id_comanda ?>" style="width: -webkit-fill-available;"class="btn btn-sm btn-info" onclick="open_table(<?php echo $id_comanda ?>)" ><?php echo 'MESA '.$value["numero"]; ?></button></td>            
                             </tr>
                         <?php 
                             }
@@ -58,8 +60,9 @@ $list_mesa = mysql_getdata("SELECT * from mesas inner join comandas on comandas.
                             <th scope="col">Excluir</th>                    
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>          
+                    <tbody id="comanda">
+                        <tr>
+                            <td style="text-align: center;">Nenhuma comanda aberta no momento.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -71,3 +74,5 @@ $list_mesa = mysql_getdata("SELECT * from mesas inner join comandas on comandas.
         </div>
     </div>
 </div>
+
+<script src="./assets/javascript/add-command.js"></script>
