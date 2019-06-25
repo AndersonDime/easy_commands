@@ -216,3 +216,6 @@ body{
   float: right;
   cursor: pointer;
 }
+.totalPrice{
+  font-size: x-large;
+}

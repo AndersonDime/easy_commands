@@ -11,10 +11,6 @@ INNER JOIN produtos ON produtos.id = pedidos.produtos_id");
 
 $list_mesa = mysql_getdata("SELECT * from mesas inner join comandas on comandas.mesas_id = mesas.id where comandas.status = 0");
 ?>
-
-<script>
-  //calculator();
-</script>
 <div class="container">
     <div class="row">   
         <div class="col-sm-4">
@@ -51,24 +47,25 @@ $list_mesa = mysql_getdata("SELECT * from mesas inner join comandas on comandas.
     <br>
         <div class="card transparencia">
             <div class="card-header text-center bg-dark txt-white"><h3>PEDIDO</h3></div>
-                <table class="table table-dark">
-                    <thead>
-                        <tr>
-                            <th scope="col">Produto</th>
-                            <th scope="col">Valor</th>
-                            <th scope="col">Quantidade</th>
-                            <th scope="col">Excluir</th>                    
-                        </tr>
-                    </thead>
-                    <tbody id="comanda">
-                        <tr>
-                            <td style="text-align: center;">Nenhuma comanda aberta no momento.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="card-header">
-                    <h2 style="display: inline-block;">TOTAL:</h2>
-                    <h4 style="display: inline-block;"><?php echo "foda"; ?></h4>
+                <div class="card-body bg-dark">
+                    <table class="table table-dark text-center" >
+                        <thead>
+                            <tr>
+                                <th scope="col">Produto</th>
+                                <th scope="col">Valor</th>
+                                <th scope="col">Quantidade</th>
+                                <th scope="col">Excluir</th>                    
+                            </tr>
+                        </thead>
+                        <tbody id="comanda">
+                            <tr>
+                                <td colspan="4">Nenhuma comanda aberta no momento.</td>
+                            </tr>
+                        </tbody>
+                    </table>      
+                </div>
+                <div class="card-footer">
+                    <button id="fecha_comanda" value="0" class="btn btn-block btn-warning" onclick="closeComand();">Finalizar Comanda</button>
                 </div>
             </div>        
         </div>

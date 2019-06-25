@@ -61,8 +61,8 @@
         </div>
     </nav>
 <script>
- $(document).ready(function(){   
-    var loc = window.location.search;
+debugger;
+ $(document).ready(function(){
     $('nav > li').find('a').not(".dropdown-toggle").parents(".nav-item").removeClass('active');
     
     $('nav > li').find('a').not(".dropdown-toggle").each(function() {

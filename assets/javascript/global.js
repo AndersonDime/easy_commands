@@ -6,10 +6,14 @@ function mensage(){
 function search(){
     window.top.location="./assets/php/cashier-search.php";
 }
-function calculator(){
-    var valor1 = parseFloat(document.getElementById("price"));
-    var valor2 = 1;
-    valor1 = valor1 + valor2;
-    valor1.toString();
-    console.log(valor1);
+function closeComand(){
+    id_comanda = document.getElementById("fecha_comanda").value;
+    $.ajax({
+        method: "POST",
+        url: "./assets/php/cashier-close.php",
+        data: {idComanda : id_comanda}
+        ,success:function(html){
+            $('#product').html(html);
+        }
+    })
 }

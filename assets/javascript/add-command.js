@@ -1,4 +1,5 @@
 function open_table(id_comanda){
+    botao = document.getElementById("fecha_comanda").nodeValue = id_comanda;
     $.ajax({
         type: 'POST',
         url: './assets/php/cashier-command.php',
