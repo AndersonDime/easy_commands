@@ -19,9 +19,6 @@
     $(document).ready(function(){
 
         $("#edit").click(function(e){
-
-            debugger;
-
              $.ajax({
                 url : "assets/php/edit-production.php",
                 type : 'post',
@@ -31,7 +28,6 @@
                 }
             })
             .done(function(msg){
-                debugger;
                 //$("#resultado").html(msg);
                 if(msg > 0){
                     $.notify( "Alterado o Status com sucesso", { position:"top center", className: 'success' } );

@@ -55,7 +55,7 @@
     <div class="container-fluid">
     <br>
         <div class="row">
-            <div class="col"></div>
+            <div class="col-xs-12 col-sm-2 col-md-1 col-lg-1"></div>
             <div class="col">
                 <div class="card">
                     <div class="card-header">
@@ -65,12 +65,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col"></div>
+            <div class="col-xs-12 col-sm-2 col-md-1 col-lg-1"></div>
         </div>
         <div class="row">
-            <div class="col-sm-12 col-md-2"></div>
-            <div class="col-sm-12 col-md-8">
-            <br>   
+            <div class="col-xs-12 col-sm-2 col-md-1 col-lg-1"></div>
+            <div class="col">
+                <br>   
                 <div class="card-header bg-info">
                 <div class="row">
                     <div class="col-md-10">
@@ -127,7 +127,7 @@
                 ?>
                     
             </div>
-            <div class="col-sm-12 col-md-2"></div>
+            <div class="col-xs-12 col-sm-2 col-md-4 col-lg-1"></div>
             </div>
         </div>
     </div>
@@ -138,8 +138,6 @@
 
         $(".edit").click(function(e){
 
-            debugger;
-
              $.ajax({
                 url : "assets/php/edit-production.php",
                 type : 'post',
@@ -149,7 +147,6 @@
                 }
             })
             .done(function(msg){
-                debugger;
                 //$("#resultado").html(msg);
                 if(msg > 0){
                     $.notify( "Alterado o Status com sucesso", { position:"top center", className: 'success' } );

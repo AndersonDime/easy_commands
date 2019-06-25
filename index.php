@@ -152,7 +152,7 @@ if($total == 1){
     }else{
         ?>
     <script>
-        $.notify("Login ou senha incorretos.", { position:"top center", className: 'error' } );
+        $('#errorHint').html('Senha incorreta. Tente novamente ou clique em "Esqueceu a senha?" para redefini-la.');        
     </script>
     <?php
     unset ($_SESSION['userId']);
@@ -164,7 +164,7 @@ if($total == 1){
     if($total == 0){
     ?>
     <script>
-        $.notify("Login inexistente.", { position:"top center", className: 'error' } );
+        $('#errorHint').html('Não foi possível encontrar sua conta.');
     </script>
     <?php
     unset ($_SESSION['userId']);

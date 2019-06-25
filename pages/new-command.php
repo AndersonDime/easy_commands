@@ -32,13 +32,13 @@ $numero_mesa = $_GET["numero"];
                             </div>
                             <div class="form-group">
                                 <label for="product">Produto</label>
-                                <select class="form-control" name="product" id="product">
-                                    <option value=""></option>
+                                <select onchange="enableSubmit()" class="form-control" name="product" id="product">
+                                    <option value="" selected disabled>Selecione um produto</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="productQtd">Quantidade</label>
-                                <input class="form-control" type="number" id="productQtd" name="productQtd">
+                                <input class="form-control" value="1" min="1" type="number" id="productQtd" name="productQtd">
                             </div>
                             <div class="form-group">
                                 <label for="observacoes">Observações</label>
@@ -48,7 +48,7 @@ $numero_mesa = $_GET["numero"];
                     </div>
                     <div class="card-footer">
                         <input  class="btn btn-dark" type="reset" value="Limpar">
-                        <Button type="button" onclick="addOrder(<?php echo $numero_mesa; ?>)" class="btn btn-warning" >Adicionar</Button>
+                        <Button id="submitOrder" type="button" onclick="addOrder(<?php echo $numero_mesa; ?>)" class="btn btn-warning" disabled>Adicionar</Button>
                     </div>
                 </div>
             </div>

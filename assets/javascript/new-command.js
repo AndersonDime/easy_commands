@@ -18,6 +18,10 @@ $(document).ready(function () {
             $('#produto').html('<option value="">Selecione uma categoria</option>');
         }
     });
+
+    $('#product').on('change',function(){
+        $('#submitOrder').prop("disabled", false);
+    })
 });
 function deleteOrder(idPedidos) {
     $.ajax({
@@ -60,6 +64,11 @@ function listOrder() {
             $('#comanda').html(html);
         }
     });
+}
+
+function enableSubmit(){
+    alert('teste');
+    $(submitOrder).prop("disabled", false);
 }
 
 

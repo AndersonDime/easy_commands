@@ -19,49 +19,29 @@
                     <a class="nav-link" href="?page=list-production">Produção</a>
                 </li>
                 <li class="nav-item">
-                    <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="produtoDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Produtos
-                    </a>
-                        <div class="dropdown-menu" aria-labelledby="produtoDropdown">
-                            <a class="dropdown-item" href="?page=new-product">Cadastrar Item</a>
-                            <a class="dropdown-item" href="?page=list-products">Lista de Item</a>
-                            <a class="dropdown-item" href="?page=new-category">Cadastrar Categoria</a>
-                            <a class="dropdown-item" href="?page=list-categories">Lista de Categorias</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="setoresDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Setores
-                    </a>
-                        <div class="dropdown-menu" aria-labelledby="setoresDropdown">
-                            <a class="dropdown-item" href="?page=new-sectors">Cadastrar Setor</a>
-                            <a class="dropdown-item" href="?page=list-sectors">Lista de Setores</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="?page=cashier">Caixa</a>
                 </li>
 
                 <li class="nav-item ">
                     <div class="dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="configDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Config
+                            Administrativo
                         </a>
                         <div class="dropdown-menu" aria-labelledby="configDropdown">
-                            <a class="dropdown-item" href="?page=user-register">Cadastrar Usuario</a>
-                            <a class="dropdown-item" href="#"<button onclick = "functionConfirm();">Sair</button></a>
+                            <a class="dropdown-item" href="?page=user-register">Usuarios</a>
+                            <a class="dropdown-item" href="?page=list-products">Produtos</a>
+                            <a class="dropdown-item" href="?page=list-categories">Categorias</a>
+                            <a class="dropdown-item" href="?page=list-sectors">Setores</a>
                         </div>
                     </div>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#"<button onclick = "functionConfirm();">Sair</button></a>
                 </li>
             </ul>
         </div>
     </nav>
 <script>
-debugger;
  $(document).ready(function(){
     $('nav > li').find('a').not(".dropdown-toggle").parents(".nav-item").removeClass('active');
     

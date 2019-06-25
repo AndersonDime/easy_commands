@@ -66,7 +66,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                     
         </div>
         <div class="col-md-1">
-            <a class="btn-info add-table" href="?page=new-product">
+            <a class="add-table" href="?page=new-product">
                 <i class="fas fa-plus"></i>
             </a>
         </div>

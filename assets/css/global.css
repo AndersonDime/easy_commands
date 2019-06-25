@@ -70,14 +70,14 @@
 .add-table, .add-table:hover{
     background-color: #228B22;
     color: white;
+    padding: 8px;
     text-align: center;
-    padding: 1.1vh;
-    font-size: 5vh!important;
+    font-size: 30px;
     border-radius: 50%;
-    height: 10vh;
-    width: 10vh;
+    height: 60px;
+    width: 60px;
     position: fixed;
-    bottom: 4vh;
+    bottom: 15px;
     transition: 0.5s;
     border: none!important;
 }
