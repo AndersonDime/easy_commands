@@ -7,41 +7,7 @@
     INNER JOIN comandas AS com ON php.comandas_id = com.id
     INNER JOIN mesas AS m ON m.id = com.mesas_id");
 
-    $sector = mysql_getdata("SELECT * FROM setores where id != 4");
-
-    $totalRodizioSelect = mysql_getdata("SELECT pedidos.quantidade AS 'qtd' FROM pedidos
-    INNER JOIN produtos ON pedidos.produtos_id = produtos.id
-    WHERE produtos.categorias_id = 2;");
-
-    $totalRodizio = 0;
-
-    foreach($totalRodizioSelect as $key => $rodizio){
-        $totalRodizio += $rodizio['qtd']; 
-    }
-
-    $totalRodizioSalgadoSelect = mysql_getdata("SELECT pedidos.quantidade AS 'qtd' FROM pedidos
-    INNER JOIN produtos ON pedidos.produtos_id = produtos.id
-    INNER JOIN comandas ON pedidos.comandas_id = comandas.id
-    INNER JOIN mesas ON mesas.id = comandas.mesas_id
-    WHERE produtos.categorias_id = 2 AND mesas.preferencia = 0");
-
-    $totalRodizioSalgado = 0;
-
-    foreach($totalRodizioSalgadoSelect as $key => $rodizio){
-        $totalRodizioSalgado += $rodizio['qtd']; 
-    }
-
-    $totalRodizioDoceSelect = mysql_getdata("SELECT pedidos.quantidade AS 'qtd' FROM pedidos
-    INNER JOIN produtos ON pedidos.produtos_id = produtos.id
-    INNER JOIN comandas ON pedidos.comandas_id = comandas.id
-    INNER JOIN mesas ON mesas.id = comandas.mesas_id
-    WHERE produtos.categorias_id = 2 AND mesas.preferencia = 1");
-
-    $totalRodizioDoce = 0;
-
-    foreach($totalRodizioDoceSelect as $key => $rodizio){
-        $totalRodizioDoce += $rodizio['qtd']; 
-    }
+    $sector = mysql_getdata("SELECT * FROM setores where id != 4 order by nome");
 
     $success= isset($_GET["success"]) ? $_GET["success"] : "";
 
@@ -50,23 +16,13 @@
     $teste = isset($_GET["teste"]) ? $_GET["teste"] : "";
 ?>
 
+<div class="stats bg-danger text-center text-white" id="listT" style="transition: 0.5s;">
+
+</div>
 
 <div class="production-page">
     <div class="container-fluid">
     <br>
-        <div class="row">
-            <div class="col-xs-12 col-sm-2 col-md-1 col-lg-1"></div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-header">
-                        Estatisticas do Salão
-                    </div>
-                    <div class="card-body" id="listT">
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-2 col-md-1 col-lg-1"></div>
-        </div>
         <div class="row">
             <div class="col-xs-12 col-sm-2 col-md-1 col-lg-1"></div>
             <div class="col">
@@ -195,3 +151,18 @@ function listTypes(){
 var refreshId = setInterval(function(){ listTypes(); }, 1000);
 
 </script>
+
+<style>
+    .stats{
+        animation-duration: 1.1s;
+        animation-name: statsAnimation;
+        animation-timing-function: ease;
+        height: fit-content;
+    }
+
+    @keyframes statsAnimation{
+        0%   {height: 0px}
+        25%  {height: 24px}
+        100% {height: 24px}
+    }
+</style>
