@@ -15,8 +15,8 @@ include_once("assets/services/products-service.php");
             </div>
     
             <div class="col-md-1">
-                <button  class="add-table bg-warning" onclick="addTable()">
-                   <i class="fas fa-plus"></i>
+                <button  class="add-table bg-dark" onclick="addTable()">
+                   <i class="text-warning fas fa-plus"></i>
                 </button>
             </div>
     

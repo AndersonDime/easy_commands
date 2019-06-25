@@ -18,8 +18,12 @@ $(document).ready(function() {
         <div class="col-sm-12 col-md-4"></div>
         <div class="col-sm-12 col-md-4">  
         <br>  
-            <div class="card transparencia">
-            <div class="card-header text-center bg-dark txt-white">Cadastro de Usuário</div>
+            <div class="card">
+            <div class="card-header bg-dark">
+                <h6 class="text-warning text-center">
+                    Cadastro de Usuário
+                </h6>
+            </div>
                 <div class="card-body">
                     <form action="assets/php/register.php" method="POST">
                         <div class="form-group">
@@ -56,7 +60,7 @@ $(document).ready(function() {
                             <label for="password">Senha</label>
                             <input type="password" class="form-control" id="exampleInputPassword1" name="inputPass" required minlength="6">
                         </div>
-                        <button type="submit" class="btn btn-outline-success btn-block">Cadastrar</button> 
+                        <button type="submit" class="btn btn-outline-dark btn-block">Cadastrar</button> 
                     </form>
                 </div>
             </div>

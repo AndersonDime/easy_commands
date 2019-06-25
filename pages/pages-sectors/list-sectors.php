@@ -15,29 +15,38 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
         <div class="col-sm-12 col-md-3"></div>
         <div class="col-sm-12 col-md-6">
         <br>
-            <table class="table table-light">
-            <thead>
-                <a class="btn-black btn-block card-header text-center" > <h4> Lista de Setores </h4> </a>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Setor</th>                   
-                </tr>
-            </thead>
-            <tbody>
-                <?php 
-                    foreach ($list as  $key =>$value){
-                ?>
-                    <tr>
-                        <th><?php echo $value["id"];?></th>
-                        <td><?php echo $value["nome"]; ?></td>
-                        <td>  <a class="btn btn-sm btn-info" href="?page=alter-sectors&id=<?php echo $value["id"] ?>" >Editar</a> </td>
-                        <td> <a class="btn btn-sm btn-danger" href="?page=delete-sectors&id=<?php echo $value["id"] ?>">Excluir</a> </td>               
-                    </tr>
-                    <?php
-                        }
-                    ?>
-            </tbody>
-            </table>
+        <div class="card">
+            <div class="card-header bg-dark">
+                <h4 class="text-warning text-center"> Lista de Setores </h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-light">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Setor</th> 
+                            <th scope="col">Editar</th>                  
+                            <th scope="col">Excluir</th>                  
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php 
+                            foreach ($list as  $key =>$value){
+                        ?>
+                            <tr>
+                                <th><?php echo $value["id"];?></th>
+                                <td><?php echo $value["nome"]; ?></td>
+                                <td>  <a class="btn btn-sm btn-info" href="?page=alter-sectors&id=<?php echo $value["id"] ?>" >Editar</a> </td>
+                                <td> <a class="btn btn-sm btn-danger" href="?page=delete-sectors&id=<?php echo $value["id"] ?>">Excluir</a> </td>               
+                            </tr>
+                            <?php
+                                }
+                            ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
                 <?php
                     //se orçamento foi inserido com sucesso mostra essa mensagem:
                 if ($success == 1):
@@ -68,8 +77,8 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                 
         </div>
         <div class="col-md-1">
-            <a class="btn-info add-table" href="?page=new-sectors" >               
-                <i class="fas fa-plus"></i>
+            <a class="btn-dark add-table" href="?page=new-sectors" >               
+                <i class="text-warning fas fa-plus"></i>
             </a>
         </div>
     </div>

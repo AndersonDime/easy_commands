@@ -23,7 +23,7 @@
                 <br>
                     <div class="card transparencia">
                         <div class="card-header bg-dark txt-white text-center">
-                            <h4> 
+                            <h4 class="text-center text-warning"> 
                                 Alteração de Categoria
                             </h4>
                         </div>
@@ -54,7 +54,7 @@
                                 ?>
                                 </select>
                             </div>
-                            <input type="submit" class="btn btn-info" value="Atualizar">
+                            <input type="submit" class="btn btn-warning" value="Atualizar">
                         </div>
                     </div>
                     <?php

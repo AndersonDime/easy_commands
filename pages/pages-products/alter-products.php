@@ -20,9 +20,9 @@
                 <div class="col-sm-12 col-md-4"></div>
                 <div class="col-sm-12 col-md-4">
                 <br>
-                    <div class="card transparencia">
-                        <div class="card-header bg-dark txt-white text-center">
-                            <h4> Alteração de Itens </h4>
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h4 class="text-warning text-center"> Alteração de Itens </h4>
                         </div>
                         <div class="card-body">
                             <div class="form-group">
@@ -61,7 +61,7 @@
                                 } 
                                 ?>
                             </div>
-                            <input type="submit" class="btn btn-info" value="Atualizar">
+                            <input type="submit" class="btn btn-warning" value="Atualizar">
                         </div>
                     </div>
                     <?php

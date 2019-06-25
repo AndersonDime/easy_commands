@@ -16,9 +16,6 @@
     $teste = isset($_GET["teste"]) ? $_GET["teste"] : "";
 ?>
 
-<div class="stats bg-danger text-center text-white" id="listT" style="transition: 0.5s;">
-
-</div>
 
 <div class="production-page">
     <div class="container-fluid">
@@ -27,7 +24,8 @@
             <div class="col-xs-12 col-sm-2 col-md-1 col-lg-1"></div>
             <div class="col">
                 <br>   
-                <div class="card-header bg-info">
+                <div class="stats bg-danger text-center text-white" id="listT" style="transition: 0.5s;"></div>
+                <div class="card-header bg-dark">
                 <div class="row">
                     <div class="col-md-10">
                         <h4 class="text-light text-center">
@@ -153,16 +151,25 @@ var refreshId = setInterval(function(){ listTypes(); }, 1000);
 </script>
 
 <style>
+
     .stats{
-        animation-duration: 1.1s;
+        animation-duration: 1.5s;
         animation-name: statsAnimation;
         animation-timing-function: ease;
         height: fit-content;
     }
 
     @keyframes statsAnimation{
-        0%   {height: 0px}
-        25%  {height: 24px}
-        100% {height: 24px}
+        0%   {
+                color: #dc3545;
+                height: 24px;
+             }
+        90%  {
+                color: #dc3545;
+            }
+        100% {
+                color: white;
+                height: 24px;
+             }
     }
 </style>

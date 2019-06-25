@@ -15,7 +15,7 @@ $numero_mesa = $_GET["numero"];
             <br>
                 <div class="card">
                     <div class="card-header bg-warning">
-                        <h4 class="text-center">Cadastrar Pedido - Mesa <?php echo $numero_mesa; ?></h4>
+                        <h4 class="text-center text-dark">Cadastrar Pedido - Mesa <?php echo $numero_mesa; ?></h4>
                     </div>
                     <div class="card-body">
                             <div class="form-group">

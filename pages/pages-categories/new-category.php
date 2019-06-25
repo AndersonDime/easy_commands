@@ -17,8 +17,10 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                 <div class="col-sm-12 col-md-4"></div>
                     <div class="col-sm-12 col-md-4">
                         <br>
-                        <div class="card transparencia">
-                            <div class="card-header bg-dark txt-white text-center"> <h4> Cadastro de categoria </h4> </div>
+                        <div class="card">
+                            <div class="card-header bg-dark">
+                                <h4 class="text-warning text-center"> Cadastro de categoria </h4> 
+                            </div>
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label>Nome da categoria</label>
@@ -37,7 +39,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                                                 </select>
                                     </div>
                                     
-                                <input type="submit" class="btn btn-info" value="Cadastrar">
+                                <input type="submit" class="btn btn-warning" value="Cadastrar">
 
                             </div>
                         </div>

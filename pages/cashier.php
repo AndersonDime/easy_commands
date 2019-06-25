@@ -13,40 +13,44 @@ $list_mesa = mysql_getdata("SELECT * from mesas inner join comandas on comandas.
 ?>
 <div class="container">
     <div class="row">   
-        <div class="col-sm-4">
-        <br>
-            <div class="card transparencia">
-                <div class="card-header text-center bg-dark txt-white">Lista de mesas</div>
-                <div class="card-header bg-dark">
-                <table class="table table-dark">
-                    <thead>
-                        <tr>
-                            <th style="text-align: center;"scope="col">Mesa</th>                   
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <?php                         
-                            foreach ($list_mesa as  $key =>$value){
-                                $id_comanda = $value['id'];
-                               
-                        ?>
+        <div class="col-xs-12 col-sm-12 col-md-3">
+            <br>
+            <div class="card">
+                <div class="card-header bg-warning">
+                    <h4 class="text-center text-dark">Lista de mesas</h4>
+                </div>
+                <div class="card-body bg-dark">
+                    <table class="table table-dark">
+                        <thead>
                             <tr>
-                                <td><button id="teste" value="<?php echo $id_comanda ?>" style="width: -webkit-fill-available;"class="btn btn-sm btn-info" onclick="open_table(<?php echo $id_comanda ?>)" ><?php echo 'MESA '.$value["numero"]; ?></button></td>            
+                                <th style="text-align: center;"scope="col">Mesa</th>                   
                             </tr>
-                        <?php 
-                            }
-                        ?>
-                    </tbody>
-                </table>
+                        </thead>
+
+                        <tbody>
+                            <?php                         
+                                foreach ($list_mesa as  $key =>$value){
+                                    $id_comanda = $value['id'];
+                                
+                            ?>
+                                <tr>
+                                    <td><button id="teste" value="<?php echo $id_comanda ?>" style="width: -webkit-fill-available;"class="btn btn-sm btn-warning" onclick="open_table(<?php echo $id_comanda ?>)" ><?php echo 'MESA '.$value["numero"]; ?></button></td>            
+                                </tr>
+                            <?php 
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>    
-    </div>
-    <div class=".col-6 col-md-2"></div>
-    <div class="col-sm-12 col-md-6">
-    <br>
-        <div class="card transparencia">
-            <div class="card-header text-center bg-dark txt-white"><h3>PEDIDO</h3></div>
+    
+        <div class="col-xs-12 col-sm-12 col-md-9">
+            <br>
+            <div class="card">
+                <div class="card-header bg-dark">
+                    <h4 class="text-center text-warning">PEDIDO</h4>
+                </div>
                 <div class="card-body bg-dark">
                     <table class="table table-dark text-center" >
                         <thead>
@@ -64,10 +68,11 @@ $list_mesa = mysql_getdata("SELECT * from mesas inner join comandas on comandas.
                         </tbody>
                     </table>      
                 </div>
-                <div class="card-footer">
+                <div class="card-footer bg-dark">
                     <button id="fecha_comanda" value="0" class="btn btn-block btn-warning" onclick="closeComand();">Finalizar Comanda</button>
                 </div>
-            </div>        
+                </div>        
+            </div>
         </div>
     </div>
 </div>

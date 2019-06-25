@@ -68,7 +68,6 @@
 }
 
 .add-table, .add-table:hover{
-    background-color: #228B22;
     color: white;
     padding: 8px;
     text-align: center;
@@ -87,4 +86,11 @@
     left: 25%;
 }
 
+.btn-outline-dark:hover{
+    color: #ffc107!important;
+  }
+
+  .btn-dark{
+      color: #ffc107!important;
+  }
 

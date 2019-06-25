@@ -20,8 +20,8 @@
                 <div class="col-sm-12 col-md-4">
                 <br>
                         <div class="card transparencia">
-                            <div class="card-header bg-dark txt-white text-center">
-                                <h4> Alterarção de Setor </h4>
+                            <div class="card-header bg-dark">
+                                <h4 class="text-warning text-center"> Alterarção de Setor </h4>
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
@@ -35,7 +35,7 @@
                                     ?>
                                     <input type="hidden" name="id" value="<?php echo $ident?>">
                                 </div>                                        
-                                <input type="submit" class="btn btn-info" value="Cadastrar">
+                                <input type="submit" class="btn btn-warning" value="Cadastrar">
 
                             </div>
                         </div>
