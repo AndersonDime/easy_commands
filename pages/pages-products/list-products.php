@@ -72,7 +72,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
         ?>
 
             <script>
-                $.notify( "Excluido com sucesso", { position:"top center" } );
+               $('#errorHint').html('Senha incorreta. Tente novamente ou clique em "Esqueceu a senha?" para redefini-la.');
             </script>
     
         <?php endif; ?>

@@ -28,7 +28,7 @@
                             Administrativo
                         </a>
                         <div class="dropdown-menu" aria-labelledby="configDropdown">
-                            <a class="dropdown-item" href="?page=user-register">Usuarios</a>
+                            <a class="dropdown-item" href="?page=list-users">Usuarios</a>
                             <a class="dropdown-item" href="?page=list-products">Produtos</a>
                             <a class="dropdown-item" href="?page=list-categories">Categorias</a>
                             <a class="dropdown-item" href="?page=list-sectors">Setores</a>

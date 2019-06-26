@@ -48,11 +48,11 @@
                                 <option value="<?php echo $value["id"];?>" <?php echo ($value["id"] == $selsect) ? "selected" : ""; ?> > 
                                     <?php echo $value["nome"]; ?>
                                 </option>
-
                                 <?php 
                                     } 
                                 ?>
                                 </select>
+                                <small id="errorHint" style="color: red;"><span style="color: white">.</span></small>
                             </div>
                             <input type="submit" class="btn btn-warning" value="Atualizar">
                         </div>
@@ -73,7 +73,7 @@
                         if ($fail):
                     ?>
                     <script>
-                        $.notify( "Falha para atualizar categoria", { position:"top center" } );
+                         $('#errorHint').html('Falha ao atualizar categoria, Verifique se digitou o mesmo nome da categoria');
                     </script>
                     <?php 
                         endif; 
