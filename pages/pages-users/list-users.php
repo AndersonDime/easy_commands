@@ -2,7 +2,7 @@
 require 'assets/services/session-validate.php';
 include_once("assets/services/products-service.php");
 
-$list = mysql_getdata("SELECT categorias.id AS 'idCategoria', categorias.nome AS 'nomeCategoria', categorias.setores_id, setores.id AS 'idSetor', setores.nome AS 'nomeSetor' FROM categorias INNER JOIN setores ON categorias.setores_id = setores.id");
+$list = mysql_getdata("SELECT usuarios.id AS 'idUsuario', usuarios.usuario AS 'nomeUsuario', usuarios.email AS 'emailUsuario', setores.nome AS 'nomeSetor', setores.id AS 'idSetor' FROM usuarios INNER JOIN setores ON usuarios.setores_id = setores.id");
 
 
 $success= isset($_GET["success"]) ? $_GET["success"] : "";
@@ -18,15 +18,16 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
         <br>
         <div class="card">
             <div class="card-header bg-dark">
-                <h4 class="text-center text-warning"> Lista de Categorias </h4>
+                <h4 class="text-center text-warning"> Lista de Usuarios </h4>
             </div>
             <div class="card-body">
                 <table class="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Categoria</th>
-                            <th scope="col">Setor da categoria</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Setor</th>
                             <th scope="col">Editar</th>                   
                             <th scope="col">Excluir</th>                   
                         </tr>
@@ -36,11 +37,12 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                             foreach ($list as  $key =>$value){
                         ?>
                             <tr>
-                                <th><?php echo $value["idCategoria"];?></th>
-                                <td><?php echo $value["nomeCategoria"];?></td>
+                                <th><?php echo $value["idUsuario"];?></th>
+                                <td><?php echo $value["nomeUsuario"];?></td>
+                                <td><?php echo $value["emailUsuario"];?></td>
                                 <td><?php echo $value["nomeSetor"];?></td>
-                                <td> <a class="btn btn-sm btn-info" href="?page=alter-categories&id=<?php echo $value["idCategoria"] ?>&sect=<?php echo $value["idSetor"] ?> " >Editar</a> </td>
-                                <td> <a class="btn btn-sm btn-danger" href="?page=delete-categories&id=<?php echo $value["idCategoria"] ?>">Excluir</a> </td>               
+                                <td> <a class="btn btn-sm btn-info" href="?page=alter-users&id=<?php echo $value["idUsuario"] ?>&sect=<?php echo $value["idSetor"] ?> " >Editar</a> </td>
+                                <td> <a class="btn btn-sm btn-danger" href="?page=delete-users&id=<?php echo $value["idUsuario"] ?>">Excluir</a> </td>               
                             </tr>
                             <?php
                                 }
@@ -80,7 +82,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                 <?php endif; ?>
         </div>
         <div class="col-md-1">
-            <a class="btn-dark add-table" href="?page=new-category" >
+            <a class="btn-dark add-table" href="?page=user-register" >
                 <i class="fas fa-plus text-warning"></i>
             </a>
         </div>

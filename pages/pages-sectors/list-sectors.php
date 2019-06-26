@@ -43,6 +43,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                                 }
                             ?>
                     </tbody>
+                    <p id="errorHint" class="text-center" style="color: red; width: 100%;"><span style="color: white">.</span></p>
                 </table>
             </div>
         </div>
@@ -71,7 +72,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                 if ($fail==1):
                 ?>
                 <script>
-                    $.notify( "Existe uma categoria alocada a este Setor", { position:"top center" } );
+                    $('#errorHint').html('Existe uma categoria alocada a este Setor');
                 </script>
                 <?php endif; ?>
                 

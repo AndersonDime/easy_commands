@@ -30,6 +30,7 @@
                                     
                                     ?>
                                     <input type="text" class="form-control" id="sec" name="sector" value="<?php echo $value["nome"] ?>" required>
+                                    <small id="errorHint" style="color: red;"><span style="color: white">.</span></small>
                                     <?php 
                                         } 
                                     ?>
@@ -55,7 +56,7 @@
                         if ($fail):
                     ?>
                     <script>
-                        $.notify( "Falha ao editar setor", { position:"top center" } );
+                        $('#errorHint').html('Falha ao atualizar o setor, Verifique se digitou o mesmo nome do setor');
                     </script>
                     <?php 
                         endif; 

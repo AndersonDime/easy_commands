@@ -23,9 +23,21 @@ include 'template/header.php';
             include 'template/navbar.php';     
             include 'pages/pages-categories/new-category.php';
             break;
+        case 'alter-users': 
+            include 'template/navbar.php';     
+            include 'pages/pages-users/alter-users.php';
+            break;
+        case 'delete-users': 
+            include 'template/navbar.php';     
+            include 'pages/pages-users/delete-users.php';
+            break;
         case 'list-table':
             include 'template/navbar.php'; 
             include 'pages/list-table.php';
+            break;
+        case 'list-users':
+            include 'template/navbar.php'; 
+            include 'pages/pages-users/list-users.php';
             break;
         case 'home-page':     
             include 'template/navbar.php';
@@ -103,6 +115,10 @@ include 'template/header.php';
             include 'template/navbar.php';     
             include 'assets/php/edit-sectors.php';
             break;
+        case 'edit-users':
+            include 'template/navbar.php';     
+            include 'assets/php/edit-users.php';
+            break;
         case 'edit-category':
             include 'template/navbar.php';     
             include 'assets/php/edit-category.php';
@@ -114,6 +130,10 @@ include 'template/header.php';
         case 'delete-table': 
             include 'template/navbar.php';     
             include 'assets/php/delete-table.php';
+            break;
+        case 'delete-users': 
+            include 'template/navbar.php';     
+            include 'assets/php/delete-users.php';
             break;
         case 'new-command':  
             include 'template/navbar.php';    
