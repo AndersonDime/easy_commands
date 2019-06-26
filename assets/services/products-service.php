@@ -41,7 +41,7 @@ function mysql_update($script){
 
     $con = mysqli_connect("localhost","root","root","easycommands") or die(mysqli_connect_error());
 
-    $dados = mysqli_query($con, $script) or die(mysqli_error());
+    $dados = mysqli_query($con, $script) or die(mysqli_error($con));
 
     $atualizou = mysqli_affected_rows($con);
     

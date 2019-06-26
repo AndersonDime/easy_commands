@@ -20,7 +20,7 @@ function open_table($id_comanda){
                 <td>'.$value["nome_produto"].'</td> 
                 <td pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$">'.$newprice.'</td>
                 <td>'.$value["quantidade_pedido"].'</td>
-                <td class="text-center"><i class=" fas fa-trash-alt" onclick="deleteOrder()"></i> </td>
+                <td class="text-center"><i class=" fas fa-trash-alt" onclick="deleteOrder('.$value["numero_mesa"].')"></i> </td>
             </tr>';
         }
     }

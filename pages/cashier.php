@@ -8,8 +8,6 @@ produtos.nome as nome_produto, produtos.preco as preco_produto from mesas
 inner join comandas ON comandas.mesas_id = mesas.id
 INNER JOIN pedidos ON pedidos.comandas_id = comandas.id
 INNER JOIN produtos ON produtos.id = pedidos.produtos_id");
-
-$list_mesa = mysql_getdata("SELECT * from mesas inner join comandas on comandas.mesas_id = mesas.id where comandas.status = 0");
 ?>
 <div class="container">
     <div class="row">   
@@ -26,19 +24,7 @@ $list_mesa = mysql_getdata("SELECT * from mesas inner join comandas on comandas.
                                 <th style="text-align: center;"scope="col">Mesa</th>                   
                             </tr>
                         </thead>
-
-                        <tbody>
-                            <?php                         
-                                foreach ($list_mesa as  $key =>$value){
-                                    $id_comanda = $value['id'];
-                                
-                            ?>
-                                <tr>
-                                    <td><button id="teste" value="<?php echo $id_comanda ?>" style="width: -webkit-fill-available;"class="btn btn-sm btn-warning" onclick="open_table(<?php echo $id_comanda ?>)" ><?php echo 'MESA '.$value["numero"]; ?></button></td>            
-                                </tr>
-                            <?php 
-                                }
-                            ?>
+                        <tbody id="lista">
                         </tbody>
                     </table>
                 </div>
@@ -69,12 +55,15 @@ $list_mesa = mysql_getdata("SELECT * from mesas inner join comandas on comandas.
                     </table>      
                 </div>
                 <div class="card-footer bg-dark">
-                    <button id="fecha_comanda" value="0" class="btn btn-block btn-warning" onclick="closeComand();">Finalizar Comanda</button>
+                    <button id="fecha_comanda" value="0" class="btn btn-block btn-warning" onclick="function_confirm_cashier();" disabled>Finalizar Comanda</button>
                 </div>
                 </div>        
             </div>
         </div>
     </div>
 </div>
+<script src="./assets/javascript/cashier.js"></script>
 
-<script src="./assets/javascript/add-command.js"></script>
+<div id="fundo" class="card transparencia">
+	 <div class="fundo_alert"></div>
+</div>

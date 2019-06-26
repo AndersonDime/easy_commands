@@ -51,8 +51,9 @@
     });
 });
 </script>
-<div id="confirm" class="card transparencia">
-	 <div class="message"></div>
-	 <button class="yes btn-info">Sim</button>
-	 <button class="no btn-danger">Não</button>
-  </div>
+    <div id="vaiFikaTudoPreto" class="vaiFikaTudoPreto"></div>
+    <div id="confirm" class="card transparencia">
+        <div class="message"></div>
+        <button class="yes btn-info">Sim</button>
+        <button class="no btn-danger">Não</button>
+    </div>
