@@ -82,9 +82,18 @@
     border: 2px outset#ffc107;
 }
 
+<<<<<<< HEAD
 .add-table:hover{
     border: 2px inset #ffc107
 }
+=======
+.new-icon{
+    font-size: 50px;
+    color:#212529!important;
+    
+}
+
+>>>>>>> a0aec30e1d655546d8f424170a27e890881eae6c
 
 .notifyjs-corner{
     left: 25%;

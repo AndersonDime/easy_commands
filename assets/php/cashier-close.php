@@ -1,7 +1,9 @@
 <?php
 include_once("../services/products-service.php");
 $id_comanda = $_POST["idComanda"];
+$valorTotal = $_POST["valorTotal"];
 
+echo $valorTotal;
 
 $list_commands = mysql_getdata("SELECT * FROM comandas WHERE id = '$id_comanda'");
 $id_comanda_banco = $list_commands[0]['id'];
@@ -12,7 +14,6 @@ $mesa_numero = $mesa[0]["numero"];
        $alter_num_mesa = mysql_update("UPDATE comandas SET hist_mesa_numero = '$mesa_numero' WHERE id = '$id_comanda_banco' ");
        $alter_id_mesa = mysql_update("UPDATE comandas SET mesas_id = null WHERE id = '$id_comanda_banco' ");
        $alter_status = mysql_update("UPDATE comandas SET `status` = 1 WHERE id = '$id_comanda_banco' ");
+       $alter_value = mysql_update("UPDATE comandas SET `hist_valor_fatura` = '$valorTotal' WHERE id = '$id_comanda_banco' ");
     }
-
-
 ?>

@@ -33,6 +33,7 @@
                             <a class="dropdown-item" href="?page=list-products">Produtos</a>
                             <a class="dropdown-item" href="?page=list-categories">Categorias</a>
                             <a class="dropdown-item" href="?page=list-sectors">Setores</a>
+                            <a class="dropdown-item" href="?page=report">Relatório</a>
                         </div>
                     </div>
                 </li>

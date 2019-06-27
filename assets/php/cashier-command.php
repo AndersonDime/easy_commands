@@ -14,6 +14,10 @@ function open_table($id_comanda){
         if($_POST["idComanda"] == $value["id_comanda"]){
             (float)$sum = $value["preco_produto"] * $value["quantidade_pedido"];
             $totalprice += $sum;
+
+            $formatTotalPrice = number_format((float)$totalprice, 2, ',', '');
+            $HistTotalPrice = number_format((float)$totalprice, 2, '.', '');
+
             $newprice = str_replace(".", ",",$value["preco_produto"]);
             echo '
             <tr>
@@ -25,8 +29,11 @@ function open_table($id_comanda){
         }
     }
     echo '<tr class="totalPrice">
-            <td colspan="4">TOTAL: '.number_format((float)$totalprice, 2, ',', '').'</td>
-          </tr>';
+            <td colspan="4">TOTAL: <span class="text-danger">'.$formatTotalPrice.'
+            <input id="valorTotal" value="'.$HistTotalPrice.'">
+            </td>
+          </span></tr>
+          ';
 }
 $idComanda = $_POST["idComanda"];
 open_table($idComanda);

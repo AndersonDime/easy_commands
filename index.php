@@ -139,9 +139,14 @@ include 'template/header.php';
             include 'template/navbar.php';    
             include 'pages/new-command.php';
             break;
+        case 'report':  
+            include 'template/navbar.php';    
+            include 'pages/report/report.php';
+            break;
         default:
             include 'pages/login.php';
             break;
+            
     }
 
 //Conecta com o banco

@@ -17,12 +17,12 @@ INNER JOIN produtos ON produtos.id = pedidos.produtos_id");
                 <div class="col-xs-12 col-sm-12 col-md-3">
                     <br>
                     <div class="card">
-                        <div class="card-header bg-warning">
-                            <h4 class="text-center text-dark">Lista de mesas</h4>
+                        <div class="card-header bg-dark">
+                            <h4 class="text-center text-warning">Lista de mesas</h4>
                         </div>
-                        <div class="card-body bg-dark">
+                        <div class="card-body bg-dark" style="padding: 0!important;">
                             <table class="table table-dark">
-                                <thead>
+                                <thead class="thead-dark">
                                     <tr>
                                         <th style="text-align: center;"scope="col">Mesa</th>                   
                                     </tr>
@@ -40,9 +40,9 @@ INNER JOIN produtos ON produtos.id = pedidos.produtos_id");
                         <div class="card-header bg-dark">
                             <h4 class="text-center text-warning">PEDIDO</h4>
                         </div>
-                        <div class="card-body bg-dark">
-                            <table class="table table-dark text-center" >
-                                <thead>
+                        <div class="card-body" style="padding: 0!important;">
+                            <table class="table text-center" >
+                                <thead class="thead-dark">
                                     <tr>
                                         <th scope="col">Produto</th>
                                         <th scope="col">Valor</th>
