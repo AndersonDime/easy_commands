@@ -71,7 +71,6 @@ $(document).ready(function() {
                                     <label for="password">Senha</label>
                                     <input type="password" class="form-control" id="exampleInputPassword1" name="inputPass" required minlength="6">
                                     <?php } ?>
-                                    <small id="errorHint" style="color: red;"><span style="color: white">.</span></small>
                                 </div>
                                 <button type="submit" class="btn btn-outline-dark btn-block">Cadastrar</button> 
                             </form>
@@ -82,7 +81,7 @@ $(document).ready(function() {
                         if ($success):
                         ?>
                             <script>
-                                $.notify( "Usuario cadastrado com sucesso", { position:"top center", className: 'success' } );
+                                $("#notification").addClass("notification-animation bg-success ").html("Alterado com sucesso");
                             </script>
                         <?php endif; ?>
                         <?php
@@ -90,7 +89,7 @@ $(document).ready(function() {
                         if ($fail):
                         ?>
                             <script>
-                                $('#errorHint').html('Usuario já cadastrado !');
+                            $("#notification").addClass("notification-animation bg-danger ").html("Usuário já cadastrado");
                             </script>
                         <?php endif; ?>
                     </div>

@@ -30,16 +30,15 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                                             </div>
                                             <div class="form-group">
                                                 <label>Setor da categoria</label>
-                                                        <select class="form-control" name="secid">
-                                                            <?php 
-                                                            foreach ($categ as $value){
-                                                            ?>
-        
-                                                            <option value="<?php echo $value["id"];?>"> <?php echo $value["nome"]; ?></option>
-        
-                                                            <?php } ?>
-                                                        </select>
-                                                        <small id="errorHint" style="color: red;"></small>
+                                                <select class="form-control" name="secid">
+                                                    <?php 
+                                                    foreach ($categ as $value){
+                                                    ?>
+
+                                                    <option value="<?php echo $value["id"];?>"> <?php echo $value["nome"]; ?></option>
+
+                                                    <?php } ?>
+                                                </select>
                                             </div>
                                             
                                         <input type="submit" class="btn btn-warning" value="Cadastrar">
@@ -51,7 +50,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                                         if ($success):
                                     ?>
                                         <script>
-                                            $.notify( "Cadastrado com sucesso", { position:"top center", className: 'success' } );
+                                            $("#notification").addClass("notification-animation bg-success ").html("Excluido com Sucesso");
                                         </script>
                                     <?php endif; ?>
         
@@ -60,7 +59,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                                         if ($fail):
                                     ?>
                                         <script>
-                                            $('#errorHint').html('Esta categoria já existe no sistema');
+                                            $("#notification").addClass("notification-animation bg-danger ").html("Esta categoria já está cadastrada no sistema"); 
                                         </script>
                                     <?php endif; ?>
                                 </div>

@@ -50,7 +50,6 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                                         }
                                     ?>
                             </tbody>
-                            <p id="errorHint" class="text-center" style="color: red; width: 100%;"><span style="color: white">.</span></p>
                         </table>
                     </div>
                 </div>
@@ -60,7 +59,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                         if ($success == 1):
                         ?>
                         <script>
-                            $.notify( "Alterado com sucesso", { position:"top center", className: 'success' } );
+                            $("#notification").addClass("notification-animation bg-success ").html("Alterado com sucesso");
                         </script>
                         <?php endif; ?>
 
@@ -70,7 +69,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                             if ($success == 2):
                         ?>
                         <script>
-                            $.notify( "Excluído com sucesso", { position:"top center", className: 'success' } );
+                            $("#notification").addClass("notification-animation bg-success ").html("Excluído com sucesso");
                         </script>
                         <?php endif; ?>
 
@@ -79,7 +78,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                         if ($fail==1):
                         ?>
                         <script>
-                            $('#errorHint').html('Existe um produto alocado a esta Categoria');
+                            $("#notification").addClass("notification-animation bg-danger ").html("Existe um produto alocado a esta categoria");
                         </script>
                         <?php endif; ?>
                 </div>

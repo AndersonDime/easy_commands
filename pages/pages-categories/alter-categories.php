@@ -54,7 +54,6 @@
                                             } 
                                         ?>
                                         </select>
-                                        <small id="errorHint" style="color: red;"><span style="color: white">.</span></small>
                                     </div>
                                     <input type="submit" class="btn btn-warning" value="Atualizar">
                                 </div>
@@ -64,7 +63,7 @@
                                 if ($success):
                             ?>
                             <script>
-                                $.notify( "Atualizado Categoria com sucesso", { position:"top center", className: 'success' } );
+                                $("#notification").addClass("notification-animation bg-success ").html("Categoria atualizada com sucesso");
                             </script>
                             <?php 
                                 endif; 
@@ -75,7 +74,7 @@
                                 if ($fail):
                             ?>
                             <script>
-                                 $('#errorHint').html('Falha ao atualizar categoria, Verifique se digitou o mesmo nome da categoria');
+                                $("#notification").addClass("notification-animation bg-success ").html("Falha ao editar categoria, verifique se existe um produto com o mesmo nome já cadastrado"); 
                             </script>
                             <?php 
                                 endif; 

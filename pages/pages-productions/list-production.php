@@ -65,7 +65,7 @@
                         if ($success):
                     ?>
                         <script>
-                            $.notify( "Pedido Enviado com Sucesso", { position:"top center", className: 'success' } );
+                            $("#notification").addClass("notification-animation bg-success ").html("Pedido enviado com sucesso");
                         </script>
                     <?php 
                         endif; 
@@ -75,7 +75,7 @@
                         if ($fail):
                     ?>
                     <script>
-                        $.notify( "Falha ao enviar pedido", { position:"top center" } );
+                        $("#notification").addClass("notification-animation bg-danger ").html("Falha ao enviar pedido");
                     </script>
                     <?php 
                         endif; 

@@ -1,5 +1,4 @@
 function refresh_production(id_pedido){
-    debugger;
     $.ajax({
         url : "assets/php/edit-production.php",
         type : 'POST',
@@ -8,11 +7,10 @@ function refresh_production(id_pedido){
     .done(function(msg){
         //$("#resultado").html(msg);
         if(msg > 0){
-            $.notify( "Alterado o Status com sucesso", { position:"top center", className: 'success' } );
+            $("#notification").addClass("notification-animation bg-success ").html("Status Alterado com Sucesso");
         }
         else{
-
-            $.notify( "Pedido Finalizado !", { position:"top center", className: 'success' } );
+            $("#notification").addClass("notification-animation bg-success ").html("Pedido Finalizado");
         }
 })
 }

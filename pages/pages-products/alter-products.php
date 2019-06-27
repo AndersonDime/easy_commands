@@ -59,7 +59,6 @@
                                         $newprice = str_replace(".", ",",$value["preco"]);  
                                         ?>
                                         <input  type="text" class="form-control" id="valor" pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$" name="price" value="<?php echo $newprice; ?>" required>
-                                        <small id="errorHint" style="color: red;"><span style="color: white">.</span></small>
                                         <?php
                                         } 
                                         ?>
@@ -72,7 +71,7 @@
                                 if ($success):
                             ?>
                             <script>
-                                $.notify( "Atualizado item com sucesso", { position:"top center", className: 'success' } );
+                                $("#notification").addClass("notification-animation bg-success ").html("Produto atualizado com Sucesso");
                             </script>
                             <?php 
                                 endif; 
@@ -83,7 +82,7 @@
                                 if ($fail):
                             ?>
                             <script>
-                                $('#errorHint').html('Falha ao editar produto, Verifique se digitou o mesmo nome do produto');
+                                $("#notification").addClass("notification-animation bg-danger ").html("Falha ao editar produto, verifique se já não existe um produto com esse nome");
                             </script>
                             <?php 
                                 endif; 

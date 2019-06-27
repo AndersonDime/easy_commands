@@ -63,7 +63,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                 ?>
         
                     <script>
-                        $.notify( "Alterado com sucesso", { position:"top center", className: 'success' } );
+                        $("#notification").addClass("notification-animation bg-success ").html("Alterado com sucesso");
                     </script>
         
                 <?php 
@@ -74,7 +74,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                 ?>
         
                     <script>
-                       $('#errorHint').html('Senha incorreta. Tente novamente ou clique em "Esqueceu a senha?" para redefini-la.');
+                       $("#notification").addClass("notification-animation bg-danger ").html("Falha na alteração"); 
                     </script>
             
                 <?php endif; ?>

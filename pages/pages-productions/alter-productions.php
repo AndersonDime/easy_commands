@@ -49,7 +49,7 @@
                     if ($success):
                 ?>
                 <script>
-                    $.notify( "Alterado setor com sucesso", { position:"top center", className: 'success' } );
+                    $("#notification").addClass("notification-animation bg-success ").html("Setor alterado com sucesso");
                 </script>
                 <?php 
                     endif; 
@@ -60,7 +60,7 @@
                     if ($fail):
                 ?>
                 <script>
-                    $.notify( "Falha ao editar setor", { position:"top center" } );
+                    $("#notification").addClass("notification-animation bg-danger ").html("Falha ao editar o setor");
                 </script>
                 <?php 
                     endif; 

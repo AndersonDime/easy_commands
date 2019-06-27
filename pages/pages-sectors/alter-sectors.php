@@ -31,7 +31,6 @@
                                             
                                             ?>
                                             <input type="text" class="form-control" id="sec" name="sector" value="<?php echo $value["nome"] ?>" required>
-                                            <small id="errorHint" style="color: red;"><span style="color: white">.</span></small>
                                             <?php 
                                                 } 
                                             ?>
@@ -46,7 +45,7 @@
                                 if ($success):
                             ?>
                             <script>
-                                $.notify( "Alterado setor com sucesso", { position:"top center", className: 'success' } );
+                                $("#notification").addClass("notification-animation bg-success ").html("Setor alterado com sucesso");
                             </script>
                             <?php 
                                 endif; 
@@ -57,7 +56,7 @@
                                 if ($fail):
                             ?>
                             <script>
-                                $('#errorHint').html('Falha ao atualizar o setor, Verifique se digitou o mesmo nome do setor');
+                                $("#notification").addClass("notification-animation bg-success ").html("Verifique se já existe um setor com este nome"); 
                             </script>
                             <?php 
                                 endif; 

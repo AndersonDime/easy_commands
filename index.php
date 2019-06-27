@@ -172,7 +172,7 @@ if($total == 1){
     }else{
         ?>
     <script>
-        $('#errorHint').html('Senha incorreta. Tente novamente ou clique em "Esqueceu a senha?" para redefini-la.');        
+        $('#errorHint').html('Senha incorreta. Tente novamente ou clique em "Esqueceu a senha?" para redefini-la.');       
     </script>
     <?php
     unset ($_SESSION['userId']);

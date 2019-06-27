@@ -30,11 +30,10 @@
             .done(function(msg){
                 //$("#resultado").html(msg);
                 if(msg > 0){
-                    $.notify( "Alterado o Status com sucesso", { position:"top center", className: 'success' } );
+                    $("#notification").addClass("notification-animation bg-success ").html("Pedido Finalizado");
                 }
                 else{
-
-                    $.notify( "Falha ao alterar o Status", { position:"top center" } );
+                    $("#notification").addClass("notification-animation bg-danger ").html("Falha ao finalizar o pedido");
                 }
                 
             })
@@ -107,7 +106,7 @@
                     if ($success):
                 ?>
                     <script>
-                        $.notify( "Alterado com sucesso", { position:"top center", className: 'success' } );
+                        $("#notification").addClass("notification-animation bg-success ").html("Alterado com sucesso");
                     </script>
                 <?php 
                     endif; 
@@ -117,7 +116,7 @@
                     if ($fail):
                 ?>
                 <script>
-                    $.notify( "Excluido com sucesso", { position:"top center" } );
+                    $("#notification").addClass("notification-animation bg-success ").html("Excluído com Sucesso");
                 </script>
                 <?php 
                     endif; 

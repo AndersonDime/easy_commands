@@ -41,7 +41,6 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                                         <div class="form-group">
                                             <label>Preço</label>
                                             <input  type="text" class="form-control" id="valor" pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$" name="price" required>
-                                            <small id="errorHint" style="color: red;"></small>
                                         </div>
                                         <input type="submit" class="btn btn-info" value="Cadastrar">
         
@@ -52,7 +51,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                                     if ($success):
                                 ?>
                                 <script>
-                                    $.notify( "Cadastrado com sucesso", { position:"top center", className: 'success' } );
+                                    $("#notification").addClass("notification-animation bg-success ").html("Cadastrado com sucesso");
                                 </script>
                                 <?php 
                                     endif; 
@@ -62,7 +61,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                                     if ($fail):
                                 ?>
                                 <script>
-                                    $('#errorHint').html('Erro ao cadastrar o item');
+                                    $("#notification").addClass("notification-animation bg-danger ").html("Erro ao cadastrar o produto"); 
                                 </script>
                                 <?php 
                                     endif; 

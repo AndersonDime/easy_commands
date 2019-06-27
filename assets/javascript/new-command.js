@@ -67,7 +67,6 @@ function listOrder() {
 }
 
 function enableSubmit(){
-    alert('teste');
     $(submitOrder).prop("disabled", false);
 }
 

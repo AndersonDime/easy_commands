@@ -43,6 +43,10 @@
             </ul>
         </div>
     </nav>
+
+    <div id="notification">
+    </div>
+
 <script>
 
  $(document).ready(function(){
