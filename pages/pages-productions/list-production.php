@@ -16,6 +16,7 @@
     $teste = isset($_GET["teste"]) ? $_GET["teste"] : "";
 ?>
 
+<<<<<<< HEAD
 
 <div class="page-container">
     <div class="bg-production fill">
@@ -40,6 +41,22 @@
                                 <?php } ?>
                             </select>
                         </div>
+=======
+<div class="production-page">
+    <div class="container-fluid">
+    <br>
+        <div class="row">
+            <div class="col-xs-12 col-sm-2 col-md-1 col-lg-1"></div>
+            <div class="col">
+                <br>   
+                <div class="stats bg-danger text-center text-white" id="listT" style="transition: 0.5s;"></div>
+                <div class="card-header bg-dark">
+                <div class="row">
+                    <div class="col-md-10">
+                        <h4 class="text-light text-center">
+                            Lista de Produção
+                        </h4> 
+>>>>>>> 1ec956a500ed7387dd27cb7d622d8ad8767c6082
                     </div>
                     </div>
                     <div class="card roll">                    
@@ -92,40 +109,7 @@
 
 
 <script> 
-    $(document).ready(function(){
-
-        $(".edit").click(function(e){
-
-             $.ajax({
-                url : "assets/php/edit-production.php",
-                type : 'post',
-                data : {
-                    id : this.parentElement.parentElement.id,
-                    stats :$("#stats_"+this.parentElement.parentElement.id).val()
-                }
-            })
-            .done(function(msg){
-                //$("#resultado").html(msg);
-                if(msg > 0){
-                    $.notify( "Alterado o Status com sucesso", { position:"top center", className: 'success' } );
-                }
-                else{
-
-                    $.notify( "Falha ao alterar o Status", { position:"top center" } );
-                }
-                
-            })
-            .fail(function(jqXHR, textStatus, msg){
-                alert(msg);
-            }); 
-
-        })
-
-        
-        
-    })
-
-    
+  
 function listOrders(){
     var sectorValue = $("#filtroSetores").val();
     $.ajax({

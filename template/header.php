@@ -21,6 +21,7 @@
     <script src="assets/javascript/global.js"></script>
     <script src="assets/javascript/login.js"></script>
     <script src="assets/javascript/notify.js"></script>
+    <script src="assets/javascript/production.js"></script>
     <link rel="stylesheet" type="text-css" href="assets/css/cadastro-produtos.css">
     
 </head>

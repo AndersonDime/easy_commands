@@ -23,6 +23,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                                     <div class="card-header bg-dark">
                                         <h4 class="text-warning text-center"> Cadastro de categoria </h4> 
                                     </div>
+<<<<<<< HEAD
                                         <div class="card-body">
                                             <div class="form-group">
                                                 <label>Nome da categoria</label>
@@ -43,6 +44,20 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                                             
                                         <input type="submit" class="btn btn-warning" value="Cadastrar">
         
+=======
+                                    <div class="form-group">
+                                        <label>Setor da categoria</label>
+                                                <select class="form-control" name="secid">
+                                                    <?php 
+                                                    foreach ($categ as $value){
+                                                    ?>
+
+                                                    <option value="<?php echo $value["id"];?>"> <?php echo $value["nome"]; ?></option>
+
+                                                    <?php } ?>
+                                                </select>
+                                            <small id="errorHint" style="color: red;"></small>
+>>>>>>> 1ec956a500ed7387dd27cb7d622d8ad8767c6082
                                     </div>
                                 </div>
                                     <?php
@@ -66,6 +81,28 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                                 <div class="col-sm-12 col-md-4"></div>
                             </div>
                         </div>
+<<<<<<< HEAD
+=======
+                            <?php
+                                //se orçamento foi inserido com sucesso mostra essa mensagem:
+                                if ($success):
+                            ?>
+                                <script>
+                                    $.notify( "Cadastrado com sucesso", { position:"top center", className: 'success' } );
+                                </script>
+                            <?php endif; ?>
+
+                            <?php
+                                // se houver erro no formulario mostra essa mensagem:
+                                if ($fail):
+                            ?>
+                                <script>
+                                   $('#errorHint').html('Erro ao cadastrar esta categoria');
+                                </script>
+                            <?php endif; ?>
+                        </div>
+                        <div class="col-sm-12 col-md-4"></div>
+>>>>>>> 1ec956a500ed7387dd27cb7d622d8ad8767c6082
                     </div>
             </form>
         </div>

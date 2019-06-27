@@ -15,8 +15,6 @@ $email = $_POST["inputEmail"];
 $pass = $_POST["inputPass"];
 
 
-
-
 $valid = mysql_getdata("SELECT * FROM usuarios WHERE usuario='$user' AND id != '$id' ");
 
 
