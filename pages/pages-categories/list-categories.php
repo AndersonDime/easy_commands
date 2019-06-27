@@ -41,8 +41,8 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                                         <th><?php echo $value["idCategoria"];?></th>
                                         <td><?php echo $value["nomeCategoria"];?></td>
                                         <td><?php echo $value["nomeSetor"];?></td>
-                                        <td> <a class="btn btn-sm btn-info" href="?page=alter-categories&id=<?php echo $value["idCategoria"] ?>&sect=<?php echo $value["idSetor"] ?> " >Editar</a> </td>
-                                        <td> <a class="btn btn-sm btn-danger" href="?page=delete-categories&id=<?php echo $value["idCategoria"] ?>">Excluir</a> </td>               
+                                        <td> <a class="btn" href="?page=alter-categories&id=<?php echo $value["idCategoria"] ?>&sect=<?php echo $value["idSetor"] ?> " > <i class="fas fa-edit new-icon"></i> </a> </td>
+                                        <td> <a class="btn" href="?page=delete-categories&id=<?php echo $value["idCategoria"] ?>"> <i class="fas fa-trash-alt new-icon"></i> </a> </td>               
                                     </tr>
                                     <?php
                                         }

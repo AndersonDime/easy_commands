@@ -38,8 +38,8 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                                     <tr>
                                         <th><?php echo $value["id"];?></th>
                                         <td><?php echo $value["nome"]; ?></td>
-                                        <td>  <a class="btn btn-sm btn-info" href="?page=alter-sectors&id=<?php echo $value["id"] ?>" >Editar</a> </td>
-                                        <td> <a class="btn btn-sm btn-danger" href="?page=delete-sectors&id=<?php echo $value["id"] ?>">Excluir</a> </td>               
+                                        <td>  <a class="btn" href="?page=alter-sectors&id=<?php echo $value["id"] ?>" > <i class="fas fa-edit new-icon"></i> </a> </td>
+                                        <td> <a class="btn" href="?page=delete-sectors&id=<?php echo $value["id"] ?>"> <i class="fas fa-trash-alt new-icon"></i> </a> </td>               
                                     </tr>
                                     <?php
                                         }
