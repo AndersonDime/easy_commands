@@ -16,7 +16,6 @@
     $teste = isset($_GET["teste"]) ? $_GET["teste"] : "";
 ?>
 
-
 <div class="production-page">
     <div class="container-fluid">
     <br>
@@ -88,40 +87,7 @@
 </div>
 
 <script> 
-    $(document).ready(function(){
-
-        $(".edit").click(function(e){
-
-             $.ajax({
-                url : "assets/php/edit-production.php",
-                type : 'post',
-                data : {
-                    id : this.parentElement.parentElement.id,
-                    stats :$("#stats_"+this.parentElement.parentElement.id).val()
-                }
-            })
-            .done(function(msg){
-                //$("#resultado").html(msg);
-                if(msg > 0){
-                    $.notify( "Alterado o Status com sucesso", { position:"top center", className: 'success' } );
-                }
-                else{
-
-                    $.notify( "Falha ao alterar o Status", { position:"top center" } );
-                }
-                
-            })
-            .fail(function(jqXHR, textStatus, msg){
-                alert(msg);
-            }); 
-
-        })
-
-        
-        
-    })
-
-    
+  
 function listOrders(){
     var sectorValue = $("#filtroSetores").val();
     $.ajax({

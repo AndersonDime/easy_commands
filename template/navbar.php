@@ -12,7 +12,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="?page=home-page">Salão <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
@@ -42,10 +42,12 @@
         </div>
     </nav>
 <script>
+
  $(document).ready(function(){
-    $('nav > li').find('a').not(".dropdown-toggle").parents(".nav-item").removeClass('active');
+    var loc = window.location.search;   
+    $('ul > li').find('a').not(".dropdown-menu").parents(".nav-item").removeClass('active');
     
-    $('nav > li').find('a').not(".dropdown-toggle").each(function() {
+    $('ul > li').find('a').not(".dropdown-menu").each(function() {
         if($(this).attr('href') == loc)
             $(this).parents(".nav-item").addClass('active');
     });

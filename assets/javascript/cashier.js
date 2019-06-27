@@ -36,19 +36,6 @@ function open_table(id_comanda){
         }
     });
 }
-function deleteOrder(numero_mesa) {
-    $.ajax({
-        type: 'GET',
-        url: './assets/php/delete-cashier.php',
-        data: {
-            id_pedidos: idPedidos,
-            id_comanda: idComanda   
-        },
-        success: function (html) {
-            $('#comanda').html(html);
-        }
-    });
-}
 function function_confirm_cashier(msg, sim, nao) {
     $('#vaiFikaTudoPreto').show();
     var confirmBox = $("#confirm");

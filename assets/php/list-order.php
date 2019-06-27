@@ -19,12 +19,11 @@
             <td style="width: 10%"> ' .$value["product_qtd"].' x</td>
             <td style="width: 10%"> ' .$value["product_name"].'</td>
             <td style="width: 50%">  '.$value["product_obs"].'</td>
-            <td style="width: 10%">  <a class="btn btn-sm" href="?page=edit-production&id='.$value["idPedido"].'" id="edit"> <i class="fas fa-check text-success new-icon"></i>
+            <td style="width: 10%">  <a class="btn btn-sm" onclick="refresh_production('.$value["idPedido"].')" id="edit"> <i class="fas fa-check text-success new-icon"></i>
             </a> 
             </td>
         </tr>
         ';
 
     }
-
 ?>
