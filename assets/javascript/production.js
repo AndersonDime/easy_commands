@@ -12,7 +12,7 @@ function refresh_production(id_pedido){
         }
         else{
 
-            $.notify( "Falha ao alterar o Status", { position:"top center" } );
+            $.notify( "Pedido Finalizado !", { position:"top center", className: 'success' } );
         }
 })
 }
