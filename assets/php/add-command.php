@@ -55,7 +55,7 @@ if($id_found == 1){
         //Codigo que cria pedido
         $dataAtual = date('Y-m-d'); 
         $horaAtual = date('H:i:s', time());
-        $createCommand = mysql_insert("INSERT INTO comandas values (DEFAULT, '{$dataAtual}', '{$horaAtual}', '0', '{$mesas_id}')");
+        $createCommand = mysql_insert("INSERT INTO comandas values (DEFAULT, '{$dataAtual}', '{$horaAtual}', '0', '{$mesas_id}', '0')");
         $data_comanda = mysql_getdata("SELECT id FROM comandas WHERE mesas_id = '$mesas_id'");
         $comanda_id = $data_comanda[0]['id'];
         $registerProductInOrder = mysql_insert("INSERT INTO pedidos values (DEFAULT, '{$product_qtd}', '0', '{$observation}', '{$comanda_id}', '{$product_id}', '{$horaAtual}')");

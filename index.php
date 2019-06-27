@@ -165,7 +165,7 @@ if($total == 1){
         $_SESSION["sessionId"] = session_id();
         $_SESSION["userId"] = $data["id"];
         $_SESSION["userUsername"] = stripslashes($data["usuario"]);
-        $_SESSION["userPermission-Level"] = $data["nivel_de_permissao"];
+        $_SESSION["userPermissionLevel"] = $data["nivel_de_permissao"];
         echo "<script type='text/javascript'>window.top.location='index.php?page=home-page';</script>";
         exit;
     //Senha invalida

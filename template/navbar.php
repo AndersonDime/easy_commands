@@ -1,4 +1,5 @@
 <?php
+    $permissao = $_SESSION["userPermissionLevel"];
     $get = isset($_GET['page'])? $_GET['page']:'';
     if(isset($_SESSION["userUsername"])){
         $username = $_SESSION["userUsername"];
@@ -21,7 +22,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="?page=cashier">Caixa</a>
                 </li>
-
+                <?php if($permissao == 0){?>
                 <li class="nav-item ">
                     <div class="dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="configDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -35,6 +36,7 @@
                         </div>
                     </div>
                 </li>
+                <?php }?>
                 <li class="nav-item">
                 <a class="nav-link" href="#"<button onclick = "functionConfirm();">Sair</button></a>
                 </li>
@@ -56,6 +58,6 @@
     <div id="vaiFikaTudoPreto" class="vaiFikaTudoPreto"></div>
     <div id="confirm" class="card transparencia">
         <div class="message"></div>
-        <button class="yes btn-info">Sim</button>
-        <button class="no btn-danger">Não</button>
+        <button class="yes btn-warning">Sim</button>
+        <button class="no btn-dark">Não</button>
     </div>
