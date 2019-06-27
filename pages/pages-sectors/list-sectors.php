@@ -80,7 +80,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                 </div>
                 <div class="col-md-1">
                     <a class="btn-dark add-table" href="?page=new-sectors" >               
-                        <i class="text-warning fas fa-plus"></i>
+                        <i class="text-light fas fa-plus"></i>
                     </a>
                 </div>
             </div>

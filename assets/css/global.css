@@ -67,9 +67,8 @@
     font-weight: bold;
 }
 
-.add-table, .add-table:hover{
-    color: white;
-    padding: 8px;
+.add-table{
+    padding: 7px;
     text-align: center;
     font-size: 30px;
     border-radius: 50%;
@@ -78,9 +77,14 @@
     position: fixed;
     bottom: 15px;
     transition: 0.5s;
-    border: none!important;
+    /* border: none!important; */
+    cursor: pointer;
+    border: 2px outset#ffc107;
 }
 
+.add-table:hover{
+    border: 2px inset #ffc107
+}
 
 .notifyjs-corner{
     left: 25%;

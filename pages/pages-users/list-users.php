@@ -84,7 +84,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                 </div>
                 <div class="col-md-1">
                     <a class="btn-dark add-table" href="?page=user-register" >
-                        <i class="fas fa-plus text-warning"></i>
+                        <i class="fas fa-plus text-light"></i>
                     </a>
                 </div>
             </div>

@@ -44,6 +44,8 @@
         </div>
     </nav>
 
+    <div style="margin-bottom: 59px!important"></div>
+
     <div id="notification">
     </div>
 
