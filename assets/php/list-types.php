@@ -4,7 +4,8 @@
 
     $totalRodizioSelect = mysql_getdata("SELECT pedidos.quantidade AS 'qtd' FROM pedidos
     INNER JOIN produtos ON pedidos.produtos_id = produtos.id
-    WHERE produtos.categorias_id = 2 AND pedidos.status != 3;");
+    INNER JOIN comandas ON pedidos.comandas_id = comandas.id
+    WHERE produtos.categorias_id = 2 AND comandas.status != 1;");
 
     $totalRodizio = 0;
 
