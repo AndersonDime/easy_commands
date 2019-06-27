@@ -14,73 +14,78 @@
 
 ?>
 
-<div class="list-page">
-    <form action="?page=edit-category" method="post">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12 col-md-4"></div>
-                <div class="col-sm-12 col-md-4">
-                <br>
-                    <div class="card transparencia">
-                        <div class="card-header bg-dark txt-white text-center">
-                            <h4 class="text-center text-warning"> 
-                                Alteração de Categoria
-                            </h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label>Nome da categoria</label>
-                                <?php foreach($categ as $value){
+<div class="page-container">
+    <div class="fill bg-categories">
+        <div class="list-page">
+            <form action="?page=edit-category" method="post">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4"></div>
+                        <div class="col-sm-12 col-md-4">
+                        <br>
+                            <div class="card transparencia">
+                                <div class="card-header bg-dark txt-white text-center">
+                                    <h4 class="text-center text-warning"> 
+                                        Alteração de Categoria
+                                    </h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label>Nome da categoria</label>
+                                        <?php foreach($categ as $value){
+                                            
+                                        ?>
+                                        <input type="text" class="form-control" id="cat" name="cate" value="<?php echo $value["nome"]; ?>" required>
+                                        <?php }?>
+                                        <input type="hidden" name="id" value="<?php echo $ident?>">
                                     
-                                ?>
-                                <input type="text" class="form-control" id="cat" name="cate" value="<?php echo $value["nome"]; ?>" required>
-                                <?php }?>
-                                <input type="hidden" name="id" value="<?php echo $ident?>">
-                            
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Setor da Categoria</label>
+                                        <select class="form-control" name="sector">
+                                        <?php 
+                                            foreach ($sec as $value){
+                                        ?>
+        
+                                        <option value="<?php echo $value["id"];?>" <?php echo ($value["id"] == $selsect) ? "selected" : ""; ?> > 
+                                            <?php echo $value["nome"]; ?>
+                                        </option>
+                                        <?php 
+                                            } 
+                                        ?>
+                                        </select>
+                                        <small id="errorHint" style="color: red;"><span style="color: white">.</span></small>
+                                    </div>
+                                    <input type="submit" class="btn btn-warning" value="Atualizar">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Setor da Categoria</label>
-                                <select class="form-control" name="sector">
-                                <?php 
-                                    foreach ($sec as $value){
-                                ?>
-
-                                <option value="<?php echo $value["id"];?>" <?php echo ($value["id"] == $selsect) ? "selected" : ""; ?> > 
-                                    <?php echo $value["nome"]; ?>
-                                </option>
-                                <?php 
-                                    } 
-                                ?>
-                                </select>
-                                <small id="errorHint" style="color: red;"><span style="color: white">.</span></small>
-                            </div>
-                            <input type="submit" class="btn btn-warning" value="Atualizar">
+                            <?php
+                                //se orçamento foi inserido com sucesso mostra essa mensagem:
+                                if ($success):
+                            ?>
+                            <script>
+                                $.notify( "Atualizado Categoria com sucesso", { position:"top center", className: 'success' } );
+                            </script>
+                            <?php 
+                                endif; 
+                            ?>
+        
+                            <?php
+                                // se houver erro no formulario mostra essa mensagem:
+                                if ($fail):
+                            ?>
+                            <script>
+                                 $('#errorHint').html('Falha ao atualizar categoria, Verifique se digitou o mesmo nome da categoria');
+                            </script>
+                            <?php 
+                                endif; 
+                            ?>
                         </div>
+                        <div class="col-sm-12 col-md-4"></div>
                     </div>
-                    <?php
-                        //se orçamento foi inserido com sucesso mostra essa mensagem:
-                        if ($success):
-                    ?>
-                    <script>
-                        $.notify( "Atualizado Categoria com sucesso", { position:"top center", className: 'success' } );
-                    </script>
-                    <?php 
-                        endif; 
-                    ?>
-
-                    <?php
-                        // se houver erro no formulario mostra essa mensagem:
-                        if ($fail):
-                    ?>
-                    <script>
-                         $('#errorHint').html('Falha ao atualizar categoria, Verifique se digitou o mesmo nome da categoria');
-                    </script>
-                    <?php 
-                        endif; 
-                    ?>
                 </div>
-                <div class="col-sm-12 col-md-4"></div>
-            </div>
+            </form>
         </div>
-    </form>
+    </div>
 </div>
+

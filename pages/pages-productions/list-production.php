@@ -17,75 +17,79 @@
 ?>
 
 
-<div class="production-page">
-    <div class="container-fluid">
-    <br>
-        <div class="row">
-            <div class="col-xs-12 col-sm-2 col-md-1 col-lg-1"></div>
-            <div class="col">
-                <br>   
-                <div class="stats bg-danger text-center text-white" id="listT" style="transition: 0.5s;"></div>
-                <div class="card-header bg-dark">
-                <div class="row">
-                    <div class="col-md-10">
-                        <h4 class="text-light text-center">
-                            Lista de Produção
-                        </h4> 
+<div class="page-container">
+    <div class="bg-production fill">
+        <div class="container-fluid">
+            <br>
+            <div class="row">
+                <div class="col-xs-12 col-sm-2 col-md-1 col-lg-1"></div>
+                <div class="col">
+                    <br>   
+                    <div class="stats bg-danger text-center text-white" id="listT" style="transition: 0.5s;"></div>
+                    <div class="card-header bg-dark">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h4 class="text-light text-center">
+                                Lista de Produção
+                            </h4> 
+                        </div>
+                        <div class="col">
+                            <select class="form-control" id="filtroSetores"> 
+                                <?php foreach($sector as  $key => $value){ ?>
+                                    <option value="<?php echo $value["id"] ?>"><?php echo $value["nome"] ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
                     </div>
-                    <div class="col">
-                        <select class="form-control" id="filtroSetores"> 
-                            <?php foreach($sector as  $key => $value){ ?>
-                                <option value="<?php echo $value["id"] ?>"><?php echo $value["nome"] ?></option>
-                            <?php } ?>
-                        </select>
                     </div>
-                </div>
-                </div>
-                <div class="card roll">                    
-                    <table class="table table-striped " >
-                        <thead class="text-center">
-                            <tr>
-                                <th scope="col">Mesa</th>
-                                <th scope="col">Hora</th>
-                                <th scope="col">Quantidade</th>
-                                <th scope="col">Produto</th>
-                                <th scope="col">Observação</th>
-                                <th scope="col">Confirma</th>                   
-                            </tr>
-                        </thead>
-                        <tbody class="text-center" id="tbody">
-                   
-                        </tbody>
-                    </table>
-                </div>     
-            
-                <?php
-                    //se orçamento foi inserido com sucesso mostra essa mensagem:
-                    if ($success):
-                ?>
-                    <script>
-                        $.notify( "Pedido Enviado com Sucesso", { position:"top center", className: 'success' } );
-                    </script>
-                <?php 
-                    endif; 
-                ?>
-                <?php
-                    // se houver erro no formulario mostra essa mensagem:
-                    if ($fail):
-                ?>
-                <script>
-                    $.notify( "Falha ao enviar pedido", { position:"top center" } );
-                </script>
-                <?php 
-                    endif; 
-                ?>
+                    <div class="card roll">                    
+                        <table class="table table-striped " >
+                            <thead class="text-center">
+                                <tr>
+                                    <th scope="col">Mesa</th>
+                                    <th scope="col">Hora</th>
+                                    <th scope="col">Quantidade</th>
+                                    <th scope="col">Produto</th>
+                                    <th scope="col">Observação</th>
+                                    <th scope="col">Confirma</th>                   
+                                </tr>
+                            </thead>
+                            <tbody class="text-center" id="tbody">
                     
-            </div>
-            <div class="col-xs-12 col-sm-2 col-md-4 col-lg-1"></div>
+                            </tbody>
+                        </table>
+                    </div>     
+                
+                    <?php
+                        //se orçamento foi inserido com sucesso mostra essa mensagem:
+                        if ($success):
+                    ?>
+                        <script>
+                            $.notify( "Pedido Enviado com Sucesso", { position:"top center", className: 'success' } );
+                        </script>
+                    <?php 
+                        endif; 
+                    ?>
+                    <?php
+                        // se houver erro no formulario mostra essa mensagem:
+                        if ($fail):
+                    ?>
+                    <script>
+                        $.notify( "Falha ao enviar pedido", { position:"top center" } );
+                    </script>
+                    <?php 
+                        endif; 
+                    ?>
+                        
+                </div>
+                <div class="col-xs-12 col-sm-2 col-md-4 col-lg-1"></div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+
 
 <script> 
     $(document).ready(function(){

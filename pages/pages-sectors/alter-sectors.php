@@ -11,59 +11,62 @@
     $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
 
 ?>
-
-<div class="list-page">
-    <form action="?page=edit-sectors" method="post">
-        <div class="container-fluid">
-            <div class="row">        
-                <div class="col-sm-12 col-md-4"></div>
-                <div class="col-sm-12 col-md-4">
-                <br>
-                        <div class="card transparencia">
-                            <div class="card-header bg-dark">
-                                <h4 class="text-warning text-center"> Alterarção de Setor </h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label>Nome do Setor</label>
-                                    <?php foreach($categ as $value){
-                                    
-                                    ?>
-                                    <input type="text" class="form-control" id="sec" name="sector" value="<?php echo $value["nome"] ?>" required>
-                                    <small id="errorHint" style="color: red;"><span style="color: white">.</span></small>
-                                    <?php 
-                                        } 
-                                    ?>
-                                    <input type="hidden" name="id" value="<?php echo $ident?>">
-                                </div>                                        
-                                <input type="submit" class="btn btn-warning" value="Cadastrar">
-
-                            </div>
+<div class="page-container">
+    <div class="fill bg-sectors">
+        <div class="list-page">
+            <form action="?page=edit-sectors" method="post">
+                <div class="container-fluid">
+                    <div class="row">        
+                        <div class="col-sm-12 col-md-4"></div>
+                        <div class="col-sm-12 col-md-4">
+                        <br>
+                                <div class="card transparencia">
+                                    <div class="card-header bg-dark">
+                                        <h4 class="text-warning text-center"> Alterarção de Setor </h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label>Nome do Setor</label>
+                                            <?php foreach($categ as $value){
+                                            
+                                            ?>
+                                            <input type="text" class="form-control" id="sec" name="sector" value="<?php echo $value["nome"] ?>" required>
+                                            <small id="errorHint" style="color: red;"><span style="color: white">.</span></small>
+                                            <?php 
+                                                } 
+                                            ?>
+                                            <input type="hidden" name="id" value="<?php echo $ident?>">
+                                        </div>                                        
+                                        <input type="submit" class="btn btn-warning" value="Cadastrar">
+        
+                                    </div>
+                                </div>
+                            <?php
+                                //se orçamento foi inserido com sucesso mostra essa mensagem:
+                                if ($success):
+                            ?>
+                            <script>
+                                $.notify( "Alterado setor com sucesso", { position:"top center", className: 'success' } );
+                            </script>
+                            <?php 
+                                endif; 
+                            ?>
+        
+                            <?php
+                                // se houver erro no formulario mostra essa mensagem:
+                                if ($fail):
+                            ?>
+                            <script>
+                                $('#errorHint').html('Falha ao atualizar o setor, Verifique se digitou o mesmo nome do setor');
+                            </script>
+                            <?php 
+                                endif; 
+                            ?>
                         </div>
-                    <?php
-                        //se orçamento foi inserido com sucesso mostra essa mensagem:
-                        if ($success):
-                    ?>
-                    <script>
-                        $.notify( "Alterado setor com sucesso", { position:"top center", className: 'success' } );
-                    </script>
-                    <?php 
-                        endif; 
-                    ?>
-
-                    <?php
-                        // se houver erro no formulario mostra essa mensagem:
-                        if ($fail):
-                    ?>
-                    <script>
-                        $('#errorHint').html('Falha ao atualizar o setor, Verifique se digitou o mesmo nome do setor');
-                    </script>
-                    <?php 
-                        endif; 
-                    ?>
+                        <div class="col-sm-12 col-md-4"></div>
+                    </div>
                 </div>
-                <div class="col-sm-12 col-md-4"></div>
-            </div>
+            </form>
         </div>
-    </form>
+    </div>
 </div>

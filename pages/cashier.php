@@ -9,59 +9,65 @@ inner join comandas ON comandas.mesas_id = mesas.id
 INNER JOIN pedidos ON pedidos.comandas_id = comandas.id
 INNER JOIN produtos ON produtos.id = pedidos.produtos_id");
 ?>
-<div class="container">
-    <div class="row">   
-        <div class="col-xs-12 col-sm-12 col-md-3">
-            <br>
-            <div class="card">
-                <div class="card-header bg-warning">
-                    <h4 class="text-center text-dark">Lista de mesas</h4>
+
+<div class="page-container">
+    <div class="fill bg-cashier">
+        <div class="container">
+            <div class="row">   
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <br>
+                    <div class="card">
+                        <div class="card-header bg-warning">
+                            <h4 class="text-center text-dark">Lista de mesas</h4>
+                        </div>
+                        <div class="card-body bg-dark">
+                            <table class="table table-dark">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center;"scope="col">Mesa</th>                   
+                                    </tr>
+                                </thead>
+                                <tbody id="lista">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>    
+            
+                <div class="col-xs-12 col-sm-12 col-md-9">
+                    <br>
+                    <div class="card">
+                        <div class="card-header bg-dark">
+                            <h4 class="text-center text-warning">PEDIDO</h4>
+                        </div>
+                        <div class="card-body bg-dark">
+                            <table class="table table-dark text-center" >
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Produto</th>
+                                        <th scope="col">Valor</th>
+                                        <th scope="col">Quantidade</th>
+                                        <th scope="col">Excluir</th>                    
+                                    </tr>
+                                </thead>
+                                <tbody id="comanda">
+                                    <tr>
+                                        <td colspan="4">Nenhuma comanda aberta no momento.</td>
+                                    </tr>
+                                </tbody>
+                            </table>      
+                        </div>
+                        <div class="card-footer bg-dark">
+                            <button id="fecha_comanda" value="0" class="btn btn-block btn-warning" onclick="function_confirm_cashier();" disabled>Finalizar Comanda</button>
+                        </div>
+                        </div>        
+                    </div>
                 </div>
-                <div class="card-body bg-dark">
-                    <table class="table table-dark">
-                        <thead>
-                            <tr>
-                                <th style="text-align: center;"scope="col">Mesa</th>                   
-                            </tr>
-                        </thead>
-                        <tbody id="lista">
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>    
-    
-        <div class="col-xs-12 col-sm-12 col-md-9">
-            <br>
-            <div class="card">
-                <div class="card-header bg-dark">
-                    <h4 class="text-center text-warning">PEDIDO</h4>
-                </div>
-                <div class="card-body bg-dark">
-                    <table class="table table-dark text-center" >
-                        <thead>
-                            <tr>
-                                <th scope="col">Produto</th>
-                                <th scope="col">Valor</th>
-                                <th scope="col">Quantidade</th>
-                                <th scope="col">Excluir</th>                    
-                            </tr>
-                        </thead>
-                        <tbody id="comanda">
-                            <tr>
-                                <td colspan="4">Nenhuma comanda aberta no momento.</td>
-                            </tr>
-                        </tbody>
-                    </table>      
-                </div>
-                <div class="card-footer bg-dark">
-                    <button id="fecha_comanda" value="0" class="btn btn-block btn-warning" onclick="function_confirm_cashier();" disabled>Finalizar Comanda</button>
-                </div>
-                </div>        
             </div>
         </div>
     </div>
 </div>
+
 <script src="./assets/javascript/cashier.js"></script>
 
 <div id="fundo" class="card transparencia">
