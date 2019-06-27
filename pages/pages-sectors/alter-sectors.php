@@ -56,7 +56,7 @@
                                 if ($fail):
                             ?>
                             <script>
-                                $("#notification").addClass("notification-animation bg-success ").html("Verifique se já existe um setor com este nome"); 
+                                $("#notification").addClass("notification-animation bg-danger ").html("Verifique se já existe um setor com este nome"); 
                             </script>
                             <?php 
                                 endif; 

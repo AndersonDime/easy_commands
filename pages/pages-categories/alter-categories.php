@@ -74,7 +74,7 @@
                                 if ($fail):
                             ?>
                             <script>
-                                $("#notification").addClass("notification-animation bg-success ").html("Falha ao editar categoria, verifique se existe um produto com o mesmo nome já cadastrado"); 
+                                $("#notification").addClass("notification-animation bg-danger ").html("Falha ao editar categoria, verifique se existe um produto com o mesmo nome já cadastrado"); 
                             </script>
                             <?php 
                                 endif; 

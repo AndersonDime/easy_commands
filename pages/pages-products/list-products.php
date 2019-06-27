@@ -74,7 +74,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                 ?>
         
                     <script>
-                       $("#notification").addClass("notification-animation bg-danger ").html("Falha na alteração"); 
+                       $("#notification").addClass("notification-animation bg-danger ").html("Excluido com sucesso"); 
                     </script>
             
                 <?php endif; ?>

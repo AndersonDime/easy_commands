@@ -12,5 +12,6 @@ function refresh_production(id_pedido){
         else{
             $("#notification").addClass("notification-animation bg-success ").html("Pedido Finalizado");
         }
+    $("#notification").addClass("notification-animation bg-success ").html("Pedido Finalizado");
 })
 }
