@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 27-Jun-2019 às 20:30
--- Versão do servidor: 10.1.38-MariaDB
--- versão do PHP: 7.3.3
+-- Tempo de geração: 27/06/2019 às 00:15
+-- Versão do servidor: 5.7.11-log
+-- Versão do PHP: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `easycommands`
+-- Banco de dados: `easycommands`
 --
 CREATE DATABASE IF NOT EXISTS `easycommands` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
 USE `easycommands`;
@@ -27,7 +25,7 @@ USE `easycommands`;
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `categorias`
+-- Estrutura para tabela `categorias`
 --
 
 CREATE TABLE `categorias` (
@@ -37,7 +35,7 @@ CREATE TABLE `categorias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `categorias`
+-- Fazendo dump de dados para tabela `categorias`
 --
 
 INSERT INTO `categorias` (`id`, `nome`, `setores_id`) VALUES
@@ -48,7 +46,7 @@ INSERT INTO `categorias` (`id`, `nome`, `setores_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `comandas`
+-- Estrutura para tabela `comandas`
 --
 
 CREATE TABLE `comandas` (
@@ -57,22 +55,21 @@ CREATE TABLE `comandas` (
   `hora` time NOT NULL,
   `status` tinyint(1) UNSIGNED NOT NULL COMMENT '0 - ATENDIMENTO\n1 - PAGO',
   `mesas_id` int(3) UNSIGNED DEFAULT NULL,
-  `hist_mesa_numero` int(3) DEFAULT NULL
+  `hist_mesas_id` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `comandas`
+-- Fazendo dump de dados para tabela `comandas`
 --
 
-INSERT INTO `comandas` (`id`, `data`, `hora`, `status`, `mesas_id`, `hist_mesa_numero`) VALUES
-(7, '2019-06-17', '21:16:24', 1, NULL, 1),
-(8, '2019-06-17', '21:23:42', 0, 29, NULL),
-(9, '2019-06-27', '15:25:10', 1, NULL, 3);
+INSERT INTO `comandas` (`id`, `data`, `hora`, `status`, `mesas_id`, `hist_mesas_id`) VALUES
+(7, '2019-06-17', '21:16:24', 0, 28, NULL),
+(8, '2019-06-17', '21:23:42', 0, 29, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `mesas`
+-- Estrutura para tabela `mesas`
 --
 
 CREATE TABLE `mesas` (
@@ -83,18 +80,17 @@ CREATE TABLE `mesas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `mesas`
+-- Fazendo dump de dados para tabela `mesas`
 --
 
 INSERT INTO `mesas` (`id`, `numero`, `preferencia`, `status`) VALUES
 (28, 1, 0, 0),
-(29, 2, 0, 0),
-(30, 3, 0, 0);
+(29, 2, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pedidos`
+-- Estrutura para tabela `pedidos`
 --
 
 CREATE TABLE `pedidos` (
@@ -108,19 +104,17 @@ CREATE TABLE `pedidos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `pedidos`
+-- Fazendo dump de dados para tabela `pedidos`
 --
 
 INSERT INTO `pedidos` (`id`, `quantidade`, `status`, `observacoes`, `comandas_id`, `produtos_id`, `pedidos_hora`) VALUES
-(28, 1, 2, '                                ', 7, 5, '21:16:24'),
-(29, 2, 0, '                                ', 8, 7, '21:23:42'),
-(30, 1, 2, '                                    ', 7, 4, '15:14:02'),
-(31, 1, 0, '                                    ', 9, 4, '15:25:10');
+(28, 1, 0, '                                ', 7, 5, '21:16:24'),
+(29, 2, 0, '                                ', 8, 7, '21:23:42');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `produtos`
+-- Estrutura para tabela `produtos`
 --
 
 CREATE TABLE `produtos` (
@@ -131,7 +125,7 @@ CREATE TABLE `produtos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `produtos`
+-- Fazendo dump de dados para tabela `produtos`
 --
 
 INSERT INTO `produtos` (`id`, `nome`, `preco`, `categorias_id`) VALUES
@@ -144,7 +138,7 @@ INSERT INTO `produtos` (`id`, `nome`, `preco`, `categorias_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `setores`
+-- Estrutura para tabela `setores`
 --
 
 CREATE TABLE `setores` (
@@ -153,7 +147,7 @@ CREATE TABLE `setores` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `setores`
+-- Fazendo dump de dados para tabela `setores`
 --
 
 INSERT INTO `setores` (`id`, `nome`) VALUES
@@ -165,7 +159,7 @@ INSERT INTO `setores` (`id`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuarios`
+-- Estrutura para tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -178,38 +172,38 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `usuarios`
+-- Fazendo dump de dados para tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `nivel_de_permissao`, `senha`, `email`, `setores_id`) VALUES
 (2, 'joao', 0, '123456', 'joao@joao.com', 4);
 
 --
--- Indexes for dumped tables
+-- Índices de tabelas apagadas
 --
 
 --
--- Indexes for table `categorias`
+-- Índices de tabela `categorias`
 --
 ALTER TABLE `categorias`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_categoria_produtos_setores1_idx` (`setores_id`);
 
 --
--- Indexes for table `comandas`
+-- Índices de tabela `comandas`
 --
 ALTER TABLE `comandas`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_comandas_mesas1_idx` (`mesas_id`);
 
 --
--- Indexes for table `mesas`
+-- Índices de tabela `mesas`
 --
 ALTER TABLE `mesas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pedidos`
+-- Índices de tabela `pedidos`
 --
 ALTER TABLE `pedidos`
   ADD PRIMARY KEY (`id`),
@@ -217,106 +211,98 @@ ALTER TABLE `pedidos`
   ADD KEY `fk_pedidos_produtos1_idx` (`produtos_id`);
 
 --
--- Indexes for table `produtos`
+-- Índices de tabela `produtos`
 --
 ALTER TABLE `produtos`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_produtos_categorias1_idx` (`categorias_id`);
 
 --
--- Indexes for table `setores`
+-- Índices de tabela `setores`
 --
 ALTER TABLE `setores`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `usuarios`
+-- Índices de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_funcionarios_setores1_idx` (`setores_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas apagadas
 --
 
 --
--- AUTO_INCREMENT for table `categorias`
+-- AUTO_INCREMENT de tabela `categorias`
 --
 ALTER TABLE `categorias`
   MODIFY `id` tinyint(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
--- AUTO_INCREMENT for table `comandas`
+-- AUTO_INCREMENT de tabela `comandas`
 --
 ALTER TABLE `comandas`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
--- AUTO_INCREMENT for table `mesas`
+-- AUTO_INCREMENT de tabela `mesas`
 --
 ALTER TABLE `mesas`
-  MODIFY `id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
-
+  MODIFY `id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
--- AUTO_INCREMENT for table `pedidos`
+-- AUTO_INCREMENT de tabela `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
--- AUTO_INCREMENT for table `produtos`
+-- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
   MODIFY `id` tinyint(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
--- AUTO_INCREMENT for table `setores`
+-- AUTO_INCREMENT de tabela `setores`
 --
 ALTER TABLE `setores`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
--- AUTO_INCREMENT for table `usuarios`
+-- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- Restrições para dumps de tabelas
+--
 
 --
--- Constraints for dumped tables
---
-
---
--- Limitadores para a tabela `categorias`
+-- Restrições para tabelas `categorias`
 --
 ALTER TABLE `categorias`
   ADD CONSTRAINT `fk_categoria_produtos_setores1` FOREIGN KEY (`setores_id`) REFERENCES `setores` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `comandas`
+-- Restrições para tabelas `comandas`
 --
 ALTER TABLE `comandas`
   ADD CONSTRAINT `fk_comandas_mesas1` FOREIGN KEY (`mesas_id`) REFERENCES `mesas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `pedidos`
+-- Restrições para tabelas `pedidos`
 --
 ALTER TABLE `pedidos`
   ADD CONSTRAINT `fk_pedidos_comandas1` FOREIGN KEY (`comandas_id`) REFERENCES `comandas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_pedidos_produtos1` FOREIGN KEY (`produtos_id`) REFERENCES `produtos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `produtos`
+-- Restrições para tabelas `produtos`
 --
 ALTER TABLE `produtos`
   ADD CONSTRAINT `fk_produtos_categorias1` FOREIGN KEY (`categorias_id`) REFERENCES `categorias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `usuarios`
+-- Restrições para tabelas `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `fk_funcionarios_setores1` FOREIGN KEY (`setores_id`) REFERENCES `setores` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
