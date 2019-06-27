@@ -25,6 +25,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                         <div class="form-group">
                             <label>Nome do Setor</label>
                             <input type="text" class="form-control" id="sec" name="sector" required>
+                            <small id="errorHint" style="color: red;"></small>
                         </div>                                
                         <input type="submit" class="btn btn-warning" value="Cadastrar">
                     </div>
@@ -43,7 +44,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                         if ($fail):
                         ?>
                         <script>
-                            $.notify( "Erro ao cadastrar o item", { position:"top center" } );
+                            $('#errorHint').html('Erro ao cadastrar este setor');
                         </script>
                         <?php endif; ?>
                 </div>

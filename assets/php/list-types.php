@@ -16,7 +16,7 @@
     INNER JOIN produtos ON pedidos.produtos_id = produtos.id
     INNER JOIN comandas ON pedidos.comandas_id = comandas.id
     INNER JOIN mesas ON mesas.id = comandas.mesas_id
-    WHERE produtos.categorias_id = 2 AND mesas.preferencia = 0 AND pedidos.status != 3;");
+    WHERE produtos.categorias_id = 2 AND mesas.preferencia = 0 AND comandas.status != 1;");
 
     $totalRodizioSalgado = 0;
 
@@ -28,7 +28,7 @@
     INNER JOIN produtos ON pedidos.produtos_id = produtos.id
     INNER JOIN comandas ON pedidos.comandas_id = comandas.id
     INNER JOIN mesas ON mesas.id = comandas.mesas_id
-    WHERE produtos.categorias_id = 2 AND mesas.preferencia = 1 AND pedidos.status != 3;");
+    WHERE produtos.categorias_id = 2 AND mesas.preferencia = 1 AND comandas.status != 1;");
 
     $totalRodizioDoce = 0;
 
