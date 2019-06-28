@@ -24,10 +24,9 @@ include_once("../services/table-service.php");
                             <button onClick="deleteTable('.$value['id'].')" class="card-icon btn-none">
                                 <i class="fas fa-trash-alt"></i>
                             </button>
-                            <a onclick="editarMesa('.$value["numero"].')" href="#" class="card-icon"><i class="fas fa-pen"></i></a>
                             </h5>
                             <p class="card-text">
-                                Preferência da mesa: '.$pref.'                   
+                            Preferência da mesa: '.$pref.'                   
                             </p>
                             <a href="?page=new-command&numero='.$value["numero"].'" class="btn btn-dark">Pedido
                             </a>
@@ -35,11 +34,12 @@ include_once("../services/table-service.php");
                             Preferencia
                             </button>
                             
-                        </div>
-                    </div>
-                </div> 
-            ';
-    }
-
-
+                            </div>
+                            </div>
+                            </div> 
+                            ';
+                        }
+                        
+                        
+                        /*                             <a onclick="editarMesa('.$value["numero"].')" href="#" class="card-icon"><i class="fas fa-pen"></i></a> */
 ?>

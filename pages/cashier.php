@@ -40,7 +40,7 @@ INNER JOIN produtos ON produtos.id = pedidos.produtos_id");
                         <div class="card-header bg-dark">
                             <h4 class="text-center text-warning">PEDIDO</h4>
                         </div>
-                        <div class="card-body" style="padding: 0!important;">
+                        <div class="card-body" style="padding: 0!important;" id="fatura">
                             <table class="table text-center" >
                                 <thead class="thead-dark">
                                     <tr>

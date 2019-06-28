@@ -12,7 +12,7 @@ $numero_mesa = $_GET["numero"];
     <div class="bg-tables fill">
         <div class="container-fluid">
             <div class="row">
-                <div class="col">
+                <div class="col-xs-12 col-sm-12 col-md-6">
                 <br>
                     <div class="card">
                         <div class="card-header bg-warning">
@@ -34,7 +34,7 @@ $numero_mesa = $_GET["numero"];
                                 <div class="form-group">
                                     <label for="product">Produto</label>
                                     <select onchange="enableSubmit()" class="form-control" name="product" id="product">
-                                        <option value="" selected disabled>Selecione um produto</option>
+                                        <option value="0" selected disabled>Selecione um produto</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -53,7 +53,7 @@ $numero_mesa = $_GET["numero"];
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-xs-12 col-sm-12 col-md-6">
                     <br>
                     <div class="card">
                         <div class="card-header bg-dark">

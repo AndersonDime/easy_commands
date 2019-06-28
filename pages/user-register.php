@@ -82,7 +82,7 @@ $(document).ready(function() {
                 if ($fail):
                 ?>
                     <script>
-                        $("#notification").addClass("notification-animation bg-danger ").html("EUsuário já cadastrado"); 
+                        $("#notification").addClass("notification-animation bg-danger ").html("Usuário já cadastrado"); 
                     </script>
                 <?php endif; ?>
             </div>

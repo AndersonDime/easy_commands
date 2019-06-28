@@ -47,6 +47,11 @@ function addOrder(numeroMesa) {
         },
         success: function (html) {
             $('#comanda').html(html);
+            $('#product').val("");
+            $('#product').prop("disabled", "true");
+            $('#productCtg').val("");
+            $('#productQtd').val("");
+            $('#observacoes').val("");
         }
     });
 }

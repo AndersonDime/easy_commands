@@ -23,7 +23,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                         <h4 class="text-center text-warning"> Lista de Usuarios </h4>
                     </div>
                     <div class="card-body">
-                        <table class="table table-striped">
+                        <table class="table table-striped text-center">
                             <thead>
                                 <tr>
                                     <th scope="col">ID</th>
@@ -43,8 +43,8 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                                         <td><?php echo $value["nomeUsuario"];?></td>
                                         <td><?php echo $value["emailUsuario"];?></td>
                                         <td><?php echo $value["nomeSetor"];?></td>
-                                        <td> <a class="btn btn-sm btn-info" href="?page=alter-users&id=<?php echo $value["idUsuario"] ?>&sect=<?php echo $value["idSetor"] ?> " >Editar</a> </td>
-                                        <td> <a class="btn btn-sm btn-danger" href="?page=delete-users&id=<?php echo $value["idUsuario"] ?>">Excluir</a> </td>               
+                                        <td> <a class="text-dark " href="?page=alter-users&id=<?php echo $value["idUsuario"] ?>&sect=<?php echo $value["idSetor"] ?> " ><i class="fas fa-edit new-icon txt-dark"></i> </a> </td>
+                                        <td> <a class="text-dark text-center" href="?page=delete-users&id=<?php echo $value["idUsuario"] ?>"><i class="fas fa-trash-alt new-icon txt-dark"></i> </a> </td>               
                                     </tr>
                                     <?php
                                         }

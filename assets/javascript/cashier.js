@@ -1,13 +1,11 @@
 function closeComand(valorTotal){
     valorTotal = $('#valorTotal').val();
-    alert(valorTotal);
     id_comanda = document.getElementById("fecha_comanda").value;
     $.ajax({
         method: "POST",
         url: "./assets/php/cashier-close.php",
         data: {idComanda : id_comanda, valorTotal : valorTotal}
-        ,success:function(html){
-            alert(html);
+        ,success:function(){
             refreshTable();
             $('#comanda').html(
                 "<tr><td colspan='4'>Nenhuma comanda aberta no momento.</td></tr>"

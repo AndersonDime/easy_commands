@@ -30,7 +30,7 @@ function open_table($id_comanda){
     }
     echo '<tr class="totalPrice">
             <td colspan="4">TOTAL: <span class="text-danger">'.$formatTotalPrice.'
-            <input id="valorTotal" value="'.$HistTotalPrice.'">
+            <input id="valorTotal" value="'.$HistTotalPrice.'" style="display: none;">
             </td>
           </span></tr>
           ';

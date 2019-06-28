@@ -24,7 +24,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                         </h4>
                     </div>
                     <div class="card-body">
-                        <table class="table table-light">
+                        <table class="table table-light text-center">
                             <thead>
                                 <tr>
                                     <th scope="col">ID</th>
@@ -40,11 +40,11 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                                 <tr>
                                     <td><?php echo $value["idProduto"];?> </td>
                                     <td><?php echo $value["nomeProduto"];?></td>
-                                    <td>  <a class="btn" href="?page=alter-products&id=<?php echo $value["idProduto"];?>&cat=<?php echo $value["idCategoria"]; ?> "> 
+                                    <td>  <a class="text-dark" href="?page=alter-products&id=<?php echo $value["idProduto"];?>&cat=<?php echo $value["idCategoria"]; ?> "> 
                                             <i class="fas fa-edit new-icon"></i>
                                     </a> </td>
                                     <td> 
-                                        <a class="btn" href="?page=delete-products&id=<?php echo $value["idProduto"]; ?> ">
+                                        <a class="text-dark" href="?page=delete-products&id=<?php echo $value["idProduto"]; ?> ">
                                             <i class="fas fa-trash-alt new-icon"></i>
                                         </a> 
                                     </td>               
@@ -74,7 +74,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                 ?>
         
                     <script>
-                       $("#notification").addClass("notification-animation bg-danger ").html("Excluido com sucesso"); 
+                       $("#notification").addClass("notification-animation bg-success ").html("Excluido com sucesso"); 
                     </script>
             
                 <?php endif; ?>
