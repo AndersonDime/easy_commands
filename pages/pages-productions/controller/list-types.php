@@ -1,6 +1,6 @@
 <?php
-    require 'conect.php';
-    include_once("../services/products-service.php");
+    require '../../../assets/php/conect.php';
+    include_once("../../../assets/services/products-service.php");
 
     $totalRodizioSelect = mysql_getdata("SELECT pedidos.quantidade AS 'qtd' FROM pedidos
     INNER JOIN produtos ON pedidos.produtos_id = produtos.id

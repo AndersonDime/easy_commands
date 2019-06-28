@@ -1,5 +1,5 @@
 <?php 
-include_once("../services/table-service.php");
+include_once("../../../assets/services/table-service.php");
 
 $pref = $_POST["pref"];
 $numero_mesa = $_POST["numero_mesa"];

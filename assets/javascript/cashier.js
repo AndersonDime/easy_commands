@@ -3,12 +3,12 @@ function closeComand(valorTotal){
     id_comanda = document.getElementById("fecha_comanda").value;
     $.ajax({
         method: "POST",
-        url: "./assets/php/cashier-close.php",
+        url: "./pages/pages-cashier/controller/cashier-close.php",
         data: {idComanda : id_comanda, valorTotal : valorTotal}
         ,success:function(){
             refreshTable();
             $('#comanda').html(
-                "<tr><td colspan='4'>Nenhuma comanda aberta no momento.</td></tr>"
+                "<tr class='text-danger'><td colspan='4'>Nenhuma comanda aberta no momento.</td></tr>"
             )
         }
     })
@@ -16,7 +16,7 @@ function closeComand(valorTotal){
 function refreshTable(){
     $.ajax({
         method: "POST",
-        url: "./assets/php/cashier-list.php",
+        url: "./pages/pages-cashier/controller/cashier-list.php",
         success:function(html){
             $('#lista').html(html);
         }
@@ -28,7 +28,7 @@ function open_table(id_comanda){
     $(botao2).prop("disabled", false).focus();
     $.ajax({
         type: 'POST',
-        url: './assets/php/cashier-command.php',
+        url: './pages/pages-cashier/controller/cashier-command.php',
         data: {
             idComanda: id_comanda
         },

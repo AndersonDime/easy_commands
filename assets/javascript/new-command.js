@@ -8,7 +8,7 @@ $(document).ready(function () {
         if (productCtgId) {
             $.ajax({
                 type: 'POST',
-                url: './assets/php/ajax-product-select.php',
+                url: 'pages/pages-tables/controller/ajax-product-select.php',
                 data: 'categorias_id=' + productCtgId,
                 success: function (html) {
                     $('#product').html(html);
@@ -38,7 +38,7 @@ function deleteOrder(idPedidos) {
 function addOrder(numeroMesa) {
     $.ajax({
         type: 'POST',
-        url: './assets/php/add-command.php',
+        url: 'pages/pages-tables/controller/add-command.php',
         data: {
             numero_mesa: numeroMesa,
             product_qtd: $('#productQtd').val(),

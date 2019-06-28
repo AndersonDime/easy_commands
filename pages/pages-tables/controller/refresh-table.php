@@ -1,5 +1,5 @@
 <?php
-include_once("../services/table-service.php");
+include_once("../../../assets/services/table-service.php");
 
     $list = mysql_getdata("SELECT * FROM mesas order by numero");
 

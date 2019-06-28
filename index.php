@@ -33,7 +33,7 @@ include 'template/header.php';
             break;
         case 'list-table':
             include 'template/navbar.php'; 
-            include 'pages/list-table.php';
+            include 'pages/pages-tables/list-table.php';
             break;
         case 'list-users':
             include 'template/navbar.php'; 
@@ -41,7 +41,7 @@ include 'template/header.php';
             break;
         case 'home-page':     
             include 'template/navbar.php';
-            include 'pages/list-table.php';
+            include 'pages/pages-tables/list-table.php';
             break;
         case 'delete-products':     
             include 'template/navbar.php';
@@ -49,7 +49,7 @@ include 'template/header.php';
             break;
         case 'cashier':     
             include 'template/navbar.php';
-            include 'pages/cashier.php';
+            include 'pages/pages-cashier/cashier.php';
             break;
         case 'delete-categories':
             include 'template/navbar.php';     
@@ -77,23 +77,23 @@ include 'template/header.php';
             break;
         case 'user-register':
             include 'template/navbar.php';     
-            include 'pages/user-register.php';
+            include 'pages/pages-users/user-register.php';
             break;
         case 'add-product':     
             include 'template/navbar.php';
-            include 'assets/php/add-product.php';
+            include 'pages/pages-products/controller/add-product.php';
             break;
         case 'add-category':
             include 'template/navbar.php';     
-            include 'assets/php/add-category.php';
+            include 'pages/pages-categories/controller/add-category.php';
             break;
         case 'edit-product':
             include 'template/navbar.php';     
-            include 'assets/php/edit-product.php';
+            include 'pages/products-pages/controller/edit-product.php';
             break;
         case 'edit-production':
             include 'template/navbar.php';     
-            include 'assets/php/edit-production.php';
+            include 'pages/pages-productions/controller/edit-production.php';
             break;
         case 'new-sectors':     
             include 'template/navbar.php';
@@ -104,7 +104,7 @@ include 'template/header.php';
             include 'pages/pages-sectors/list-sectors.php';
             break;
         case 'add-sector':     
-            include 'assets/php/add-sector.php';
+            include 'pages/pages-sectors/controller/add-sector.php';
             include 'template/navbar.php';
             break;
         case 'alter-sectors':
@@ -113,15 +113,15 @@ include 'template/header.php';
             break;
         case 'edit-sectors':
             include 'template/navbar.php';     
-            include 'assets/php/edit-sectors.php';
+            include 'pages/pages-sectors/controller/edit-sectors.php';
             break;
         case 'edit-users':
             include 'template/navbar.php';     
-            include 'assets/php/edit-users.php';
+            include 'pages/pages-users/controller/edit-users.php';
             break;
         case 'edit-category':
             include 'template/navbar.php';     
-            include 'assets/php/edit-category.php';
+            include 'pages/pages-categories/controller/edit-category.php';
             break;
         case 'delete-sectors': 
             include 'template/navbar.php';     
@@ -129,7 +129,7 @@ include 'template/header.php';
             break;
         case 'delete-table': 
             include 'template/navbar.php';     
-            include 'assets/php/delete-table.php';
+            include 'pages/pages-tables/controller/delete-table.php';
             break;
         case 'delete-users': 
             include 'template/navbar.php';     
@@ -137,7 +137,7 @@ include 'template/header.php';
             break;
         case 'new-command':  
             include 'template/navbar.php';    
-            include 'pages/new-command.php';
+            include 'pages/pages-tables/new-command.php';
             break;
         case 'report':  
             include 'template/navbar.php';    

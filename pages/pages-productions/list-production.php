@@ -97,7 +97,7 @@ function listOrders(){
     var sectorValue = $("#filtroSetores").val();
     $.ajax({
         type:'POST',
-        url:'./assets/php/list-order.php',
+        url:'pages/pages-tables/controller/list-order.php',
         data: {sector_value: sectorValue},
         success:function(html){
             $('#tbody').html(html);
@@ -110,7 +110,7 @@ var refreshId = setInterval(function(){ listOrders(); }, 1000);
 function listTypes(){
     $.ajax({
         type:'POST',
-        url:'./assets/php/list-types.php',
+        url:'pages/pages-productions/controller/list-types.php',
         success:function(html){
             $('#listT').html(html);
         }

@@ -1,5 +1,5 @@
 <?php
-include_once("../services/products-service.php");                    
+include_once("../../assets/services/products-service.php");                    
 $list_mesa = mysql_getdata("SELECT * from mesas inner join comandas on comandas.mesas_id = mesas.id 
 where comandas.status = 0 ORDER BY numero ASC"); 
 foreach ($list_mesa as  $key =>$value){

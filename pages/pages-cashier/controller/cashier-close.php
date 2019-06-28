@@ -1,5 +1,5 @@
 <?php
-include_once("../services/products-service.php");
+include_once("../../assets/services/products-service.php");
 $id_comanda = $_POST["idComanda"];
 $valorTotal = $_POST["valorTotal"];
 

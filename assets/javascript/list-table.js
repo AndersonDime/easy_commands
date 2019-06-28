@@ -35,7 +35,7 @@ function saveNumber(numero, id) {
 function addTable(){
     $.ajax({
         method: "POST",
-        url: "assets/php/add-table.php",
+        url: "pages/pages-tables/controller/add-table.php",
         success: function () {
             refreshTable();
         }
@@ -45,7 +45,7 @@ function addTable(){
 function deleteTable(idMesa){
     $.ajax({
         method: "POST",
-        url: "assets/php/delete-table.php",
+        url: "pages/pages-tables/controller/delete-table.php",
         data: {id: idMesa},
         success: function () {
             refreshTable();
@@ -56,7 +56,7 @@ function deleteTable(idMesa){
 function refreshTable(){
     $.ajax({
         method: "POST",
-        url: "assets/php/refresh-table.php",
+        url: "./pages/pages-tables/controller/refresh-table.php",
         success: function (html) {
             $('#cardsRow').html(html);
         }
@@ -72,7 +72,7 @@ function changePref(pref,numero){
     }
     $.ajax({
         type: 'POST',
-        url: './assets/php/alter-table-pref.php',
+        url: 'pages/pages-tables/controller/alter-table-pref.php',
         data: 
             {pref: prefChange, numero_mesa: numero},
         success: function () {

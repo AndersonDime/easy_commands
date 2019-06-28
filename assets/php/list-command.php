@@ -1,8 +1,8 @@
 <?php
-    include_once("../services/products-service.php");
+    include_once("../../assets/services/products-service.php");
     $numeroMesa = $_POST['numero_mesa'];
     
-    require 'conect.php';    
+    require '../../assets/php/conect.php';    
     $mesa = mysql_getdata("SELECT * FROM mesas WHERE numero = '$numeroMesa'");
     $idMesa = $mesa[0]['id'];
     $id_comanda = "SELECT id FROM comandas WHERE mesas_id = '$idMesa'";
