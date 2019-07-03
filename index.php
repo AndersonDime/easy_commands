@@ -89,7 +89,7 @@ include 'template/header.php';
             break;
         case 'edit-product':
             include 'template/navbar.php';     
-            include 'pages/products-pages/controller/edit-product.php';
+            include 'pages/pages-products/controller/edit-product.php';
             break;
         case 'edit-production':
             include 'template/navbar.php';     
