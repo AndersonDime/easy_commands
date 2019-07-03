@@ -15,7 +15,7 @@ $(document).ready(function () {
                 }
             });
         } else {
-            $('#produto').html('<option value="">Selecione uma categoria</option>');
+            $('#produto').html('<option value="#" selected>Selecione uma categoria</option>');
         }
     });
 
@@ -48,10 +48,11 @@ function addOrder(numeroMesa) {
         success: function (html) {
             $('#comanda').html(html);
             $('#product').val("");
-            $('#product').prop("disabled", "true");
-            $('#productCtg').val("");
-            $('#productQtd').val("");
+            $('#productCtg').val("#");
+            $('#productQtd').val(1);
             $('#observacoes').val("");
+            $('#submitOrder').prop("disabled", true);
+            $('#product').html("<option value='#' selected disabled>Selecione um produto</option>");
         }
     });
 }
