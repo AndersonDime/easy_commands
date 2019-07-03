@@ -1,10 +1,10 @@
 <?php
-include_once("assets/services/table-service.php");
+include_once("../../../assets/services/table-service.php");
 
-$numeroMesa = $_POST["numero_mesa"];
+$numeroMesa = $_POST["mesa_numero"];
+$id = $_POST["mesa_id"];
 
-echo $numeroMesa;
-/* $alter = mysql_insert("UPDATE mesas SET numero ='$numeroMesa' WHERE  = $id"); */
-
+ $alterTableNumber = mysql_insert("UPDATE mesas SET numero ='$numeroMesa' WHERE id = '$id'");
+?>
 
 

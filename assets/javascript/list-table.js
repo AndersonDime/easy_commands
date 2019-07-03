@@ -4,32 +4,33 @@ function editarMesa(numero) {
     $(campo).prop("disabled", false).focus();
 }
 
-/* function saveNumber(numero, id){
-var campo = document.getElementById("numeroMesa" + numero);
-    $(campo).prop("disabled", true);
-
-    $.ajax(
-        type:'POST',
-        url:'./assets/php/edit-table.php',
-        data: {numero_mesa: $(campo).val(), id: id;}
-        ,success:function(html){
-            $('#product').html(html);
-        }
-    )
-} */
 
 function saveNumber(numero, id) {
     var campo = document.getElementById("numeroMesa" + numero);
     $(campo).prop("disabled", true);
+    error = false;
 
     $.ajax({
         method: "POST",
-        url: "./assets/php/edit-table.php",
-        data: { mesa_numero: $(campo).val(), mesa_id: id }
+        url: "pages/pages-tables/controller/check-table-number.php",
+        data: { mesa_numero: $(campo).val()},
+        success: function () {
+            $.ajax({
+                method: "POST",
+                url: "pages/pages-tables/controller/edit-table-number.php",
+                data: { mesa_numero: $(campo).val(), mesa_id: id },
+                success: function () {
+                    refreshTable();
+                }
+            })
+        },
+        error: function(){
+            refreshTable();
+        }
     })
-        .done(function (msg) {
-            alert("Data Saved: " + msg);
-    });
+    
+
+
 }
 
 function addTable(){
