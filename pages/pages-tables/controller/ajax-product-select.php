@@ -1,6 +1,6 @@
 <?php
 //Include the database configuration file
-$con = mysqli_connect("localhost","root","root","easycommands") or die(mysqli_connect_error());
+$con = mysqli_connect("localhost","root","","easycommands") or die(mysqli_connect_error());
 
 echo $_POST["categorias_id"];
 if(!empty($_POST["categorias_id"])){
