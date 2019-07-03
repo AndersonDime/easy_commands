@@ -1,7 +1,7 @@
 <?php
 require '../../../assets/php/conect.php';
 date_default_timezone_set('America/Sao_Paulo'); 
-include_once("../../assets/services/products-service.php");
+include_once("../../../assets/services/products-service.php");
 
 $numeroMesa = $_POST["numero_mesa"];
 $product_qtd = $_POST["product_qtd"];
@@ -9,7 +9,7 @@ $product_id = $_POST["product_id"];
 $observation = $_POST["observation"];
 
 function list_products($numeroMesa){  
-    require 'conect.php';
+    require '../../../assets/php/conect.php';
     
     $mesa = mysql_getdata("SELECT * FROM mesas WHERE numero = '$numeroMesa'");
     $idMesa = $mesa[0]['id'];

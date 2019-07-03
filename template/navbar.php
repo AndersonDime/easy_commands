@@ -47,7 +47,7 @@
 
     <div style="margin-bottom: 59px!important"></div>
 
-    <div class="notification">
+    <div id="notification">
     </div>
 
 <script>
