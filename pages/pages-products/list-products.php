@@ -59,7 +59,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
         
                 <?php
                     //se orçamento foi inserido com sucesso mostra essa mensagem:
-                    if ($success):
+                    if ($success == 1):
                 ?>
         
                     <script>
@@ -70,7 +70,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                     endif; 
                 
                     // se houver erro no formulario mostra essa mensagem:
-                    if ($fail):
+                    if ($success == 2):
                 ?>
         
                     <script>
@@ -78,6 +78,14 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                     </script>
             
                 <?php endif; ?>
+                <?php
+                            // se houver erro no formulario mostra essa mensagem:
+                        if ($fail==1):
+                        ?>
+                        <script>
+                             $("#notification").addClass("notification-animation bg-danger ").html("Existem produtos alocados a esta categoria"); 
+                        </script>
+                        <?php endif; ?>
                             
                 </div>
                 <div class="col-md-1">
