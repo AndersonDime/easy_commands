@@ -22,6 +22,8 @@
     <script src="assets/javascript/login.js"></script>
     <script src="assets/javascript/notify.js"></script>
     <script src="assets/javascript/production.js"></script>
+    <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
     <link rel="stylesheet" type="text-css" href="assets/css/cadastro-produtos.css">
     
 </head>

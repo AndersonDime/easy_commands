@@ -24,7 +24,7 @@
                 </li>
                 <?php if($permissao == 0){?>
                 <li class="nav-item ">
-                    <div class="dropdown">
+                    <div class="dropdown" style="z-index: 1000; overflow: visible">
                         <a class="nav-link dropdown-toggle" href="#" id="configDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Administrativo
                         </a>
@@ -47,7 +47,7 @@
 
     <div style="margin-bottom: 59px!important"></div>
 
-    <div id="notification">
+    <div class="notification">
     </div>
 
 <script>

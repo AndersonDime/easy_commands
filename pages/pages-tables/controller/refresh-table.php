@@ -26,7 +26,7 @@ include_once("../../../assets/services/table-service.php");
                             </button>
                             </h5>
                             <p class="card-text">
-                            Preferência da mesa: '.$pref.'                   
+                            Preferência: '.$pref.'                   
                             </p>
                             <a href="?page=new-command&numero='.$value["numero"].'" class="btn btn-dark">Pedido
                             </a>
