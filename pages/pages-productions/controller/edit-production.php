@@ -1,6 +1,6 @@
 <?php
 
-include_once("../../assets/services/products-service.php");
+include_once("../../../assets/services/products-service.php");
 
 $id = $_POST["idPedido"];
 $valid = mysql_getdata("SELECT * FROM pedidos WHERE id = '$id' ");

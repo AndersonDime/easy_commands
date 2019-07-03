@@ -1,6 +1,6 @@
 function refresh_production(id_pedido){
     $.ajax({
-        url : "assets/php/edit-production.php",
+        url : "pages/pages-productions/controller/edit-production.php",
         type : 'POST',
         data : {idPedido: id_pedido},
     })
