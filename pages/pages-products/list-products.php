@@ -83,7 +83,7 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                         if ($fail==1):
                         ?>
                         <script>
-                             $("#notification").addClass("notification-animation bg-danger ").html("Existem produtos alocados a esta categoria"); 
+                             $("#notification").addClass("notification-animation bg-danger ").html("Existem um pedido utilizando este produto"); 
                         </script>
                         <?php endif; ?>
                             
