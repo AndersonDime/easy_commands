@@ -1,8 +1,8 @@
 <?php
 
 function open_table($id_comanda){
-    include_once("../../assets/services/products-service.php");
-    require '../../assets/php/conect.php';
+    include_once("../../../assets/services/products-service.php");
+    require '../../../assets/php/conect.php';
     (float)$totalprice = 0;
     $list_commands = mysql_getdata("SELECT mesas.numero as numero_mesa, mesas.id as id_mesa, mesas.status as status_mesa,
     comandas.id as id_comanda, comandas.status as status_comanda, pedidos.id as id_pedidos, pedidos.quantidade as quantidade_pedido,

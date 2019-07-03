@@ -12,6 +12,7 @@ $mesa = mysql_getdata("SELECT numero FROM mesas WHERE id = '$id_mesa'");
 $mesa_numero = $mesa[0]["numero"];
     if($id_comanda == $id_comanda_banco){
        $alter_num_mesa = mysql_update("UPDATE comandas SET hist_mesa_numero = '$mesa_numero' WHERE id = '$id_comanda_banco' ");
+       $update_pref_mesa = mysql_update("UPDATE mesas SET preferencia = 0 Where numero = '$mesa_numero'");
        $alter_id_mesa = mysql_update("UPDATE comandas SET mesas_id = null WHERE id = '$id_comanda_banco' ");
        $alter_status = mysql_update("UPDATE comandas SET `status` = 1 WHERE id = '$id_comanda_banco' ");
        $alter_value = mysql_update("UPDATE comandas SET `hist_valor_fatura` = '$valorTotal' WHERE id = '$id_comanda_banco' ");
