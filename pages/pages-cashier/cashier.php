@@ -57,7 +57,7 @@ INNER JOIN produtos ON produtos.id = pedidos.produtos_id");
                                     <tr class="text-danger">
                                         <td colspan="4">
                                         <br>
-                                        Nenhuma comanda aberta no momento.
+                                            Nenhuma comanda aberta no momento.
                                         </td>
                                     </tr>
                                 </tbody>
