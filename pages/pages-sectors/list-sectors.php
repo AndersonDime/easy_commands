@@ -39,7 +39,11 @@ $fail= isset($_GET["fail"]) ? $_GET["fail"] : "";
                                         <th><?php echo $value["id"];?></th>
                                         <td><?php echo $value["nome"]; ?></td>
                                         <td>  <a class="text-dark" href="?page=alter-sectors&id=<?php echo $value["id"] ?>" > <i class="fas fa-edit new-icon txt-dark"></i> </a> </td>
-                                        <td> <a class="text-dark" href="?page=delete-sectors&id=<?php echo $value["id"] ?>"> <i class="fas fa-trash-alt new-icon txt-dark"></i> </a> </td>               
+                                        <td> 
+                                            <?php if($value["id"] != 4 && $value["id"] != 5) { ?>
+                                                <a class="text-dark" href="?page=delete-sectors&id=<?php echo $value["id"] ?>"> <i class="fas fa-trash-alt new-icon txt-dark"></i> </a> 
+                                            <?php }?>
+                                        </td>               
                                     </tr>
                                     <?php
                                         }
