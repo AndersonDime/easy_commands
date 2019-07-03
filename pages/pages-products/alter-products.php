@@ -58,7 +58,7 @@
                                         <?php foreach($prodName as $value){
                                         $newprice = str_replace(".", ",",$value["preco"]);  
                                         ?>
-                                        <input  type="text" class="form-control" id="valor" pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$" name="price" value="<?php echo $newprice; ?>" required>
+                                        <input onfocusout="formatPrice()" type="text" class="form-control dinheiro" id="valor" pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$" name="price" value="<?php echo $newprice; ?>" required>
                                         <?php
                                         } 
                                         ?>
@@ -95,3 +95,18 @@
         </div>
     </div>
 </div>
+<script>
+    $('.dinheiro').mask('#.##0,00', {reverse: true});
+
+    function formatPrice(){
+        formatedVal = $("#valor").val();
+
+        if (formatedVal.length == 2){
+            $("#valor").val(formatedVal + ",00") 
+        }else if(formatedVal.length == 1){
+            $("#valor").val(formatedVal + ",00") 
+        }else if(formatedVal.length == 0){
+            $("#valor").val(formatedVal + "0,00") 
+        }
+    }
+</script>
