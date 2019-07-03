@@ -15,35 +15,29 @@ body{
   position: fixed;
   width: 100%;
   height: 0;
-  top: 56px;
+  top: 60px;
   z-index: 1;
   text-align: center;
   color: white;
   overflow: hidden;
-	transition-property: all;
-	transition-duration: .5s;
-  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	transition: 0.5s;
   animation-name: notificationShow;
-  animation-duration: 10s;
+  animation-duration: 4s;
   animation-timing-function: linear;
 }
 
 @keyframes notificationShow{
   0%{
   height: 0px;
-  transition: 0.5s;
   }
   20%{
     height: fit-content;
-    transition: 0.5s;
   }
   90%{
     height: fit-content;
-    transition: 0.5s;
   }
   100%{
     height: 0px;
-    transition: 0.5s;
   }
 }
 
@@ -70,7 +64,7 @@ body{
 .navbar{
   position: fixed;
   top: 0px;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   border-bottom: 4px solid #ffc107;;
 }
